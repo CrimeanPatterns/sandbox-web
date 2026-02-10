@@ -1,0 +1,282 @@
+/* ************************** My defaults ************************** */
+html,body{
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: Black;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	border: none;
+}
+td{
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: Black;
+	font-weight: normal;
+}
+hr{
+	color : Black;
+	height : 1px;
+}
+h1{
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	color: #732E34;
+	font-weight: normal;
+	margin-bottom: 0px;
+}
+h2{
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #732E34;
+	font-weight: normal;
+	margin-bottom: 0px;
+}
+/* *********** link *********** */
+a:visited, a:link, a:active {
+	color: #512D01;
+	text-decoration: underline;
+	font-weight : normal;
+}
+a:hover {
+	color: #000000;
+	text-decoration: none;
+	font-weight : normal;
+}
+
+/* *********** white link 12 *********** */
+a.a12pxBldWht:visited, a.a12pxBldWht:link, a.a12pxBldWht:active {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: White;
+	text-decoration: none;
+}
+a.a12pxBldWht:hover {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: White;
+	text-decoration: underline;
+}
+
+/* *********** bold red link *********** */
+a.a12pxBldRed:visited, a.a12pxBldRed:link, a.a12pxBldRed:active {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #F63636;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.a12pxBldRed:hover {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #F63636;
+	text-decoration: underline;
+	font-weight : bold;
+}
+.detailsTable{
+	border: 1px solid #C7C4BF;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+.detailsTable td{
+	border: 1px solid #C7C4BF;
+	text-align: left;
+}
+.detailsTableDark{
+	border: 1px solid #838383;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.subMenu
+{
+    VISIBILITY: hidden;
+    position:absolute;
+}
+
+.white{
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: White;
+	font-weight: normal;
+	background-color: #f63636;
+}
+
+/* *********** white link 11 *********** */
+a.a11pxBldWht:visited, a.a11pxBldWht:link, a.a11pxBldWht:active {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: White;
+	text-decoration: none;
+}
+a.a11pxBldWht:hover {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: White;
+	text-decoration: underline;
+}
+
+.inputTxt {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	border: 1px solid #ADADAD;
+	color : Black;
+}
+.detailsTableDark{
+	border: 1px solid #838383;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+.detailsTableDark td{
+	border: 1px solid #838383;
+}
+
+.noBorder td{
+	border: 0px none;
+}
+.noBorder{
+	border: 0px none;
+}
+#noBorder td{
+	border: 0px none;
+}
+#noBorder{
+	border: 0px none;
+}
+
+/* ----------------- forms ------------------ */
+td.formErrorCell {
+	background-color: #ffdddd;
+}
+table.formTable{
+}
+table.formTable .asterisk{
+	position: relative;
+	font-size: 110%;
+	top: -2px;
+	color: #e67512;
+}
+table.formTable td.caption{
+	color: black;
+}
+input.inputTxt, textarea.inputTxt{
+	border: 1px solid #a1a1a1;
+	font-weight: normal;
+	font-size: 10pt;
+	background-image: url(/lib/images/inputBg.gif);
+	background-repeat: repeat-x;
+}
+
+select.selectTxt{
+	border: 1px solid #a1a1a1;
+	font-weight: normal;
+	font-size: 10pt;
+}
+
+table.formTable tr:hover .inputTxt, table.formTable tr .inputTxt:focus{
+	background-image: url(/lib/images/inputBgHover.gif);
+	background-repeat: repeat-x;
+	border: 1px solid #0b70b7;
+}
+
+table.formTable tr:hover .selectTxt, table.formTable tr .selectTxt:focus{
+	border: 1px solid #0b70b7;
+}
+
+table.formTable .fieldHint{
+	font-size: 8pt;
+	color: #a1a1a1;
+}
+.fieldhint a{
+	color: #a1a1a1;
+}
+table.formTable td.input{
+	color: black;
+}
+table.formTable tr:hover label{
+	color: #0b70b7;
+}
+.fieldhint{
+ 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #666666;
+	font-weight: normal;
+}
+img.calicon{
+	vertical-align: bottom;
+	border: none;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	z-index: 0;
+	cursor: pointer;
+}
+.errorFrm, a.errorFrm:link, a.errorFrm:active, a.errorFrm:visited, errorFrm a{
+	color: Red;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.successFrm, a.successFrm:link, a.successFrm:active, a.successFrm:visited{
+	color: Green;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.infoFrm, a.infoFrm:link, a.infoFrm:active, a.infoFrm:visited{
+	color: Blue;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.warningFrm, a.warningFrm:link, a.warningFrm:active, a.warningFrm:visited {
+	color: Orange;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+
+}
+a.errorFrm:link, a.errorFrm:active, a.errorFrm:visited{
+	text-decoration: underline;
+}
+a.successFrm:link, a.successFrm:active, a.successFrm:visited{
+	text-decoration: underline;
+}
+a.infoFrm:link, a.infoFrm:active, a.infoFrm:visited{
+	text-decoration: underline;
+}
+a.warningFrm:link, a.warningFrm:active, a.warningFrm:visited{
+	text-decoration: underline;
+}
+.formerror{
+	color: Red;
+	font-weight: bold;
+}
+form{
+	padding: 0;
+	margin: 0;
+}
+table.formTable td{
+	text-align: left;
+}
+
+@media print{
+
+	.notPrintable{
+		display: none;
+	}
+
+}
+td.errorMessage {
+	color: red;
+	font-weight: bold;
+}
+
+.datepicker {position:relative; margin-right:20px;}
+	.datepicker .ui-datepicker-trigger {position:absolute; top:0px; right:-24px; cursor:pointer;} 

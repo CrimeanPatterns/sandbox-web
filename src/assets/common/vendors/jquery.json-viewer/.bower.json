@@ -1,0 +1,14 @@
+{
+  "name": "jquery.json-viewer",
+  "homepage": "https://github.com/AwardWallet/jquery.json-viewer",
+  "version": "1.4.1",
+  "_release": "1.4.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.4.1",
+    "commit": "f30846c809bf6e1fd2508930636310d64c57b9d2"
+  },
+  "_source": "https://github.com/AwardWallet/jquery.json-viewer.git",
+  "_target": "1.4.1",
+  "_originalSource": "https://github.com/AwardWallet/jquery.json-viewer.git"
+}

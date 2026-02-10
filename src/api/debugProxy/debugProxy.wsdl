@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="https://awardwallet.com/api/debugProxy/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="services"
+	xmlns:spec="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	targetNamespace="https://awardwallet.com/api/debugProxy/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="https://awardwallet.com/api/debugProxy/">
+			<xsd:element name="AccountInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AccountID" type="xsd:positiveInteger"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element name="Request">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AccountID" type="xsd:positiveInteger"/>
+						<xsd:element name="Url" type="xsd:anyURI"/>
+						<xsd:element name="Type" type="xsd:string" />
+						<xsd:element name="Data" type="xsd:string" minOccurs="0" maxOccurs="1" />
+						<xsd:element name="PreEncoded" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+						<xsd:element name="Headers" type="xsd:string" minOccurs="0" maxOccurs="1" />
+						<xsd:element name="HttpsProtocol" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element name="AccountInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Login" type="xsd:string" />
+						<xsd:element name="Login2" type="xsd:string" />
+						<xsd:element name="Login3" type="xsd:string" />
+						<xsd:element name="Pass" type="xsd:string" />
+						<xsd:element name="ProviderID" type="xsd:positiveInteger" />
+						<xsd:element name="DisplayName" type="xsd:string" />
+						<xsd:element name="ProviderCode" type="xsd:string" />
+                        <xsd:element name="ProviderEngine" type="xsd:positiveInteger" />
+						<xsd:element name="BrowserState" type="xsd:string" />
+						<xsd:element name="Answers" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element name="DebugProxyRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AccountID" type="xsd:integer" />
+						<xsd:element name="SerializedRequest" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="DebugProxyResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="SerializedResponse" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="AccountInfo">
+		<wsdl:part name="body" element="tns:AccountInfo" />
+	</wsdl:message>
+	
+	<wsdl:message name="Request">
+		<wsdl:part name="body" element="tns:Request" />
+	</wsdl:message>
+	
+	<wsdl:message name="AccountInfoResponse">
+		<wsdl:part name="body" element="tns:AccountInfoResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="DebugProxyRequest">
+		<wsdl:part name="body" element="tns:DebugProxyRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="DebugProxyResponse">
+		<wsdl:part name="body" element="tns:DebugProxyResponse" />
+	</wsdl:message>
+
+	<wsdl:portType name="DebugProxyClient">
+		<wsdl:operation name="GetAccountInfo">
+			<wsdl:input message="tns:AccountInfo" />
+			<wsdl:output message="tns:AccountInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="SendHttpRequest">
+			<wsdl:input message="tns:DebugProxyRequest" />
+			<wsdl:output message="tns:DebugProxyResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="DebugProxyClientBinding" type="tns:DebugProxyClient">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<spec:SecuritySpec spec:Namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" spec:Id="default-spec">
+			<spec:UsernameTokenSpec PasswordType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">
+		   </spec:UsernameTokenSpec>
+		</spec:SecuritySpec>
+		<wsdl:operation name="GetAccountInfo">
+			<soap:operation soapAction="GetAccountInfo" />
+			<wsdl:input>
+				<spec:SecuritySpecRef RefId="default-spec"></spec:SecuritySpecRef>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<spec:SecuritySpecRef RefId="default-spec"></spec:SecuritySpecRef>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SendHttpRequest">
+			<soap:operation soapAction="SendHttpRequest" />
+			<wsdl:input>
+				<spec:SecuritySpecRef RefId="default-spec"></spec:SecuritySpecRef>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<spec:SecuritySpecRef RefId="default-spec"></spec:SecuritySpecRef>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="DebugProxyClient">
+		<wsdl:documentation>Client debug proxy interface</wsdl:documentation>
+		<wsdl:port binding="tns:DebugProxyClientBinding" name="DebugProxyClientBinding">
+			<soap:address location="https://awardwallet.com/api/debugProxy/DebugProxy.php" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
+	

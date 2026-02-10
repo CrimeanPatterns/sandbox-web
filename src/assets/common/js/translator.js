@@ -1,0 +1,575 @@
+/*!
+ * William DURAND <william.durand1@gmail.com>
+ * MIT Licensed
+ */
+var Translator = (function(document) {
+    "use strict";
+
+    var base64encode = function base64_encode(data) {
+
+        var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+        var o1, o2, o3, h1, h2, h3, h4, bits, i = 0, enc = '';
+
+        do {
+            o1 = data.charCodeAt(i++);
+            o2 = data.charCodeAt(i++);
+            o3 = data.charCodeAt(i++);
+
+            bits = o1 << 16 | o2 << 8 | o3;
+
+            h1 = bits >> 18 & 0x3f;
+            h2 = bits >> 12 & 0x3f;
+            h3 = bits >> 6 & 0x3f;
+            h4 = bits & 0x3f;
+
+            enc += b64.charAt(h1) + b64.charAt(h2) + b64.charAt(h3) + b64.charAt(h4);
+        } while (i < data.length);
+
+        switch (data.length % 3) {
+            case 1:
+                enc = enc.slice(0, -2) + '==';
+                break;
+            case 2:
+                enc = enc.slice(0, -1) + '=';
+                break;
+        }
+
+        return enc;
+    };
+
+    var isTranshelper = document.cookie.match(/transhelper/);
+
+
+    var _messages     = {},
+        _sPluralRegex = /^\w+\: +(.+)$/,
+        _cPluralRegex = /^\s*((\{\s*(\-?\d+[\s*,\s*\-?\d+]*)\s*\})|([\[\]])\s*(-Inf|\-?\d+)\s*,\s*(\+?Inf|\-?\d+)\s*([\[\]]))\s?(.+?)$/,
+        _iPluralRegex = /^\s*(\{\s*(\-?\d+[\s*,\s*\-?\d+]*)\s*\})|([\[\]])\s*(-Inf|\-?\d+)\s*,\s*(\+?Inf|\-?\d+)\s*([\[\]])/;
+
+    /**
+     * Replace placeholders in given message.
+     *
+     * **WARNING:** used placeholders are removed.
+     *
+     * @param {String} message      The translated message
+     * @param {Object} placeholders The placeholders to replace
+     * @return {String}             A human readable message
+     * @api private
+     */
+    function replace_placeholders(message, placeholders) {
+        var _i,
+            _prefix = Translator.placeHolderPrefix,
+            _suffix = Translator.placeHolderSuffix;
+
+        for (_i in placeholders) {
+            var _r = new RegExp(_prefix + _i + _suffix, 'g');
+
+            if (_r.test(message)) {
+                message = message.replace(_r, placeholders[_i]);
+                delete(placeholders[_i]);
+            }
+        }
+
+        return message;
+    }
+
+    /**
+     * Get the message based on its id, its domain, and its locale. If domain or
+     * locale are not specified, it will try to find the message using fallbacks.
+     *
+     * @param {String} id               The message id
+     * @param {String} domain           The domain for the message or null to guess it
+     * @param {String} locale           The locale or null to use the default
+     * @param {String} currentLocale    The current locale or null to use the default
+     * @param {String} localeFallback   The fallback (default) locale
+     * @param {String} defaultDomain    Default domain
+     * @return {String}                 The right message if found, `undefined` otherwise
+     * @api private
+     */
+    function get_message(id, domain, locale, currentLocale, localeFallback, defaultDomain) {
+        var _locale = locale || currentLocale || localeFallback,
+            _domain = domain || defaultDomain;
+
+        if (undefined === _messages[_locale]) {
+            if (undefined === _messages[localeFallback]) {
+                return id;
+            }
+
+            _locale = localeFallback;
+        }
+
+        if (undefined !== _messages[_locale][_domain] &&
+            undefined !== _messages[_locale][_domain][id]) {
+            return _messages[_locale][_domain][id];
+        }
+        if (_locale != localeFallback) {
+            if (undefined !== _messages[localeFallback][_domain] &&
+                undefined !== _messages[localeFallback][_domain][id]) {
+                return _messages[localeFallback][_domain][id];
+            }
+        }
+
+        return id;
+    }
+
+    /**
+     * The logic comes from the Symfony2 PHP Framework.
+     *
+     * Given a message with different plural translations separated by a
+     * pipe (|), this method returns the correct portion of the message based
+     * on the given number, the current locale and the pluralization rules
+     * in the message itself.
+     *
+     * The message supports two different types of pluralization rules:
+     *
+     * interval: {0} There is no apples|{1} There is one apple|]1,Inf] There is %count% apples
+     * indexed:  There is one apple|There is %count% apples
+     *
+     * The indexed solution can also contain labels (e.g. one: There is one apple).
+     * This is purely for making the translations more clear - it does not
+     * affect the functionality.
+     *
+     * The two methods can also be mixed:
+     *     {0} There is no apples|one: There is one apple|more: There is %count% apples
+     *
+     * @param {String} message  The message id
+     * @param {Number} number   The number to use to find the indice of the message
+     * @param {String} locale   The locale
+     * @return {String}         The message part to use for translation
+     * @api private
+     */
+    function pluralize(message, number, locale) {
+        var _p,
+            _e,
+            _explicitRules = [],
+            _standardRules = [],
+            _parts         = message.split(Translator.pluralSeparator),
+            _matches       = [];
+
+        for (_p in _parts) {
+            var _part = _parts[_p];
+            var _rc = new RegExp(_cPluralRegex);
+            var _rs = new RegExp(_sPluralRegex);
+
+            if (_rc.test(_part)) {
+                _matches = _part.match(_rc);
+                _explicitRules[_matches[0]] = _matches[_matches.length - 1];
+            } else if (_rs.test(_part)) {
+                _matches = _part.match(_rs);
+                _standardRules.push(_matches[1]);
+            } else {
+                _standardRules.push(_part);
+            }
+        }
+
+        for (_e in _explicitRules) {
+            var _r = new RegExp(_iPluralRegex);
+
+            if (_r.test(_e)) {
+                _matches = _e.match(_r);
+
+                if (_matches[1]) {
+                    var _ns = _matches[2].split(','),
+                        _n;
+
+                    for (_n in _ns) {
+                        if (number == _ns[_n]) {
+                            return _explicitRules[_e];
+                        }
+                    }
+                } else {
+                    var _leftNumber  = convert_number(_matches[4]);
+                    var _rightNumber = convert_number(_matches[5]);
+
+                    if (('[' === _matches[3] ? number >= _leftNumber : number > _leftNumber) &&
+                        (']' === _matches[6] ? number <= _rightNumber : number < _rightNumber)) {
+                        return _explicitRules[_e];
+                    }
+                }
+            }
+        }
+
+        return _standardRules[plural_position(number, locale)] || _standardRules[0] || undefined;
+    }
+
+    /**
+     * The logic comes from the Symfony2 PHP Framework.
+     *
+     * Convert number as String, "Inf" and "-Inf"
+     * values to number values.
+     *
+     * @param {String} number   A litteral number
+     * @return {Number}         The int value of the number
+     * @api private
+     */
+    function convert_number(number) {
+        if ('-Inf' === number) {
+            return Math.log(0);
+        } else if ('+Inf' === number || 'Inf' === number) {
+            return -Math.log(0);
+        }
+
+        return parseInt(number, 10);
+    }
+
+    /**
+     * The logic comes from the Symfony2 PHP Framework.
+     *
+     * Returns the plural position to use for the given locale and number.
+     *
+     * @param {Number} number  The number to use to find the indice of the message
+     * @param {String} locale  The locale
+     * @return {Number}        The plural position
+     * @api private
+     */
+    function plural_position(number, locale) {
+        var _locale = locale;
+
+        if ('pt_BR' === _locale) {
+            _locale = 'xbr';
+        }
+
+        if (_locale.length > 3) {
+            _locale = _locale.split('_')[0];
+        }
+
+        switch (_locale) {
+            case 'bo':
+            case 'dz':
+            case 'id':
+            case 'ja':
+            case 'jv':
+            case 'ka':
+            case 'km':
+            case 'kn':
+            case 'ko':
+            case 'ms':
+            case 'th':
+            case 'tr':
+            case 'vi':
+            case 'zh':
+                return 0;
+            case 'af':
+            case 'az':
+            case 'bn':
+            case 'bg':
+            case 'ca':
+            case 'da':
+            case 'de':
+            case 'el':
+            case 'en':
+            case 'eo':
+            case 'es':
+            case 'et':
+            case 'eu':
+            case 'fa':
+            case 'fi':
+            case 'fo':
+            case 'fur':
+            case 'fy':
+            case 'gl':
+            case 'gu':
+            case 'ha':
+            case 'he':
+            case 'hu':
+            case 'is':
+            case 'it':
+            case 'ku':
+            case 'lb':
+            case 'ml':
+            case 'mn':
+            case 'mr':
+            case 'nah':
+            case 'nb':
+            case 'ne':
+            case 'nl':
+            case 'nn':
+            case 'no':
+            case 'om':
+            case 'or':
+            case 'pa':
+            case 'pap':
+            case 'ps':
+            case 'pt':
+            case 'so':
+            case 'sq':
+            case 'sv':
+            case 'sw':
+            case 'ta':
+            case 'te':
+            case 'tk':
+            case 'ur':
+            case 'zu':
+                return (number == 1) ? 0 : 1;
+
+            case 'am':
+            case 'bh':
+            case 'fil':
+            case 'fr':
+            case 'gun':
+            case 'hi':
+            case 'ln':
+            case 'mg':
+            case 'nso':
+            case 'xbr':
+            case 'ti':
+            case 'wa':
+                return ((number === 0) || (number == 1)) ? 0 : 1;
+
+            case 'be':
+            case 'bs':
+            case 'hr':
+            case 'ru':
+            case 'sr':
+            case 'uk':
+                return ((number % 10 == 1) && (number % 100 != 11)) ? 0 : (((number % 10 >= 2) && (number % 10 <= 4) && ((number % 100 < 10) || (number % 100 >= 20))) ? 1 : 2);
+
+            case 'cs':
+            case 'sk':
+                return (number == 1) ? 0 : (((number >= 2) && (number <= 4)) ? 1 : 2);
+
+            case 'ga':
+                return (number == 1) ? 0 : ((number == 2) ? 1 : 2);
+
+            case 'lt':
+                return ((number % 10 == 1) && (number % 100 != 11)) ? 0 : (((number % 10 >= 2) && ((number % 100 < 10) || (number % 100 >= 20))) ? 1 : 2);
+
+            case 'sl':
+                return (number % 100 == 1) ? 0 : ((number % 100 == 2) ? 1 : (((number % 100 == 3) || (number % 100 == 4)) ? 2 : 3));
+
+            case 'mk':
+                return (number % 10 == 1) ? 0 : 1;
+
+            case 'mt':
+                return (number == 1) ? 0 : (((number === 0) || ((number % 100 > 1) && (number % 100 < 11))) ? 1 : (((number % 100 > 10) && (number % 100 < 20)) ? 2 : 3));
+
+            case 'lv':
+                return (number === 0) ? 0 : (((number % 10 == 1) && (number % 100 != 11)) ? 1 : 2);
+
+            case 'pl':
+                return (number == 1) ? 0 : (((number % 10 >= 2) && (number % 10 <= 4) && ((number % 100 < 12) || (number % 100 > 14))) ? 1 : 2);
+
+            case 'cy':
+                return (number == 1) ? 0 : ((number == 2) ? 1 : (((number == 8) || (number == 11)) ? 2 : 3));
+
+            case 'ro':
+                return (number == 1) ? 0 : (((number === 0) || ((number % 100 > 0) && (number % 100 < 20))) ? 1 : 2);
+
+            case 'ar':
+                return (number === 0) ? 0 : ((number == 1) ? 1 : ((number == 2) ? 2 : (((number >= 3) && (number <= 10)) ? 3 : (((number >= 11) && (number <= 99)) ? 4 : 5))));
+
+            default:
+                return 0;
+        }
+    }
+
+    /**
+     * Get the current application's locale based on the `lang` attribute
+     * on the `html` tag.
+     *
+     * @return {String}     The current application's locale
+     * @api private
+     */
+    function get_current_locale() {
+        return document.documentElement.lang;
+    }
+
+    return {
+        /**
+         * The current locale.
+         *
+         * @type {String}
+         * @api public
+         */
+        locale: get_current_locale(),
+
+        /**
+         * Fallback locale.
+         *
+         * @type {String}
+         * @api public
+         */
+        fallback: 'en',
+
+        /**
+         * Placeholder prefix.
+         *
+         * @type {String}
+         * @api public
+         */
+        placeHolderPrefix: '%',
+
+        /**
+         * Placeholder suffix.
+         *
+         * @type {String}
+         * @api public
+         */
+        placeHolderSuffix: '%',
+
+        /**
+         * Default domain.
+         *
+         * @type {String}
+         * @api public
+         */
+        defaultDomain: 'messages',
+
+        /**
+         * Plurar separator.
+         *
+         * @type {String}
+         * @api public
+         */
+        pluralSeparator: '|',
+
+        /**
+         * Adds a translation entry.
+         *
+         * @param {String} id       The message id
+         * @param {String} message  The message to register for the given id
+         * @param {String} domain   The domain for the message or null to use the default
+         * @param {String} locale   The locale or null to use the default
+         * @return {Object}         Translator
+         * @api public
+         */
+        add: function(id, message, domain, locale) {
+            var _locale = locale || this.locale || this.fallback,
+                _domain = domain || this.defaultDomain;
+
+            if (!_messages[_locale]) {
+                _messages[_locale] = {};
+            }
+
+            if (!_messages[_locale][_domain]) {
+                _messages[_locale][_domain] = {};
+            }
+
+            _messages[_locale][_domain][id] = message;
+
+            return this;
+        },
+
+
+        /**
+         * Translates the given message.
+         *
+         * @param {String} id             The message id
+         * @param {Object} parameters     An array of parameters for the message
+         * @param {String} domain         The domain for the message or null to guess it
+         * @param {String} locale         The locale or null to use the default
+         * @return {String}               The translated string
+         * @api public
+         */
+        trans: function (id, parameters, domain, locale) {
+            var _message = get_message(
+                id,
+                domain,
+                locale,
+                this.locale,
+                this.fallback,
+                this.defaultDomain
+            );
+
+            return this.addMark(id, domain, replace_placeholders(_message, parameters || {}));
+        },
+
+        /**
+         * Translates the given choice message by choosing a translation according to a number.
+         *
+         * @param {String} id             The message id
+         * @param {Number} number         The number to use to find the indice of the message
+         * @param {Object} parameters     An array of parameters for the message
+         * @param {String} domain         The domain for the message or null to guess it
+         * @param {String} locale         The locale or null to use the default
+         * @return {String}               The translated string
+         * @api public
+         */
+        transChoice: function(id, number, parameters, domain, locale) {
+            var _message = get_message(
+                id,
+                domain,
+                locale,
+                this.locale,
+                this.fallback,
+                this.defaultDomain
+            );
+
+            var _number  = parseInt(number, 10);
+
+            if (undefined !== _message && !isNaN(_number)) {
+                _message = pluralize(
+                    _message,
+                    _number,
+                    locale || this.locale || this.fallback
+                );
+            }
+
+            return this.addMark(id, domain, replace_placeholders(_message, parameters || {}));
+        },
+
+        addMark: function(id, domain, mess) {
+            if (isTranshelper) {
+                var mark = base64encode(JSON.stringify({
+                    id: id,
+                    domain: domain || 'messages',
+                    message: mess
+                }));
+
+                return '<mark data-title="' + mark + '">' + mess + '</mark>';
+            } else {
+                return mess;
+            }
+        },
+
+        /**
+         * Loads translations from JSON.
+         *
+         * @param {String} data     A JSON string or object literal
+         * @return {Object}         Translator
+         * @api public
+         */
+        fromJSON: function(data) {
+            if(typeof data === 'string') {
+                data = JSON.parse(data);
+            }
+
+            if (data.locale) {
+                this.locale = data.locale;
+            }
+
+            if (data.fallback) {
+                this.fallback = data.fallback;
+            }
+
+            if (data.defaultDomain) {
+                this.defaultDomain = data.defaultDomain;
+            }
+
+            if (data.translations) {
+                for (var locale in data.translations) {
+                    for (var domain in data.translations[locale]) {
+                        for (var id in data.translations[locale][domain]) {
+                            this.add(id, data.translations[locale][domain][id], domain, locale);
+                        }
+                    }
+                }
+            }
+
+            return this;
+        },
+
+        /**
+         * @api public
+         */
+        reset: function() {
+            _messages   = {};
+            this.locale = get_current_locale();
+        }
+    };
+})(document);
+
+if (typeof window.define === 'function' && window.define.amd) {
+    window.define('Translator', [], function() {
+        return Translator;
+    });
+}

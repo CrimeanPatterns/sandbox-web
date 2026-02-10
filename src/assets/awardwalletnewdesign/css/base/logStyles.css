@@ -1,0 +1,137 @@
+body {
+    margin-top: 0;
+}
+
+h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+}
+
+.awlog-emergency {
+    color: white;
+    background-color: darkred;
+}
+
+.awlog-alert {
+    color: white;
+    background-color: red;
+}
+
+.awlog-critical {
+    color: darkred;
+    font-weight: bold;
+}
+
+.awlog-error {
+    color: red;
+}
+
+.awlog-warning {
+    color: orange;
+}
+
+.awlog-notice {
+    color: #bfab27;
+}
+
+.awlog-info {
+    color: black;
+}
+
+.awlog-debug {
+    color: #686868;
+}
+
+/* Tab styles BEGIN */
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #f1f1f1;*/
+
+    /*z-index: 100px;*/
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    border: 1px solid #ccc;
+    border-top: 0px;
+    float: right;
+}
+
+/* Float the list items side by side */
+ul.tab li {
+    float: left;
+    border-style: outset;
+    /*border-width: 2px;*/
+    border-color: white;
+}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 7px 7px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+}
+
+/* Tab styles END */
+
+/* Pretty tab menu START */
+
+ul.tab a {
+    background-color: #fff!important;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZzc0MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjZjBmMWYyIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzc0MykiLz48L3N2Zz4=)!important;
+    background-image: -moz-linear-gradient(top,#fff,#f0f1f2)!important;
+    background-image: -ms-linear-gradient(top,#fff,#f0f1f2)!important;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f0f1f2))!important;
+    background-image: -webkit-linear-gradient(top,#fff,#f0f1f2)!important;
+    background-image: -o-linear-gradient(top,#fff,#f0f1f2)!important;
+    background-image: linear-gradient(top,#fff,#f0f1f2)!important;
+    background-repeat: repeat-x!important
+}
+
+ul.tab a:hover {
+    background-color: #fff!important;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZzc0MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzc0MykiLz48L3N2Zz4=)!important;
+    background-image: -moz-linear-gradient(top,#fff,#fff)!important;
+    background-image: -ms-linear-gradient(top,#fff,#fff)!important;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#fff))!important;
+    background-image: -webkit-linear-gradient(top,#fff,#fff)!important;
+    background-image: -o-linear-gradient(top,#fff,#fff)!important;
+    background-image: linear-gradient(top,#fff,#fff)!important;
+    background-repeat: repeat-x!important
+}
+
+ul.tab a.active {
+    background: #e3e6e8!important;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UzZTZlOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,#e3e6e8 0,#fff 30%)!important;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#e3e6e8),color-stop(30%,#fff))!important;
+    background: -webkit-linear-gradient(top,#e3e6e8 0,#fff 30%)!important;
+    background: -o-linear-gradient(top,#e3e6e8 0,#fff 30%)!important;
+    background: -ms-linear-gradient(top,#e3e6e8 0,#fff 30%)!important;
+    background: linear-gradient(to bottom,#e3e6e8 0,#fff 30%)!important
+}
+
+/* Pretty tab menu END */

@@ -1,0 +1,39 @@
+h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+}
+
+.awlog-emergency {
+    color: white;
+    background-color: darkred;
+}
+
+.awlog-alert {
+    color: white;
+    background-color: red;
+}
+
+.awlog-critical {
+    color: darkred;
+    font-weight: bold;
+}
+
+.awlog-error {
+    color: red;
+}
+
+.awlog-warning {
+    color: orange;
+}
+
+.awlog-notice {
+    color: #bfab27;
+}
+
+.awlog-info {
+    color: black;
+}
+
+.awlog-debug {
+    color: #686868;
+}
