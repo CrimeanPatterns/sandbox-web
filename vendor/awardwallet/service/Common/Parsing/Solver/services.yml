@@ -1,0 +1,164 @@
+#external services and parameters required:
+# flight_info.trip_alert.app_key - flight stats app key
+# @aw.flight_stats.communicator
+
+#dependencies
+# AwardWallet/service/Common/Geo/services.yml:
+# @aw.geo.google_geo_coder
+# @aw.geo.google_geo
+services:
+    _defaults:
+        public: true
+    #helpers
+    aw.solver.alias_provider.aircode:
+        class: AwardWallet\Common\Parsing\Solver\Helper\AirCodeAliasProvider
+        arguments:
+            - "@database_connection"
+    aw.solver.alias_provider.airline:
+        class: AwardWallet\Common\Parsing\Solver\Helper\AirlineAliasProvider
+        arguments:
+            - "@database_connection"
+    aw.solver.address_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\AddressHelper
+        arguments:
+            - '@aw.geo.cheap_geocoder'
+    aw.solver.extra_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\ExtraHelper
+        arguments:
+            - "@aw.solver.alias_provider.airline"
+            - "@database_connection"
+            - "@logger"
+    aw.solver.data_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\DataHelper
+        arguments:
+            - "@database_connection"
+            - "@logger"
+            - "@aw.solver.address_helper"
+            - "@aw.solver.hotel_helper"
+    aw.solver.segment_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\SegmentHelper
+        arguments:
+            - "@aw.solver.data_helper"
+            - "@logger"
+    aw.solver.fs_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\FSHelper
+        public: true
+        arguments:
+            - '@AwardWallet\Common\FlightStats\Communicator'
+            - "@logger"
+            - '@=container.hasParameter("flight_stats_restricted_partners") ? parameter("flight_stats_restricted_partners") : service("database_connection").executeQuery("select Login from Partner where EnableFlightStats != 1").fetchAll(constant("PDO::FETCH_COLUMN"))'
+            - '@=container.hasParameter("disable_flight_stats") ? parameter("disable_flight_stats") : false'
+    AwardWallet\Common\Parsing\Solver\Helper\FSHelper: '@aw.solver.fs_helper'
+    aw.solver.flight_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\FlightHelper
+        arguments:
+            - "@database_connection"
+            - "@logger"
+            - "@aw.solver.alias_provider.aircode"
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.address_helper"
+    AwardWallet\Common\Parsing\Solver\Helper\FlightHelper: '@aw.solver.flight_helper'
+    aw.solver.hotel_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\HotelHelper
+        autowire: true
+    AwardWallet\Common\Parsing\Solver\Helper\HotelHelper: '@aw.solver.hotel_helper'
+    aw.solver.al_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\ALHelper
+        public: true
+        arguments:
+            - '@AwardWallet\Common\AirLabs\Communicator'
+            - "@logger"
+    aw.solver.itinerary_helper:
+        class: AwardWallet\Common\Parsing\Solver\Helper\ItineraryHelper
+        arguments:
+            - "@database_connection"
+            - "@logger"
+    # itinerary solvers
+    aw.solver.itinerary.flight:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Flight
+        arguments:
+            - "@aw.solver.flight_helper"
+            - "@aw.solver.data_helper"
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.segment_helper"
+            - "@aw.solver.fs_helper"
+            - "@logger"
+    aw.solver.itinerary.hotel:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Hotel
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+            - "@logger"
+    aw.solver.itinerary.rental:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Rental
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+            - "@aw.solver.flight_helper"
+            - '@logger'
+    aw.solver.itinerary.bus:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Bus
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+            - "@aw.solver.segment_helper"
+            - "@aw.solver.address_helper"
+    aw.solver.itinerary.train:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Train
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+            - "@aw.solver.segment_helper"
+            - "@logger"
+    aw.solver.itinerary.transfer:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Transfer
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+            - "@aw.solver.segment_helper"
+            - "@aw.solver.address_helper"
+    aw.solver.itinerary.ferry:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Ferry
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+            - "@aw.solver.segment_helper"
+    aw.solver.itinerary.cruise:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Cruise
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+    aw.solver.itinerary.event:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Event
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+            - "@logger"
+    aw.solver.itinerary.parking:
+        class: AwardWallet\Common\Parsing\Solver\Itinerary\Parking
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.data_helper"
+    #misc
+    aw.solver.loyalty:
+        class: AwardWallet\Common\Parsing\Solver\Loyalty
+        arguments:
+            - "@database_connection"
+    aw.solver.master:
+        public: true
+        class: AwardWallet\Common\Parsing\Solver\MasterSolver
+        arguments:
+            - "@aw.solver.extra_helper"
+            - "@aw.solver.itinerary.bus"
+            - "@aw.solver.itinerary.cruise"
+            - "@aw.solver.itinerary.event"
+            - "@aw.solver.itinerary.flight"
+            - "@aw.solver.itinerary.hotel"
+            - "@aw.solver.itinerary.rental"
+            - "@aw.solver.itinerary.train"
+            - "@aw.solver.itinerary.transfer"
+            - "@aw.solver.itinerary.parking"
+            - "@aw.solver.itinerary.ferry"
+            - "@aw.solver.loyalty"
+            - "@aw.solver.itinerary_helper"
+    AwardWallet\Common\Parsing\Solver\MasterSolver: "@aw.solver.master"

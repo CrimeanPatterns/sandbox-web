@@ -1,0 +1,7 @@
+version: '3.5'
+
+services:
+  php:
+    volumes:
+      - ./:/www/awardwallet:cached
+      - ./app/logs:/var/log/www/awardwallet:cached

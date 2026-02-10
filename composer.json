@@ -1,0 +1,115 @@
+{
+    "name": "awardwallet/parserbox-web",
+    "description": "Web parsing sandbox",
+    "autoload": {
+        "psr-0": {"": "bundles/"},
+        "psr-4": {
+            "AwardWallet\\Engine\\": "src/engine",
+            "AwardWallet\\TestProvider\\": "src/engine/testprovider"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:mariobb/mongodb.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:AwardWallet/schema.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:AwardWallet/service.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:AwardWallet/lib.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:AwardWallet/webdriver-client.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "facebook/webdriver-old",
+                "version": "0.6.0",
+                "source": {
+                    "url": "https://github.com/facebook/php-webdriver.git",
+                    "type": "git",
+                    "reference": "v0.6.0"
+                },
+                "autoload": {
+                    "classmap": [
+                        "lib/"
+                    ]
+                }
+            }
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:AwardWallet/extension-worker.git"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-memcached": "*",
+        "ext-pdo": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-iconv": "*",
+        "awardwallet/service": "dev-master",
+        "awardwallet/schema": "dev-master",
+        "awardwallet/lib": "dev-master",
+        "doctrine/mongodb": "dev-master#535f72f8371e8f9484f18616e81d7234727b7913 as 1.4.0",
+        "doctrine/mongodb-odm": "^1.1.0",
+        "doctrine/mongodb-odm-bundle": "3.*",
+        "symfony/dependency-injection": "^3.4",
+        "incenteev/composer-parameter-handler": "^2.1",
+        "symfony/config": "^3.4",
+        "symfony/expression-language": "^3.4",
+        "doctrine/dbal": "^2.9",
+        "doctrine/orm": "^2.6",
+        "jms/serializer": "^3.0",
+        "symfony/event-dispatcher": "^3.4",
+        "symfony/framework-bundle": "^3.4",
+        "doctrine/doctrine-bundle": "^1.11",
+        "symfony/twig-bundle": "^3.4",
+        "symfony/twig-bridge": "^3.4",
+        "symfony/doctrine-bridge": "^3.4",
+        "aws/aws-sdk-php": "~3.52",
+        "alcaeus/mongo-php-adapter": "^1.1",
+        "awardwallet/webdriver-client": "^1.0",
+        "mailslurp/mailslurp-client-php": "^15.17",
+        "awardwallet/extension-worker": "dev-master",
+        "symfony/form": "^3.4",
+        "php-amqplib/rabbitmq-bundle": "^1.15",
+        "symfony/monolog-bundle": "^3.6"
+    },
+    "scripts" : {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "npm i",
+            "npm run build",
+            "node_modules/.bin/bower prune",
+            "node_modules/.bin/bower update"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "npm i",
+            "npm run build",
+            "node_modules/.bin/bower prune",
+            "node_modules/.bin/bower update"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "~2.18.7"
+    }
+}

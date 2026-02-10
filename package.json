@@ -1,0 +1,36 @@
+{
+    "name": "parserbox-web",
+    "description": "Установка  ================",
+    "version": "1.0.0",
+    "main": "lint-staged.config.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "lint-staged",
+        "prepare": "husky install",
+        "build": "webpack --mode development",
+        "dev": "webpack --mode development --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AwardWallet/parserbox-web.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AwardWallet/parserbox-web/issues"
+    },
+    "homepage": "https://github.com/AwardWallet/parserbox-web#readme",
+    "devDependencies": {
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0",
+        "bower": "^1.8.14",
+        "ts-loader": "^9.5.1",
+        "webpack": "^5.90.1",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+      "@awardwallet/extension-client": "^1.0.25",
+      "@awardwallet/extension-v3": "^1.1.8",
+      "centrifuge": "^5.0.1"
+    }
+}

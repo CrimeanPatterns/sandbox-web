@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  php:
+      image: docker.awardwallet.com/php/frontend-ubuntu20.04-php7.4-debug
+      volumes:
+          - ./:/www/service
+          - home:/home/user
+          - ./docker/dev/.bashrc:/home/user/.bashrc
+          - ./docker/dev/.profile:/home/user/.profile
+          - ~/.ssh:/home/user/.ssh
+          - ~/.gitconfig:/home/user/.gitconfig
+          - composer-cache:/home/user/.composer
+      environment:
+          - LOCAL_USER_ID
+          - GOSU=off
+      command: ["/docker/console"]
+      hostname: service
+      working_dir: /www/service
+  mysql:
+      image: mysql:5.6
+      platform: linux/amd64
+      environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD=1
+          - MYSQL_USER=wsdlawardwallet
+          - MYSQL_PASSWORD=wsdlawardwallet
+          - MYSQL_DATABASE=wsdlawardwallet
+      volumes:
+          - ./docker/dev/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+          - mysql-data:/var/lib/mysql
+      depends_on:
+          - mysql-data
+  mysql-data:
+      image: docker.awardwallet.com/mysql-data/wsdlawardwallet
+      volumes:
+        - mysql-data:/var/lib/mysql
+
+volumes:
+  home: {}
+  composer-cache: {}
+  mysql-data:
+

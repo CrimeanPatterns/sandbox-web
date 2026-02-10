@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        public: true
+
+    aw.aws_util:
+        class: AwardWallet\Common\AWS\Util
+        arguments: ['@aw.curl_driver', '@aw.aws_cache']
+    AwardWallet\Common\AWS\Util: '@aw.aws_util'
+    aw.aws_cache:
+        class: AwardWallet\Common\MemoryCache\Cache
+        arguments: ['@aw.aws_time_communicator']
+    aw.aws_time_communicator:
+        class: AwardWallet\Common\TimeCommunicator
+    AwardWallet\Common\AWS\AwsMetadataMock:

@@ -1,0 +1,169 @@
+{
+  "Results": [
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/chrome-94-port",
+        "Flags": 0,
+        "Value": "MTI2NTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/healthy",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/idle",
+        "Flags": 0,
+        "Value": "OTg=",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/proxyTime",
+        "Flags": 0,
+        "Value": "Mg==",
+        "CreateIndex": 20,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/reportTime",
+        "Flags": 0,
+        "Value": "MjAxOC0xMC0wMiAwNjoxODoyOQ==",
+        "CreateIndex": 13,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/sessionsCount",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/sessionsTime",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal:20001\/webdriverTime",
+        "Flags": 0,
+        "Value": "MTM4",
+        "CreateIndex": 18,
+        "ModifyIndex": 1420
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/chrome-94-port",
+        "Flags": 0,
+        "Value": "MTI2NTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/healthy",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/idle",
+        "Flags": 0,
+        "Value": "OTg=",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/proxyTime",
+        "Flags": 0,
+        "Value": "Mg==",
+        "CreateIndex": 20,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/reportTime",
+        "Flags": 0,
+        "Value": "MjAxOC0xMC0wMiAwNjoxODoyOQ==",
+        "CreateIndex": 13,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/sessionsCount",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/sessionsTime",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal:20002\/webdriverTime",
+        "Flags": 0,
+        "Value": "MTM4",
+        "CreateIndex": 18,
+        "ModifyIndex": 1420
+      }
+    }
+  ],
+  "Errors": null,
+  "Index": 0,
+  "LastContact": 0,
+  "KnownLeader": true,
+  "ConsistencyLevel": ""
+}

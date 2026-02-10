@@ -1,0 +1,269 @@
+{
+  "Results": [
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/chrome-66-port",
+        "Flags": 0,
+        "Value": "MTI2NTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/chromium-60-port",
+        "Flags": 0,
+        "Value": "MTM2MDQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/firefox-40-port",
+        "Flags": 0,
+        "Value": "MTE0MDQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/firefox-45-port",
+        "Flags": 0,
+        "Value": "MTE0NTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/firefox-53-port",
+        "Flags": 0,
+        "Value": "MTE1MzQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/firefox-59-port",
+        "Flags": 0,
+        "Value": "MTE1OTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/healthy",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/idle",
+        "Flags": 0,
+        "Value": "OTg=",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/proxyTime",
+        "Flags": 0,
+        "Value": "Mg==",
+        "CreateIndex": 20,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/reportTime",
+        "Flags": 0,
+        "Value": "MjAxOC0xMC0wMiAwNjoxODoyOQ==",
+        "CreateIndex": 13,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/sessionsCount",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/sessionsTime",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host1.docker.internal\/webdriverTime",
+        "Flags": 0,
+        "Value": "MTM4",
+        "CreateIndex": 18,
+        "ModifyIndex": 1420
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/chrome-66-port",
+        "Flags": 0,
+        "Value": "MTI2NTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/chromium-60-port",
+        "Flags": 0,
+        "Value": "MTM2MDQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/firefox-40-port",
+        "Flags": 0,
+        "Value": "MTE0MDQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/firefox-45-port",
+        "Flags": 0,
+        "Value": "MTE0NTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/firefox-53-port",
+        "Flags": 0,
+        "Value": "MTE1MzQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/firefox-59-port",
+        "Flags": 0,
+        "Value": "MTE1OTQ=",
+        "CreateIndex": 13,
+        "ModifyIndex": 1385
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/healthy",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/idle",
+        "Flags": 0,
+        "Value": "OTg=",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/proxyTime",
+        "Flags": 0,
+        "Value": "Mg==",
+        "CreateIndex": 20,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/reportTime",
+        "Flags": 0,
+        "Value": "MjAxOC0xMC0wMiAwNjoxODoyOQ==",
+        "CreateIndex": 13,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/sessionsCount",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/sessionsTime",
+        "Flags": 0,
+        "Value": "MQ==",
+        "CreateIndex": 14,
+        "ModifyIndex": 1422
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "\/selenium-monitor\/host2.docker.internal\/webdriverTime",
+        "Flags": 0,
+        "Value": "MTM4",
+        "CreateIndex": 18,
+        "ModifyIndex": 1420
+      }
+    }
+  ],
+  "Errors": null,
+  "Index": 0,
+  "LastContact": 0,
+  "KnownLeader": true,
+  "ConsistencyLevel": ""
+}

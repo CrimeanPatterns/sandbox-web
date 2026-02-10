@@ -1,0 +1,146 @@
+[
+    {
+        "Node": {
+            "ID": "9672fc18-cf94-bf3a-f120-06335779bace",
+            "Node": "fe494dd71ee9",
+            "Address": "172.19.0.5",
+            "Datacenter": "dc1",
+            "TaggedAddresses": {
+                "lan": "172.19.0.5",
+                "wan": "172.19.0.5"
+            },
+            "Meta": {
+                "consul-network-segment": ""
+            },
+            "CreateIndex": 9,
+            "ModifyIndex": 10
+        },
+        "Service": {
+            "ID": "selenium-monitor:host1.docker.internal:20001",
+            "Service": "selenium-monitor",
+            "Tags": [
+                "chrome-94"
+            ],
+            "Address": "host1.docker.internal",
+            "Meta": null,
+            "Port": 20001,
+            "EnableTagOverride": false,
+            "ProxyDestination": "",
+            "Connect": {
+                "Native": false,
+                "Proxy": null
+            },
+            "CreateIndex": 12,
+            "ModifyIndex": 12
+        },
+        "Checks": [
+            {
+                "Node": "fe494dd71ee9",
+                "CheckID": "serfHealth",
+                "Name": "Serf Health Status",
+                "Status": "passing",
+                "Notes": "",
+                "Output": "Agent alive and reachable",
+                "ServiceID": "",
+                "ServiceName": "",
+                "ServiceTags": [],
+                "Definition": {},
+                "CreateIndex": 9,
+                "ModifyIndex": 9
+            },
+            {
+                "Node": "fe494dd71ee9",
+                "CheckID": "selenium-monitor:monitor:host1.docker.internal:20001",
+                "Name": "monitor",
+                "Status": "passing",
+                "Notes": "cumulative health check",
+                "Output": "",
+                "ServiceID": "selenium-monitor:host.docker.internal:20001",
+                "ServiceName": "selenium-monitor",
+                "ServiceTags": [
+                    "chrome-94"
+                ],
+                "Definition": {},
+                "CreateIndex": 12,
+                "ModifyIndex": 1337
+            }
+        ]
+    },
+    {
+        "Node": {
+            "ID": "9672fc18-cf94-bf3a-f120-06335779bace",
+            "Node": "fe494dd71ee9",
+            "Address": "172.19.0.5",
+            "Datacenter": "dc1",
+            "TaggedAddresses": {
+                "lan": "172.19.0.5",
+                "wan": "172.19.0.5"
+            },
+            "Meta": {
+                "consul-network-segment": ""
+            },
+            "CreateIndex": 9,
+            "ModifyIndex": 10
+        },
+        "Service": {
+            "ID": "selenium-monitor:host2.docker.internal:20002",
+            "Service": "selenium-monitor",
+            "Tags": [
+                "firefox-40",
+                "firefox-45",
+                "firefox-53",
+                "firefox-59",
+                "chromium-60",
+                "chrome-66"
+            ],
+            "Address": "host2.docker.internal",
+            "Meta": null,
+            "Port": 20002,
+            "EnableTagOverride": false,
+            "ProxyDestination": "",
+            "Connect": {
+                "Native": false,
+                "Proxy": null
+            },
+            "CreateIndex": 12,
+            "ModifyIndex": 12
+        },
+        "Checks": [
+            {
+                "Node": "fe494dd71ee9",
+                "CheckID": "serfHealth",
+                "Name": "Serf Health Status",
+                "Status": "passing",
+                "Notes": "",
+                "Output": "Agent alive and reachable",
+                "ServiceID": "",
+                "ServiceName": "",
+                "ServiceTags": [],
+                "Definition": {},
+                "CreateIndex": 9,
+                "ModifyIndex": 9
+            },
+            {
+                "Node": "fe494dd71ee9",
+                "CheckID": "selenium-monitor:monitor:host2.docker.internal:20002",
+                "Name": "monitor",
+                "Status": "passing",
+                "Notes": "cumulative health check",
+                "Output": "",
+                "ServiceID": "selenium-monitor:host2.docker.internal:20002",
+                "ServiceName": "selenium-monitor",
+                "ServiceTags": [
+                    "firefox-40",
+                    "firefox-45",
+                    "firefox-53",
+                    "firefox-59",
+                    "chromium-60",
+                    "chrome-66"
+                ],
+                "Definition": {},
+                "CreateIndex": 12,
+                "ModifyIndex": 1337
+            }
+        ]
+    }
+]

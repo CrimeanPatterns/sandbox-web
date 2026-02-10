@@ -1,0 +1,86 @@
+parameters:
+  selenium_startup_url: 'http://localhost:4448/start'
+  env(SELENIUM_NODE_ADDRESS): 'host.docker.internal'
+
+services:
+  aw.selenium_finder:
+    public: true
+    class: SeleniumSingleServerFinder
+    arguments:
+      $server: '%selenium_host%'
+
+  aw.selenium_firefox_starter:
+    public: true
+    class: FirefoxStarter
+    arguments:
+      - "@logger"
+      - "%selenium_startup_url%"
+
+  aw.selenium_chromium_starter:
+    class: ChromiumStarter
+    arguments:
+      - "@logger"
+      - "%selenium_startup_url%"
+
+  aw.selenium_starter:
+    public: true
+    class: SeleniumStarter
+    arguments:
+      - "@logger"
+      - "%selenium_share%"
+      - "@aw.selenium_chromium_starter"
+      - "@aw.selenium_firefox_starter"
+      - "%selenium_startup_url%"
+
+  aw.selenium_connector:
+    public: true # for debug proxy
+    autowire: true
+    class: SeleniumConnector
+    arguments:
+      $finder: '@aw.selenium_finder'
+      $memcached: "@aw.selenium_memcached"
+      $seleniumStarter: '@aw.selenium_starter'
+      $nodeFinder: '@aw.selenium_node_finder'
+      $macNodeFinder: '@aw.selenium_mac_node_finder'
+      $macRpcClient: '@old_sound_rabbit_mq.mac_session_requests_rpc'
+
+  aw.selenium_node_finder: '@AwardWallet\WebdriverClient\NodeFinder'
+  aw.selenium_mac_node_finder: '@AwardWallet\WebdriverClient\NodeFinder'
+
+  AwardWallet\WebdriverClient\NodeFinder:
+    autowire: true
+    public: true # for debug proxy
+    arguments:
+      $httpClient: "@aw.webdriver_curl_client"
+      $endPoint: '%webdriver_cluster_endpoint%'
+
+  aw.webdriver_curl_client:
+    class: Symfony\Component\HttpClient\CurlHttpClient
+    arguments:
+      $defaultOptions:
+        timeout: 5
+
+  aw.selenium_single_node_finder:
+    class: AwardWallet\WebdriverClient\SingleNodeFinder
+    public: true # for debug proxy
+    arguments:
+      $nodeAddress: '%env(SELENIUM_NODE_ADDRESS)%'
+  
+  dummy_selenium_rpc_server:
+    class: stdClass
+
+old_sound_rabbit_mq:
+  connections:
+  rpc_clients:
+    mac_session_requests:
+      connection: default
+      unserializer: json_decode
+      lazy: true
+      direct_reply_to: true
+  rpc_servers:
+    mac_session_requests:
+      connection: default
+      callback: dummy_selenium_rpc_server
+      exchange_options: { name: mac_session_requests, type: direct }
+      queue_options: { name: mac_session_requests, durable: false, arguments: { 'x-message-ttl': [ 'I', '10000' ] } }
+      serializer: json_encode

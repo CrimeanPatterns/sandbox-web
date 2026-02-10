@@ -1,0 +1,26 @@
+{
+  "name": "awardwallet/extension-worker",
+  "description": "runs php extension parsers on backend",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Vladimir Silantyev",
+      "email": "vladimir@awardwallet.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "AwardWallet\\ExtensionWorker\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:AwardWallet/schema.git"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "centrifugal/phpcent": "~5.0"
+  }
+}

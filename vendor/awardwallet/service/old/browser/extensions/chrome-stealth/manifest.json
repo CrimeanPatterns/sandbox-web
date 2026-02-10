@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "stealth selenium. built from https://github.com/berstend/puppeteer-extra/",
+    "version": "1.0.0",
+    "applications": {
+        "gecko": {
+            "id": "chrome-stealth@awardwallet.com"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content-script.js"
+            ],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ]
+}

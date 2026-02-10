@@ -1,0 +1,62 @@
+services:
+    _defaults:
+        public: true
+
+    aw.flight_stats.cache:
+        class: AwardWallet\Common\FlightStats\Cache
+        arguments:
+        - "@doctrine.dbal.shared_connection"
+        - "@logger"
+    AwardWallet\Common\FlightStats\Communicator:
+        public: true
+        autowire: true
+        arguments:
+            - "@aw.curl_driver"
+            - "@logger"
+            - "@jms_serializer"
+            - "@aw.shared_memcached"
+            - "@event_dispatcher"
+            - "@aw.flight_stats.cache"
+            - "%flight_info.app_id%"
+            - "%flight_info.app_key%"
+    aw.flight_stats.communicator: '@AwardWallet\Common\FlightStats\Communicator'
+
+    aw.flight_number_filter:
+        class: AwardWallet\Common\Parsing\Filter\FlightStats\FlightNumberFilter
+        arguments:
+            - "@logger"
+            - '@AwardWallet\Common\FlightStats\Communicator'
+            - "@aw.scheduled_flight_converter"
+        tags:
+            - { name: aw.trip_segment_filter }
+    aw.airport_code_filter:
+        class: AwardWallet\Common\Parsing\Filter\FlightStats\AirportCodeFilter
+        arguments:
+            - "@logger"
+            - "@database_connection"
+    aw.airport_by_alias_code_filter:
+        class: AwardWallet\Common\Parsing\Filter\FlightStats\AirportCodeByAliasFilter
+        arguments:
+            - "@logger"
+            - "@database_connection"
+    aw.itineraries_filter:
+        class: AwardWallet\Common\Parsing\Filter\ItinerariesFilter
+        arguments:
+            - '@logger'
+    aw.scheduled_flight_converter:
+        class: AwardWallet\Common\Parsing\Filter\FlightStats\ScheduledFlightConverter
+        arguments:
+            - "@logger"
+    aw.hotel_address_by_name_filter:
+        class: AwardWallet\Common\Parsing\Filter\Google\HotelAddressByNameFilter
+        arguments:
+            - '@aw.geo.google_api'
+            - '@aw.place_details_to_address_converter'
+            - '@logger'
+        tags:
+            - { name: aw.itinerary_filter }
+
+    aw.place_details_to_address_converter:
+        class: AwardWallet\Common\Geo\Google\PlaceDetailsToAddressConverter
+        arguments:
+            - '@logger'

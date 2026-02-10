@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+    <Description about="urn:mozilla:install-manifest">
+        <em:creator>AwardWallet</em:creator>
+        <em:description>Hide selenium</em:description>
+        <em:homepageURL>https://awardwallet.com/</em:homepageURL>
+        <em:id>hide-selenium@awardwallet.com</em:id>
+        <em:name>Hide Selenium</em:name>
+        <em:optionsURL>chrome://hideselenium/content/preferences.xul</em:optionsURL>
+        <em:type>2</em:type>
+        <em:version>0.7.1.1.1-signed.1-signed</em:version>
+        
+        <!-- Firefox 4.0 - 9.0 -->
+        <em:targetApplication>
+            <Description>
+                <em:id>hide-selenium@awardwallet.com</em:id>
+                <em:minVersion>4.0</em:minVersion>
+                <em:maxVersion>9.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+        
+        <!-- Seamonkey 2.0 -->
+        <!--<em:targetApplication>
+            <Description>
+                <em:id>hide-selenium@awardwallet.com</em:id>
+                <em:minVersion>2.0</em:minVersion>
+                <em:maxVersion>2.0.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>-->
+    </Description>
+</RDF>

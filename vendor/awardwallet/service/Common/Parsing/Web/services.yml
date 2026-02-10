@@ -1,0 +1,57 @@
+parameters:
+  env(LPM_HOST): 'lpm.infra.awardwallet.com'
+  env(WRAPPED_PROXY_INTERNAL_HOST): 'wrapped-proxy.infra.awardwallet.com:3000'
+  env(WRAPPED_PROXY_EXTERNAL_HOST): 'wrapped-proxy.awardwallet.com'
+
+services:
+  _defaults:
+    bind:
+      $seleniumConnector: '@aw.selenium_connector'
+      $curlDriver: '@aw.curl_driver'
+
+  AwardWallet\Common\Selenium\FingerprintFactory:
+    autowire: true
+  AwardWallet\Common\Selenium\SeleniumDriverFactory:
+    autowire: true
+  AwardWallet\Common\Selenium\HotPoolManager:
+    autowire: true
+  AwardWallet\Common\Selenium\HotSession\NullHotPoolManager:
+    public: true
+    autowire: true
+  AwardWallet\Common\Selenium\HotSession\HotPoolManagerInterface: '@AwardWallet\Common\Selenium\HotSession\NullHotPoolManager'
+  AwardWallet\Common\Selenium\HotSession\KeepHotConfigFactory:
+    autowire: true
+    arguments:
+      $parseMode: "@=container.hasParameter('ra_parse_mode') ? parameter('ra_parse_mode') : null"
+  AwardWallet\Common\Parsing\ProxyChecker:
+    autowire: true
+    arguments:
+      $driver: '@aw.curl_driver'
+  AwardWallet\Common\Parsing\MailslurpApiControllersCustom:
+    autowire: true
+  AwardWallet\Common\Parsing\LuminatiProxyManager\Api:
+    autowire: true
+    arguments:
+      $host: '%env(LPM_HOST)%'
+  AwardWallet\Common\Parsing\LuminatiProxyManager\Client:
+    autowire: true
+  AwardWallet\Common\Parsing\WrappedProxyClient:
+    autowire: true
+    arguments:
+      $internalHost: '%env(WRAPPED_PROXY_INTERNAL_HOST)%'
+      $externalHost: '%env(WRAPPED_PROXY_EXTERNAL_HOST)%'
+  AwardWallet\Common\Parsing\JsExecutor:
+    autowire: true
+  aw.parsing.web.service_locator:
+    public: true
+    class: Symfony\Component\DependencyInjection\ServiceLocator
+    tags: ['container.service_locator']
+    arguments:
+      -
+        AwardWallet\Common\Selenium\FingerprintFactory: '@AwardWallet\Common\Selenium\FingerprintFactory'
+        AwardWallet\Common\Selenium\SeleniumDriverFactory: '@AwardWallet\Common\Selenium\SeleniumDriverFactory'
+        AwardWallet\Common\Parsing\ProxyChecker: '@AwardWallet\Common\Parsing\ProxyChecker'
+        AwardWallet\Common\Parsing\MailslurpApiControllersCustom: '@AwardWallet\Common\Parsing\MailslurpApiControllersCustom'
+        AwardWallet\Common\Parsing\LuminatiProxyManager\Client: '@AwardWallet\Common\Parsing\LuminatiProxyManager\Client'
+        AwardWallet\Common\Parsing\WrappedProxyClient: '@AwardWallet\Common\Parsing\WrappedProxyClient'
+        AwardWallet\Common\Parsing\JsExecutor: '@AwardWallet\Common\Parsing\JsExecutor'

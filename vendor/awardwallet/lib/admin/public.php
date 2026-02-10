@@ -1,0 +1,5 @@
+<?
+
+$_SESSION["Admin"] = True;
+
+?>

@@ -1,0 +1,22 @@
+{
+    "name": "awardwallet/lib",
+    "description": "Common repository for different projects, should be divided to more granular parts",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Vladimir Silantyev",
+            "email": "vladimir@awardwallet.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "classes/"
+        ]
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-memcached": "3.*",
+        "ext-json": "*",
+        "ext-curl": "*"
+    }
+}

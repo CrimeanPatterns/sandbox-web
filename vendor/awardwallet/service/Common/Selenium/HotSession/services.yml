@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    public: true
+
+  AwardWallet\Common\Selenium\HotSession\HotPoolManager:
+    autowire: true
+    arguments:
+      $seleniumConnector: "@aw.selenium_connector"
+
+  AwardWallet\Common\Selenium\HotSession\HotPoolManagerInterface: '@AwardWallet\Common\Selenium\HotSession\HotPoolManager'
+
+  AwardWallet\Common\Selenium\HotSession\KeepActiveHotSessionManager:
+    autowire: true
+    arguments:
+      $connector: "@aw.selenium_connector"
+      $driverFactory: '@AwardWallet\Common\Selenium\SeleniumDriverFactory'
+      $s3Client: "@aw.s3client"
+      $bucket: "@=container.hasParameter('aws_s3_bucket') ? parameter('aws_s3_bucket') : null"

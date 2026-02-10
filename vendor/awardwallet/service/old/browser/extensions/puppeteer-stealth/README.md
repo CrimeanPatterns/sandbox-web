@@ -1,0 +1,1 @@
+see puppeteer-stealth-extension repo for sources

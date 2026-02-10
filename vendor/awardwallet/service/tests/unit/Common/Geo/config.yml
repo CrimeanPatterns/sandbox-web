@@ -1,0 +1,68 @@
+imports:
+  - { resource: '/www/service/Common/Geo/services.yml'}
+
+parameters:
+  timezonedb_endpoint: "http://api.timezonedb.com"
+  timezonedb_apikey: "ZZMG848IULBJ"
+  google_api_key: "someS3cretKey"
+  positionstack_api_key: 'some_pos_stack_key'
+  bing_maps_api_key: 'some_ms_key'
+
+services:
+  AwardWallet\Common\Memcached\Factory:
+  aw.curl_driver:
+    public: true
+    class: CurlDriver
+  HttpDriverInterface:
+    class: tests\unit\Common\Geo\HttpDriverMock
+  HttpDriverCache:
+    alias: 'HttpDriverInterface'
+  aw.shared_memcached:
+    public: true
+    class: Memcached
+    factory: ['@AwardWallet\Common\Memcached\Factory', 'create']
+    arguments:
+      - "memcached"
+  aw.stat_logger:
+    class: Psr\Log\NullLogger
+  Psr\Log\LoggerInterface:
+    class: Psr\Log\NullLogger
+
+  # doctrine
+  Doctrine\DBAL\Connection:
+    factory: 'Doctrine\DBAL\DriverManager::getConnection'
+    arguments:
+      $params:
+        dbname: wsdlawardwallet
+        user: wsdlawardwallet
+        password: wsdlawardwallet
+        host: mysql
+        driver: pdo_mysql
+  Doctrine\ORM\Configuration:
+    factory: 'Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration'
+    arguments:
+      $paths:
+        - '/www/service/Common/Entity'
+      $isDevMode: true
+      $proxyDir: null
+      $cache: null
+      $useSimpleAnnotationReader: false
+  Doctrine\ORM\EntityManagerInterface:
+    factory: 'AwardWallet\Common\Doctrine\EntityManagerBuilder::create'
+    arguments:
+      $connection: '@Doctrine\DBAL\Connection'
+      $config: '@Doctrine\ORM\Configuration'
+
+  # jms serializer
+  JMS\Serializer\SerializerBuilder:
+    factory: 'JMS\Serializer\SerializerBuilder::create'
+  JMS\Serializer\SerializerInterface:
+    factory: 'JMS\Serializer\SerializerBuilder:build'
+
+  # public instances for tests
+  google.geo.public:
+    alias: 'AwardWallet\Common\Geo\GoogleGeo'
+    public: true
+  aw.geo.cheap_geocoder.public:
+    alias: aw.geo.cheap_geocoder
+    public: true

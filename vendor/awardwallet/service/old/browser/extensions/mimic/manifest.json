@@ -1,0 +1,55 @@
+{
+  "name" : "",
+  "version" : "1",
+  "description" : "",
+  "permissions": [ "cookies", "tabs", "privacy", "notifications", "management",
+    "webNavigation",  "storage","webRequest","webRequestBlocking", "contextMenus", "<all_urls>"],
+  "icons": { "128": "128x128.png" },
+  "applications": {
+    "gecko": {
+      "id": "multilogin@3.0",
+      "strict_min_version": "50.0"
+    }
+  },
+  "browser_action": {
+    "default_icon": "128x128.png",
+    "default_popup": "popup_menu.html",
+    "browser_style": true
+  },
+  "commands": {
+    "hcp": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac":  "Alt+Shift+F"
+      },
+      "description": "-"
+    },
+    "csp": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1",
+        "mac":  "Command+Shift+1"
+      },
+      "description": "-"
+    },
+    "cwsp": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2",
+        "mac":  "Command+Shift+2"
+      },
+      "description": "-"
+    }
+  },
+  "applications": {
+    "gecko": {
+      "id": "dc9b6ecd19a14a54a628edaaf23733bf@42.0",
+      "strict_min_version": "50.0"
+    }
+  },
+  "background": {
+    "scripts": ["conf.js", "background.js"]
+  },
+  "web_accessible_resources": [
+    "*"
+  ],
+  "manifest_version": 2
+}

@@ -1,0 +1,38 @@
+{
+    "version": "1.0.0",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwecgauyyBJJm95GlK8XvpKXF43Ms5TDJ0qOyWJgJlU7+D0MNKAP2TlWXCSMMqwzL2sUEHpSHTqucJiGMw02/U4IiIMKk91A+X+ZSFZcea8ygZV/n3663bs8arktYuPr78fhHNyKmQcrfyYnXKpivsQydijwxlq7LYNLkoOid1uUcdvUMBJYJWFlsefam+fz4GSyWWb3xUck1WamD7nB0Da9PK80GDIQ3V4t4lFK+SA6uQ2OD4laU0V9Sl8nfWlK6q6FzsCzW0SsW/yiul6fn2AI5Awjrpc9ViiJrbNIeafYuU69+vYazDpgUjx0WCaX//Ucegk/Io6cuHXVuw8GkPQIDAQAB",
+    "manifest_version": 2,
+    "name": "Request Recorder",
+    "applications": {
+        "gecko": {
+            "id": "request-recorder@awardwallet.com"
+        }
+    },
+    "permissions": [
+        "browsingData",
+        "tabs",
+        "unlimitedStorage",
+        "storage",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ],
+    "minimum_chrome_version":"22.0.0",
+    "externally_connectable": {
+        "matches": ["http://localhost/*"],
+        "ids": ["*"]
+    }
+}

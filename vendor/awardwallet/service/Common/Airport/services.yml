@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+
+  AwardWallet\Common\Airport\AirportTime:
+    class: AwardWallet\Common\Airport\AirportTime

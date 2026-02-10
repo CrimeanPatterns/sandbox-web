@@ -1,0 +1,95 @@
+.fbconnect_title_wrapper {
+width:820px;
+margin-bottom:20px;
+float:left;
+}
+
+.fbconnect_friend_wrapper {
+width:130px;
+height:110px;
+background:#EEE;
+text-align:center;
+padding:10px;
+margin:5px;
+float:left;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+
+.fbconnect_status {
+color: #3B5998;
+font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+font-size:20px;
+margin:0px 10px 0px 10px;
+}
+
+#fbconnect_textarea, #fbconnect_input {
+font:bold 16px georgia,verdana,"Times New Roman",times;
+background:#EEE;
+color:#333;
+border:2px solid #AAA;
+padding:10px;
+margin:10px;
+}
+
+.fbconnect_button {
+font:22px georgia,verdana,"Times New Roman",times;
+margin:10px;
+float:left;
+}
+
+.fbconnect_welcome {
+font:22px georgia,verdana,"Times New Roman",times;
+color:#333;
+width:820px;
+margin:10px;
+float:left;
+
+}
+
+.fbconnect_login {
+font:22px georgia,verdana,"Times New Roman",times;
+color:#333;
+width:820px;
+margin:10px;
+float:left;
+}
+
+#fbconnect_result {
+font:18px georgia,verdana,"Times New Roman",times;
+color:#3B5998;
+width:820px;
+margin-left:10px;
+float:left;
+}
+
+#fbconnect_status_result {
+font:18px georgia,verdana,"Times New Roman",times;
+color:#3B5998;
+width:820px;
+float:left;
+}
+
+.fbconnect_text {
+font:18px georgia,verdana,"Times New Roman",times;
+color:#333;
+width:820px;
+margin-top:20px;
+margin-left:10px;
+float:left;
+}
+.fbconnect_friend_wrapper a{
+	text-decoration: none;
+}
+.fbconnect_friend_name{
+	padding-bottom: 3px;
+}
+.fbconnect_friend_pic{
+	height: 70px;
+}
+.fbconnect_friend_check{
+	padding-bottom: 5px;
+}
+.fbconnect_friend_pic img{
+	border: none;
+}

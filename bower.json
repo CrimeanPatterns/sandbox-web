@@ -1,0 +1,20 @@
+{
+  "name": "aw",
+  "version": "0.0.1",
+  "authors": [
+    "awardwallet"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.1",
+    "jquery.cookie": "~1.4.1",
+    "requirejs": "~2.1.14",
+    "jqueryui": "1.10.1",
+    "jquery.json-viewer": "https://github.com/AwardWallet/jquery.json-viewer.git#1.4.1"
+  }
+}

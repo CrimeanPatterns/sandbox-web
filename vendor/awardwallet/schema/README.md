@@ -1,0 +1,2 @@
+- src/Itineraris - DTO для ответов API Loyalty/Email 
+- src/Parser - внутренний форматы данных парсеров

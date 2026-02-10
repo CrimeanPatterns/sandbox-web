@@ -1,0 +1,105 @@
+#external services and parameters required:
+#
+# %google_api_key%
+# %positionstack_api_key%
+# %timezonedb_endpoint%
+# %timezonedb_apikey%
+#
+# @aw.shared_memcached
+# @aw.curl_driver
+# @aw.stat_logger
+# @logger
+# @jms_serializer
+
+parameters:
+  bing_maps_retries: 5
+
+services:
+  _defaults:
+    public: true
+    autowire: true
+    bind:
+      $memcached: '@aw.shared_memcached'
+      $statLogger: '@aw.stat_logger'
+      $curlDriver: '@aw.cached_curl_driver'
+  _instanceof:
+    AwardWallet\Common\Geo\GeoCodeSourceInterface:
+      tags: ['aw.geo_code_source']
+    AwardWallet\Common\Geo\GoogleGeo:
+      tags: ['aw.geo.coder']
+
+  AwardWallet\Common\Geo\:
+    resource: '*'
+    exclude: '{Google/*.php,GeoCodeResult.php,TimezoneDb/Response.php}'
+
+  AwardWallet\Common\Geo\Google\GeoCodeSource:
+    arguments:
+      $logger: '@logger'
+      $jms: "@jms_serializer"
+  AwardWallet\Common\Geo\Google\GoogleApi:
+    arguments:
+      $httpDriver: '@aw.curl_driver'
+      $apiKey: "%google_api_key%"
+  AwardWallet\Common\Geo\GoogleGeo:
+    arguments:
+      $geocodeSources:
+        - '@AwardWallet\Common\Geo\UsGeoCoder'
+        - '@AwardWallet\Common\Geo\Google\GeoCodeSource'
+  AwardWallet\Common\Geo\CityCorrector:
+    autowire: true
+    arguments:
+      $reverseGeoCoder: '@AwardWallet\Common\Geo\Bing\ReverseGeoCoder'
+  AwardWallet\Common\Geo\PositionStack\Client:
+    arguments:
+      $accessKey: '%positionstack_api_key%'
+      $httpDriver: '@aw.cached_curl_driver'
+  AwardWallet\Common\Geo\Bing\ReverseGeoCoder:
+    arguments:
+      $accessKey: '%bing_maps_api_key%'
+      $httpDriver: '@aw.cached_curl_driver'
+      $retries: '%bing_maps_retries%'
+  AwardWallet\Common\Geo\PositionStack\SolverClient:
+    arguments:
+      $accessKey: '%positionstack_api_key%'
+      $httpDriver: '@aw.cached_curl_driver'
+  AwardWallet\Common\Geo\UsGeoCoder:
+    autowire: true
+  AwardWallet\Common\Geo\Geoapify\Client:
+    autowire: true
+    arguments:
+      $accessKey: '%geoapify_api_key%'
+      $http: '@aw.cached_curl_driver'
+  aw.geo.cheap_geocoder:
+    class: AwardWallet\Common\Geo\GoogleGeo
+    arguments:
+      $geocodeSources:
+        - '@AwardWallet\Common\Geo\UsGeoCoder'
+        - '@AwardWallet\Common\Geo\Geoapify\Client'
+        - '@AwardWallet\Common\Geo\Google\GeoCodeSource'
+  aw.geo.coder.default: '@AwardWallet\Common\Geo\GoogleGeo'
+  aw.geo.coder.cheap: '@aw.geo.cheap_geocoder'
+  aw.geo.coder.ps:
+    class: AwardWallet\Common\Geo\GoogleGeo
+    arguments:
+      $geocodeSources:
+        - '@AwardWallet\Common\Geo\PositionStack\Client'
+
+  aw.geo.google_geo: '@AwardWallet\Common\Geo\GoogleGeo'
+  aw.geo.google_api: '@AwardWallet\Common\Geo\Google\GoogleApi'
+
+  aw.cached_curl_driver:
+    class: HttpDriverCache
+    arguments:
+      - '@aw.curl_driver'
+      - '@aw.shared_memcached'
+
+  AwardWallet\Common\Geo\TimezoneDb\Client:
+    arguments:
+      $endpoint: '%timezonedb_endpoint%'
+      $apiKey: '%timezonedb_apikey%'
+      $httpDriver: '@aw.cached_curl_driver'
+
+  AwardWallet\Common\FixTimeZoneLocationCommand:
+    autowire: true
+    tags:
+      - { name: 'console.command' }

@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+
+  AwardWallet\Common\CurrencyConverter\CurrencyConverter:
+    class: AwardWallet\Common\CurrencyConverter\CurrencyConverter
+    arguments:
+      $currencyConverterApiKey: "@=container.hasParameter('currency_converter_api_key') ? parameter('currency_converter_api_key') : 'xxx'"

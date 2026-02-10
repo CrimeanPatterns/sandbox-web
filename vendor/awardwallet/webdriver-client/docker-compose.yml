@@ -1,0 +1,9 @@
+services:
+  php:
+    build: docker
+    entrypoint: bash
+    working_dir: /app
+    volumes:
+      - ./:/app:cached
+    environment:
+      - LOCAL_USER_ID

@@ -1,0 +1,1 @@
+{"price":{"total":15678.56,"currencyCode":"USD"},"providerCode":"testprovider","type":"Bus","itineraries":[{"segments":[{"noNumber":true,"depName":"some name","arrCode":"CDD","arrName":"station name","arrDate":1516195200,"noDepDate":true}],"ticketNumbers":[["334",false]],"confirmationNumbers":[["AHAHAHAH",null]],"type":"bus"}]}

@@ -1,0 +1,524 @@
+/* *********** standard styles which are used in the lib code *********** */
+.white{
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: White;
+	font-weight : normal;
+}
+.detailsTable{
+	border: 1px solid #C7C4BF;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+.detailsTable td{
+	border: 1px solid #C7C4BF;
+}
+.detailsTableDark{
+	border: 1px solid #838383;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+.detailsTableDark td{
+	border: 1px solid #838383;
+}
+.noBorder td{
+	border: 0px none;
+}
+.noBorder{
+	border: 0px none;
+}
+#noBorder td{
+	border: 0px none;
+}
+#noBorder{
+	border: 0px none;
+}
+#clarFormatting td{
+	border: 0px none;
+	padding: 0px;
+}
+#clarFormatting{
+	border: 0px none;
+	padding: 0px;
+}
+
+.button {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	border: 1px solid #848383;
+	background-color: #F5F2EB;
+	cursor: pointer;
+	height: 20px;
+}
+
+.button26{
+	background-image: url(/lib/images/buttonBg1.jpg);
+	height: 26px;
+	border: 0px;
+	color: White;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	cursor: pointer;
+}
+.button19{
+	background-image: url(/lib/images/buttonBg1.jpg);
+	height: 19px;
+	border: 0px;
+	color: White;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	cursor: pointer;
+}
+.fieldhint{
+ 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #666666;
+	font-weight: normal;
+}
+.inputTxt {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	border: 1px solid #ADADAD;
+	color : Black;
+}
+/* *********** white link 11 *********** */
+a.a11pxBldWht:visited, a.a11pxBldWht:link, a.a11pxBldWht:active {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: White;
+	text-decoration: none;
+}
+a.a11pxBldWht:hover {
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: White;
+	text-decoration: underline;
+}
+
+/* *********** slide show link *********** */
+a.slideLinks:visited, a.slideLinks:link, a.slideLinks:active {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: white;
+	text-decoration: underline;
+	font-weight: bold;
+}
+a.slideLinks:hover {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: White;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* *********** syles for menu items *********** */
+.tblBorder{
+	border: 1px solid #E1E1E1;
+}
+.tblBorder td{
+	border: 1px solid #E1E1E1;
+}
+
+.detailsTableLight{
+	border: 1px solid #E1E1E1;
+	padding: 5px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+.detailsTableLight td{
+	padding: 5px;
+	border: 1px solid #E1E1E1;
+}
+#tblBorderDark td{
+	border-top: 1px solid #848383;
+	border-right: 1px solid #848383;
+}
+.errorFrm, a.errorFrm:link, a.errorFrm:active, a.errorFrm:visited, errorFrm a{
+	color: Red;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.successFrm, a.successFrm:link, a.successFrm:active, a.successFrm:visited{
+	color: Green;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.infoFrm, a.infoFrm:link, a.infoFrm:active, a.infoFrm:visited{
+	color: Blue;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.warningFrm, a.warningFrm:link, a.warningFrm:active, a.warningFrm:visited {
+	color: Orange;
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+
+}
+a.errorFrm:link, a.errorFrm:active, a.errorFrm:visited{
+	text-decoration: underline;
+}
+a.successFrm:link, a.successFrm:active, a.successFrm:visited{
+	text-decoration: underline;
+}
+a.infoFrm:link, a.infoFrm:active, a.infoFrm:visited{
+	text-decoration: underline;
+}
+a.warningFrm:link, a.warningFrm:active, a.warningFrm:visited{
+	text-decoration: underline;
+}
+.pictureCaptionEdit
+{
+	font-family: Verdana, Geneva, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	border: 1px solid #ADADAD;
+	color : Black;
+	width: 80px;
+}
+.formerror{
+	color: Red;
+	font-weight: bold;
+}
+
+/* *********** Begin Rich Texty Editor Styles *********** */
+.Bold
+{
+	font-weight: bold;
+}
+
+.Title
+{
+	font-weight: bold;
+	font-size: 18px;
+	color: #cc3300;
+}
+
+.Code
+{
+	border: #8b4513 1px solid;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #000066;
+	font-family: 'Courier New' , Monospace;
+	background-color: #ff9933;
+}
+/* *********** End Rich Texty Editor Styles *********** */
+
+/* *********** Begin Chat Styles ********* */
+#chatUsersOnlineDiv{
+	margin-bottom: 20px;
+}
+#chatUsersOnlineDiv td{
+	color: green;
+	font-size: 10px;
+}
+#chatUsersOnlineDiv a{
+	color: green;
+	font-size: 10px;
+}
+#chatUsersPingDiv a{
+	color: #316BBF;
+	font-size: 10px;
+}
+#chatUsersPingDiv td{
+	color: #316BBF;
+	font-size: 10px;
+}
+.chatOtherName{
+	font-weight: bold;
+}
+.chatMyName{
+	font-weight: bold;
+}
+#userOfflineDiv{
+	color: #512d01;
+}
+#userOnlineDiv a{
+	color: green;
+}
+.chatNameCell{
+	vertical-align: top;
+	text-align: right;
+	border-right: 1px solid #316bbf;
+	padding-right: 5px;
+}
+.chatTextCell{
+	vertical-align: top;
+	padding-left: 5px;
+	font-style: italic;
+}
+
+/* *********** End Chat Styles *********** */
+
+/* ************ Print Styles ************* */
+@media print {
+	.noPrint *{
+		display: none;
+	}
+}
+/* *********** End Print Styles ********** */
+img.calicon{
+	vertical-align: bottom;
+	border: none;
+	position: relative;
+	left: -22px;
+	top: 0px;
+	z-index: 0;
+	cursor: pointer;
+}
+
+/* ----------------- forms ------------------ */
+table.formTable{
+}
+table.formTable .asterisk{
+	position: relative;
+	font-size: 110%;
+	top: -2px;
+	color: #e67512;
+}
+table.formTable td.caption{
+	color: black;
+	padding-left: 40px;
+	padding-right: 40px;
+	text-align: left;
+}
+input.inputTxt{
+	height: auto;
+}
+* html input.inputTxt{ /* IE6 hack */
+	height: 26px;
+}
+input.inputTxt, textarea.inputTxt{
+	padding: 4px 10px;
+	border: 1px solid #a1a1a1;
+	font-weight: normal;
+	font-size: 10pt;
+	background-image: url(/lib/images/inputBg.gif);
+	background-repeat: repeat-x;
+}
+
+select.selectTxt{
+	padding: 2px 10px;
+	border: 1px solid #a1a1a1;
+	font-weight: normal;
+	font-size: 10pt;
+	height: 17pt;
+}
+
+table.formTable tr:hover .inputTxt, table.formTable tr .inputTxt:focus{
+	background-image: url(/lib/images/inputBgHover.gif);
+	background-repeat: repeat-x;
+	border: 1px solid #0b70b7;
+}
+
+table.formTable tr:hover .selectTxt, table.formTable tr .selectTxt:focus{
+	border: 1px solid #0b70b7;
+}
+
+select.selectTxt{
+	padding-right: 2px;
+}
+table.formTable .fieldHint{
+	font-size: 8pt;
+	color: #a1a1a1;
+}
+table.formTable td.input{
+	color: black;
+	padding-bottom: 15px;
+	text-align: left;
+}
+table.formTable tr:hover label{
+	color: #0b70b7;
+}
+
+/*
+================================================
+autosuggest, inquisitor style
+================================================
+*/
+
+body
+{
+	position: relative;
+}
+
+
+div.autosuggest
+{
+	position: absolute;
+/*	background-image: url(img_inquisitor/as_pointer.gif);*/
+	background-image: url(/lib/images/inputBgHover.gif);
+	background-repeat: repeat-x;
+	background-color: white;
+	background-position: top;
+	padding: 0px 0 0 0;
+	z-index: 100;
+}
+
+div.autosuggest div.as_header,
+div.autosuggest div.as_footer
+{
+	position: relative;
+	height: 0px;
+	padding: 0 0px;
+/*	background-image: url(img_inquisitor/ul_corner_tr.gif);*/
+	background-position: top right;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+div.autosuggest div.as_footer
+{
+/*	background-image: url(img_inquisitor/ul_corner_br.gif);*/
+}
+
+div.autosuggest div.as_header div.as_corner,
+div.autosuggest div.as_footer div.as_corner
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 0px;
+	width: 0px;
+/*	background-image: url(img_inquisitor/ul_corner_tl.gif);*/
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+div.autosuggest div.as_footer div.as_corner
+{
+/*	background-image: url(img_inquisitor/ul_corner_bl.gif);*/
+}
+div.autosuggest div.as_header div.as_bar,
+div.autosuggest div.as_footer div.as_bar
+{
+	height: 0px;
+	overflow: hidden;
+/*	background-color: white;*/
+}
+
+
+div.autosuggest ul
+{
+	border: 1px solid #0b70b7;
+	list-style: none;
+	margin: 0 0 0px 0;
+	padding: 0;
+	overflow: hidden;
+/*	background-color: white;*/
+}
+
+div.autosuggest ul li
+{
+	color: #ccc;
+	padding: 0;
+	margin: 0 0px 0px 0px;
+	text-align: left;
+}
+
+div.autosuggest ul li a
+{
+	color: black;
+	display: block;
+	text-decoration: none;
+	background-color: white;
+/*	text-shadow: #000 0px 0px 5px;*/
+	position: relative;
+	padding: 0;
+	width: 100%;
+}
+div.autosuggest ul li a:hover
+{
+	background-color: #eee;
+}
+div.autosuggest ul li.as_highlight a:hover
+{
+	background-color: #1B5CCD;
+}
+
+div.autosuggest ul li a span
+{
+	display: block;
+	padding: 3px 6px;
+	font-weight: bold;
+}
+
+div.autosuggest ul li a span small
+{
+	font-weight: normal;
+	color: #666;
+}
+
+div.autosuggest ul li.as_highlight a span small
+{
+	color: #ccc;
+}
+
+div.autosuggest ul li.as_highlight a
+{
+	color: #fff;
+	background-color: #1B5CCD;
+/*	background-image: url(img_inquisitor/hl_corner_br.gif);*/
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+div.autosuggest ul li.as_highlight a span
+{
+/*	background-image: url(img_inquisitor/hl_corner_bl.gif);*/
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+
+div.autosuggest ul li a .tl,
+div.autosuggest ul li a .tr
+{
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	top: 0;
+	padding: 0;
+	margin: 0;
+}
+div.autosuggest ul li a .tr
+{
+	right: 0;
+}
+
+div.autosuggest ul li.as_highlight a .tl
+{
+	left: 0;
+/*	background-image: url(img_inquisitor/hl_corner_tl.gif);*/
+	background-position: bottom left;
+}
+
+div.autosuggest ul li.as_highlight a .tr
+{
+	right: 0;
+/*	background-image: url(img_inquisitor/hl_corner_tr.gif);*/
+	background-position: bottom right;
+}
+
+
+
+div.autosuggest ul li.as_warning
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+div.autosuggest ul em
+{
+	font-style: normal;
+	color: #6EADE7;
+}

@@ -1,0 +1,3025 @@
+definitions:
+  ItineraryCommon:
+    description: There are different types of itineraries, such as air, hotel, rental car, etc. They all have slightly different schemas and they are all [defined below](#section-Itineraries).
+    type: array
+    items:
+      oneOf:
+        - $ref: "#/definitions/Flight"
+        - $ref: "#/definitions/CarRental"
+        - $ref: "#/definitions/HotelReservation"
+        - $ref: "#/definitions/Bus"
+        - $ref: "#/definitions/Train"
+        - $ref: "#/definitions/Transfer"
+        - $ref: "#/definitions/Cruise"
+        - $ref: "#/definitions/Event"
+        - $ref: "#/definitions/Parking"
+        - $ref: "#/definitions/Ferry"
+        - $ref: "#/definitions/CancelledFlight"
+        - $ref: "#/definitions/CancelledCarRental"
+        - $ref: "#/definitions/CancelledHotelReservation"
+        - $ref: "#/definitions/CancelledBus"
+        - $ref: "#/definitions/CancelledTrain"
+        - $ref: "#/definitions/CancelledTransfer"
+        - $ref: "#/definitions/CancelledCruise"
+        - $ref: "#/definitions/CancelledEvent"
+        - $ref: "#/definitions/CancelledParking"
+        - $ref: "#/definitions/CancelledFerry"
+
+  Itinerary:
+    type: object
+    properties:
+      travelAgency:
+        description: 'If this reservation was booked through a travel agency this object would define the properties of that travel agency.'
+        $ref: '#/definitions/TravelAgency'
+      pricingInfo:
+        description: 'An object that describes what was paid for this reservation, i.e. fees, taxes, miles, points, etc.'
+        $ref: '#/definitions/PricingInfo'
+      status:
+        description: 'Status of the reservation. I.e. cancelled, confirmed, etc.'
+        type: string
+      reservationDate:
+        description: 'Date when the reservation was booked'
+        type: string
+      providerInfo:
+        description: 'This object describes the provider, specifically the loyalty information as it pertains to this provider.'
+        $ref: '#/definitions/ProviderInfo'
+      cancelled:
+        type: "boolean"
+        description: "Indicates whether this itinerary has been cancelled. Cancelled reservations may not contain all required data."
+      cancellationPolicy:
+        type: "string"
+        description: Cancelation policy of this specific reservation.
+        x-group-anchor: cancellation
+      notes:
+        type: "string"
+        description: "This field may contain additional information which may be helpful to the traveler. It may include notes from the travel agent, such as meeting or pickup instructions."
+
+  Transportation:
+    required:
+      - type
+    allOf:
+      - $ref: "#/definitions/Itinerary"
+      - properties:
+          confirmationNumbers:
+            type: array
+            items:
+              type: object
+              $ref: '#/definitions/ConfNo'
+            description: Reservation confirmation number(s) specific to the travel provider. If there are other confirmation numbers specific to a travel agency, those would be listed under the [`travelAgency`. `confirmationNumbers`](#method-Itineraries_1). In some cases, there are multiple reservation numbers, for example if there are multiple hotel rooms booked.
+          travelers:
+            type: array
+            description: "Names of the people listed on the reservation"
+            items:
+              type: object
+              $ref: "#/definitions/Person"
+  BaseFlight:
+    allOf:
+      - $ref: "#/definitions/Itinerary"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `flight`
+            enum: [flight]
+          travelers:
+            type: "array"
+            description: "Names of the people listed on the reservation"
+            items:
+              type: object
+              $ref: "#/definitions/Person"
+          segments:
+            type: "array"
+            description: "An array describing individual flight segments of the itinerary."
+            items:
+              type: object
+              $ref: "#/definitions/FlightSegment"
+          issuingCarrier:
+            $ref: "#/definitions/IssuingAirline"
+            description: Object that defines the airline that issued the ticket, could be the same as the `marketingCarrier` or could be different.
+  Flight:
+    allOf:
+      - $ref: "#/definitions/BaseFlight"
+    required:
+      - type
+      - segments
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 150,
+                  "cost": 100,
+                  "discount": 28.34,
+                  "spentAwards": "3 segments",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 30
+                    },
+                    {
+                      "name": "Seat selection",
+                      "charge": 5.5
+                    },
+                    {
+                      "name": "Baggage fee",
+                      "charge": 14.5
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "delta",
+                  "name": "Delta Air Lines",
+                  "accountNumbers": [
+                    {
+                      "number": "1234****",
+                      "masked": true
+                    },
+                    {
+                      "number": "4321****",
+                      "masked": true
+                    }
+                  ],
+                  "earnedRewards": "300 award miles"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "Transfer shuttle will be located at the terminal exit",
+                "travelers": [
+                  {
+                    "name": "John Doe",
+                    "full": true
+                  },
+                  {
+                    "name": "Jane Doe",
+                    "full": true
+                  }
+                ],
+                "segments": [
+                  {
+                    "departure": {
+                      "airportCode": "LAX",
+                      "terminal": "A",
+                      "name": "Los Angeles International Airport",
+                      "localDateTime": "2030-01-01T13:30:00",
+                      "address": {
+                        "text": "LAX",
+                        "addressLine": "1 World Way",
+                        "city": "Los Angeles",
+                        "stateName": "California",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": "90045",
+                        "lat": 33.9415889,
+                        "lng": -118.40853,
+                        "timezone": -25200,
+                        "timezoneId": "America/Los_Angeles"
+                      }
+                    },
+                    "arrival": {
+                      "airportCode": "SFO",
+                      "terminal": "2",
+                      "name": "San Francisco International Airport",
+                      "localDateTime": "2030-01-01T15:00:00",
+                      "address": {
+                        "text": "SFO",
+                        "addressLine": "San Francisco International Airport",
+                        "city": "San Francisco",
+                        "stateName": "California",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": null,
+                        "lat": 37.615215,
+                        "lng": -122.389881,
+                        "timezone": -25200,
+                        "timezoneId": "America/Los_Angeles"
+                      }
+                    },
+                    "marketingCarrier": {
+                      "airline": {
+                        "name": "Delta Air Lines",
+                        "iata": "DL",
+                        "icao": "DAL"
+                      },
+                      "flightNumber": "0013",
+                      "confirmationNumber": "MRTG67",
+                      "phoneNumbers": [
+                        {
+                          "description": null,
+                          "number": "+1-404-714-2300"
+                        }
+                      ],
+                      "isCodeshare": true
+                    },
+                    "operatingCarrier": {
+                      "airline": {
+                        "name": "British Airways",
+                        "iata": "BA",
+                        "icao": "BAW"
+                      },
+                      "flightNumber": "5566",
+                      "confirmationNumber": "CARR23",
+                      "phoneNumbers": [
+                        {
+                          "description": null,
+                          "number": "+1-718-335-7070"
+                        }
+                      ]
+                    },
+                    "wetleaseCarrier": {
+                      "name": "Sky Express",
+                      "iata": null,
+                      "icao": null
+                    },
+                    "seats": [
+                      "3E",
+                      "3F"
+                    ],
+                    "aircraft": {
+                      "iataCode": "7M7",
+                      "name": "Boeing 737MAX 7 Passenger",
+                      "turboProp": false,
+                      "jet": true,
+                      "wideBody": false,
+                      "regional": false,
+                      "registrationNumber": "N345DL"
+                    },
+                    "traveledMiles": "300mi",
+                    "cabin": "Coach",
+                    "bookingCode": "CL",
+                    "duration": "1h30min",
+                    "meal": "Snacks",
+                    "smoking": false,
+                    "status": "Confirmed",
+                    "stops": 0,
+                    "flightStatsMethodUsed": "ScheduleByFlight"
+                  },
+                  {
+                    "departure": {
+                      "airportCode": "SFO",
+                      "terminal": "2",
+                      "name": "San Francisco International Airport",
+                      "localDateTime": "2030-01-05T06:00:00",
+                      "address": {
+                        "text": "SFO",
+                        "addressLine": "San Francisco International Airport",
+                        "city": "San Francisco",
+                        "stateName": "California",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": null,
+                        "lat": 37.615215,
+                        "lng": -122.389881,
+                        "timezone": -25200,
+                        "timezoneId": "America/Los_Angeles"
+                      }
+                    },
+                    "arrival": {
+                      "airportCode": "LAX",
+                      "terminal": "A",
+                      "name": "Los Angeles International Airport",
+                      "localDateTime": "2030-01-05T07:30:00",
+                      "address": {
+                        "text": "LAX",
+                        "addressLine": "1 World Way",
+                        "city": "Los Angeles",
+                        "stateName": "California",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": "90045",
+                        "lat": 33.9415889,
+                        "lng": -118.40853,
+                        "timezone": -25200,
+                        "timezoneId": "America/Los_Angeles"
+                      }
+                    },
+                    "marketingCarrier": {
+                      "airline": {
+                        "name": "Delta Air Lines",
+                        "iata": "DL",
+                        "icao": "DAL"
+                      },
+                      "flightNumber": "0014",
+                      "confirmationNumber": "MRTG67",
+                      "phoneNumbers": [
+                        {
+                          "description": null,
+                          "number": "+1-404-714-2300"
+                        }
+                      ],
+                      "isCodeshare": true
+                    },
+                    "operatingCarrier": {
+                      "airline": {
+                        "name": "British Airways",
+                        "iata": "BA",
+                        "icao": "BAW"
+                      },
+                      "flightNumber": "9009",
+                      "confirmationNumber": "CARR23",
+                      "phoneNumbers": [
+                        {
+                          "description": null,
+                          "number": "+1-718-335-7070"
+                        }
+                      ]
+                    },
+                    "wetleaseCarrier": null,
+                    "seats": [
+                      "1B",
+                      "1C"
+                    ],
+                    "aircraft": {
+                      "iataCode": "7M7",
+                      "name": "Boeing 737MAX 7 Passenger",
+                      "turboProp": false,
+                      "jet": true,
+                      "wideBody": false,
+                      "regional": false,
+                      "registrationNumber": "N345DL"
+                    },
+                    "traveledMiles": "300mi",
+                    "cabin": "First class",
+                    "bookingCode": "I",
+                    "duration": "1h30min",
+                    "meal": "Snacks",
+                    "smoking": null,
+                    "status": "Confirmed",
+                    "stops": null,
+                    "flightStatsMethodUsed": "ScheduleByAirport"
+                  }
+                ],
+                "issuingCarrier": {
+                  "airline": {
+                    "name": "Delta Air Lines",
+                    "iata": "DL",
+                    "icao": "DAL"
+                  },
+                  "confirmationNumber": "ISSD12",
+                  "phoneNumbers": [
+                    {
+                      "description": null,
+                      "number": "+1-404-714-2300"
+                    }
+                  ],
+                  "ticketNumbers": [
+                    {
+                      "number": "006 123321",
+                      "masked": false
+                    },
+                    {
+                      "number": "006 456654",
+                      "masked": false
+                    }
+                  ]
+                },
+                "type": "flight"
+              }
+            ]
+          }
+  CancelledFlight:
+    title: Cancelled Flight
+    allOf:
+      - $ref: "#/definitions/BaseFlight"
+    required:
+      - type
+      - cancelled
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "delta",
+                  "name": "Delta Air Lines",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "travelers": null,
+                "segments": null,
+                "issuingCarrier": null,
+                "type": "flight"
+              }
+            ]
+          }
+  BaseBus:
+    allOf:
+      - $ref: "#/definitions/Transportation"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `bus`
+            enum: [bus]
+          segments:
+            type: "array"
+            description: "An array describing individual travel segments of the itinerary."
+            items:
+              type: object
+              $ref: "#/definitions/BusSegment"
+          ticketNumbers:
+            type: "array"
+            description: There may be different ticket numbers associated with an itinerary. All the ticket numbers that we gather would be presented as an array in this field.
+            items:
+              type: object
+              $ref: "#/definitions/ParsedNumber"
+  Bus:
+    description: "Bus ride"
+    required:
+      - type
+      - segments
+    allOf:
+    - $ref: "#/definitions/BaseBus"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 251.41,
+                  "cost": 193.75,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 34.56
+                    },
+                    {
+                      "name": "Insurance",
+                      "charge": 23.1
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "boltbus",
+                  "name": "BoltBus",
+                  "accountNumbers": [
+                    {
+                      "number": "BB3398",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "Keep your ticket at your person at all times",
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Transaction number",
+                    "isPrimary": false
+                  }
+                ],
+                "travelers": [
+                  {
+                    "name": "John Doe",
+                    "full": true
+                  },
+                  {
+                    "name": "Jane Doe",
+                    "full": true
+                  }
+                ],
+                "segments": [
+                  {
+                    "scheduleNumber": "2023",
+                    "departure": {
+                      "stationCode": null,
+                      "name": "Boston South Station - Gate 9 NYC-Gate 10 NWK\\/PHL",
+                      "localDateTime": "2030-01-01T13:30:00",
+                      "address": {
+                        "text": "Boston South Station - Gate 9 NYC-Gate 10 NWK\\/PHL",
+                        "addressLine": "700 Atlantic Avenue",
+                        "city": "Boston",
+                        "stateName": "Massachusetts",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": "02111",
+                        "lat": 42.3504505,
+                        "lng": -71.0561242,
+                        "timezone": -14400,
+                        "timezoneId": "America/New_York"
+                      }
+                    },
+                    "arrival": {
+                      "stationCode": null,
+                      "name": "New York W 33rd St & 11-12th Ave (DC,BAL,BOS,PHL)",
+                      "localDateTime": "2030-01-01T20:34:00",
+                      "address": {
+                        "text": "New York W 33rd St & 11-12th Ave (DC,BAL,BOS,PHL)",
+                        "addressLine": null,
+                        "city": null,
+                        "stateName": null,
+                        "countryName": null,
+                        "countryCode": null,
+                        "postalCode": null,
+                        "lat": null,
+                        "lng": null,
+                        "timezone": null,
+                        "timezoneId": null
+                      }
+                    },
+                    "busInfo": {
+                      "type": "Regular",
+                      "model": "Mercedes"
+                    },
+                    "seats": [
+                      "11",
+                      "12"
+                    ],
+                    "traveledMiles": "43mi",
+                    "cabin": null,
+                    "bookingCode": null,
+                    "duration": "7h",
+                    "meal": null,
+                    "smoking": null,
+                    "stops": null
+                  }
+                ],
+                "ticketNumbers": [
+                  {
+                    "number": "345667",
+                    "masked": false
+                  },
+                  {
+                    "number": "345668",
+                    "masked": false
+                  }
+                ],
+                "type": "bus"
+              }
+            ]
+          }
+  CancelledBus:
+    title: Cancelled Bus
+    required:
+      - type
+      - confirmationNumbers
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseBus"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "Cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "boltbus",
+                  "name": "BoltBus",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": null
+                  }
+                ],
+                "travelers": null,
+                "segments": null,
+                "ticketNumbers": null,
+                "type": "bus"
+              }
+            ]
+          }
+  BaseTrain:
+    allOf:
+      - $ref: "#/definitions/Transportation"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `train`
+            enum: [train]
+          segments:
+            type: "array"
+            description: "An array describing individual travel segments of the itinerary."
+            items:
+              type: object
+              $ref: "#/definitions/TrainSegment"
+          ticketNumbers:
+            type: "array"
+            description: There may be different ticket numbers associated with an itinerary. All the ticket numbers that we gather would be presented as an array in this field.
+            items:
+              type: object
+              $ref: "#/definitions/ParsedNumber"
+  Train:
+    description: "Train ride"
+    required:
+      - type
+      - segments
+    allOf:
+      - $ref: "#/definitions/BaseTrain"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 251.41,
+                  "cost": 193.75,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 34.56
+                    },
+                    {
+                      "name": "Insurance",
+                      "charge": 23.1
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "amtrak",
+                  "name": "Amtrak",
+                  "accountNumbers": [
+                    {
+                      "number": "AM3398",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "Taxi will be waiting for you in the parking area",
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Transaction number",
+                    "isPrimary": false
+                  }
+                ],
+                "travelers": [
+                  {
+                    "name": "John Doe",
+                    "full": true
+                  },
+                  {
+                    "name": "Jane Doe",
+                    "full": true
+                  }
+                ],
+                "segments": [
+                  {
+                    "departure": {
+                      "stationCode": "BBSS",
+                      "name": "Boston South Station - Gate 9 NYC-Gate 10 NWK\\/PHL",
+                      "localDateTime": "2030-01-01T13:30:00",
+                      "address": {
+                        "text": "Boston South Station - Gate 9 NYC-Gate 10 NWK\\/PHL",
+                        "addressLine": "700 Atlantic Avenue",
+                        "city": "Boston",
+                        "stateName": "Massachusetts",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": "02111",
+                        "lat": 42.3504505,
+                        "lng": -71.0561242,
+                        "timezone": -14400,
+                        "timezoneId": "America/New_York"
+                      }
+                    },
+                    "arrival": {
+                      "stationCode": "NNYW",
+                      "name": "New York W 33rd St & 11-12th Ave (DC,BAL,BOS,PHL)",
+                      "localDateTime": "2030-01-01T20:34:00",
+                      "address": {
+                        "text": "New York W 33rd St & 11-12th Ave (DC,BAL,BOS,PHL)",
+                        "addressLine": null,
+                        "city": null,
+                        "stateName": null,
+                        "countryName": null,
+                        "countryCode": null,
+                        "postalCode": null,
+                        "lat": null,
+                        "lng": null,
+                        "timezone": null,
+                        "timezoneId": null
+                      }
+                    },
+                    "scheduleNumber": "2023",
+                    "serviceName": "Amtrak Express",
+                    "trainInfo": {
+                      "type": "Regular",
+                      "model": null
+                    },
+                    "car": "4",
+                    "seats": [
+                      "11",
+                      "12"
+                    ],
+                    "traveledMiles": "43mi",
+                    "cabin": "coach",
+                    "bookingCode": null,
+                    "duration": "7h",
+                    "meal": null,
+                    "smoking": null,
+                    "stops": null
+                  }
+                ],
+                "ticketNumbers": [
+                  {
+                    "number": "345667",
+                    "masked": false
+                  },
+                  {
+                    "number": "345668",
+                    "masked": false
+                  }
+                ],
+                "type": "train"
+              }
+            ]
+          }
+  CancelledTrain:
+    title: Cancelled Train
+    required:
+      - type
+      - confirmationNumber
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseTrain"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "amtrak",
+                  "name": "Amtrak",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": null
+                  }
+                ],
+                "travelers": null,
+                "segments": null,
+                "ticketNumbers": null,
+                "type": "train"
+              }
+            ]
+          }
+  BaseTransfer:
+    allOf:
+      - $ref: "#/definitions/Transportation"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `transfer`
+            enum: [transfer]
+          segments:
+            type: "array"
+            description: "An array describing individual travel segments of the itinerary."
+            items:
+              type: object
+              $ref: "#/definitions/TransferSegment"
+  Transfer:
+    description: "Car or shuttle bus ride"
+    required:
+      - type
+      - segments
+    allOf:
+      - $ref: "#/definitions/BaseTransfer"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 251.41,
+                  "cost": 193.75,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 34.56
+                    },
+                    {
+                      "name": "Insurance",
+                      "charge": 23.1
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "uber",
+                  "name": "Uber.com",
+                  "accountNumbers": [
+                    {
+                      "number": "AM3398",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "You may be asked to provide an ID",
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Transaction number",
+                    "isPrimary": false
+                  }
+                ],
+                "travelers": [
+                  {
+                    "name": "John Doe",
+                    "full": true
+                  },
+                  {
+                    "name": "Jane Doe",
+                    "full": true
+                  }
+                ],
+                "segments": [
+                  {
+                    "departure": {
+                      "airportCode": "SFO",
+                      "name": "San Francisco International Airport",
+                      "localDateTime": "2030-01-01T13:30:00",
+                      "address": {
+                        "text": "SFO",
+                        "addressLine": "San Francisco International Airport",
+                        "city": "San Francisco",
+                        "stateName": "California",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": null,
+                        "lat": 37.615215,
+                        "lng": -122.389881,
+                        "timezone": -25200,
+                        "timezoneId": "America/Los_Angeles"
+                      }
+                    },
+                    "arrival": {
+                      "airportCode": null,
+                      "name": "315 Walnut Ave, South San Francisco, CA 94080, USA",
+                      "localDateTime": "2030-01-01T14:34:00",
+                      "address": {
+                        "text": "315 Walnut Ave, South San Francisco, CA 94080, USA",
+                        "addressLine": "315 Walnut Avenue",
+                        "city": "South San Francisco",
+                        "stateName": "California",
+                        "countryName": "United States",
+                        "countryCode": "US",
+                        "postalCode": "94080",
+                        "lat": 37.6569251,
+                        "lng": -122.4143844,
+                        "timezone": -25200,
+                        "timezoneId": "America/Los_Angeles"
+                      }
+                    },
+                    "vehicleInfo": {
+                      "type": "Regular",
+                      "model": "Ford Focus",
+                      "imageUrl": "http://car.image/url"
+                    },
+                    "adults": 1,
+                    "kids": 0,
+                    "traveledMiles": "4.3mi",
+                    "duration": "7h"
+                  }
+                ],
+                "type": "transfer"
+              }
+            ]
+          }
+  CancelledTransfer:
+    title: Cancelled Transfer
+    required:
+      - type
+      - confirmationNumbers
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseTransfer"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "uber",
+                  "name": "Uber.com",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": null
+                  }
+                ],
+                "travelers": null,
+                "segments": null,
+                "type": "transfer"
+              }
+            ]
+          }
+  BaseHotelReservation:
+    allOf:
+      - $ref: "#/definitions/Itinerary"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `hotelReservation`
+            enum: [hotelReservation]
+          confirmationNumbers:
+            type: array
+            items:
+              type: object
+              $ref: '#/definitions/ConfNo'
+            description: Reservation confirmation number(s) specific to the travel provider. If there are other confirmation numbers specific to a travel agency, those would be listed under the [`travelAgency`. `confirmationNumbers`](#method-Itineraries_1). In some cases, there are multiple reservation numbers, for example if there are multiple hotel rooms booked.
+          hotelName:
+            type: "string"
+            description: Name of the hotel, i.e. “Hilton Garden Inn Atlanta Perimeter Center”
+          chainName:
+            type: "string"
+            description: Name of the hotel chain.
+          address:
+            $ref: "#/definitions/Address"
+            description: An object describing all the details of the address of the hotel.
+          checkInDate:
+            type: "string"
+            description: Check-in date.
+          checkOutDate:
+            type: "string"
+            description: Check-out date.
+          phone:
+            type: "string"
+            description: Hotel’s phone number.
+          fax:
+            type: "string"
+            description: Hotel’s fax number.
+          guests:
+            type: "array"
+            description: An array describing guests that are listed on the reservation.
+            items:
+              type: object
+              $ref: "#/definitions/Person"
+          guestCount:
+            type: "integer"
+            description: Number of guests on the reservation.
+            minimum: 1
+          kidsCount:
+            type: "integer"
+            description: Number of kids listed on the reservation.
+            minimum: 0
+          roomsCount:
+            type: "integer"
+            description: Number of rooms listed on the reservation.
+            minimum: 1
+          cancellationNumber:
+            type: "string"
+            description: Cancellation number if the reservation has been cancelled
+            x-group: cancellation
+          cancellationDeadline:
+            type: "string"
+            description: Deadline date for changing or cancelling the reservation without additional penalties
+            x-group: cancellation
+          isNonRefundable:
+            type: "boolean"
+            description: Set to `true` if the reservation is non-refundable. Set to `null` if we don’t know if the reservation is refundable or non-refundable.
+            x-group: cancellation
+          rooms:
+            type: "array"
+            description: An array describing the room(s) listed on the reservation.
+            items:
+              type: object
+              $ref: "#/definitions/Room"
+          freeNights:
+            type: "integer"
+            description: Number of free nights obtained via a certificate or a promo
+  HotelReservation:
+    title: Hotel Reservation
+    description: "Hotel reservation"
+    allOf:
+      - $ref: "#/definitions/BaseHotelReservation"
+    required:
+      - type
+      - hotelName
+      - address
+      - checkInDate
+      - checkOutDate
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 300,
+                  "cost": 200,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 100
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "spg",
+                  "name": "Starwood Hotels",
+                  "accountNumbers": [
+                    {
+                      "number": "xxxxxx345",
+                      "masked": true
+                    }
+                  ],
+                  "earnedRewards": "4 nights"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Cancellation is free 24 hours prior to check-in",
+                "cancellationDeadline": "2029-12-31T13:30:00",
+                "isNonRefundable": null,
+                "notes": "Use the secondary entrance if you're carrying large luggage",
+                "confirmationNumbers": [
+                  {
+                    "number": "1122334455",
+                    "description": "Confirmation number",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Reference",
+                    "isPrimary": false
+                  }
+                ],
+                "hotelName": "Sheraton Philadelphia Downtown Hotel",
+                "chainName": null,
+                "address": {
+                  "text": "201 North 17th Street, Philadelphia, Pennsylvania 19103 United States",
+                  "addressLine": "201 North 17th Street",
+                  "city": "Philadelphia",
+                  "stateName": "Pennsylvania",
+                  "countryName": "United States",
+                  "countryCode": "US",
+                  "postalCode": "19103",
+                  "lat": 39.9569828,
+                  "lng": -75.1674669,
+                  "timezone": -14400,
+                  "timezoneId": "America/New_York"
+                },
+                "checkInDate": "2030-01-01T13:30:00",
+                "checkOutDate": "2030-01-05T12:00:00",
+                "phone": "+1-22-3333",
+                "fax": "+1-66-77899",
+                "guests": [
+                  {
+                    "name": "John D.",
+                    "full": false
+                  },
+                  {
+                    "name": "Jane D.",
+                    "full": false
+                  }
+                ],
+                "guestCount": 2,
+                "kidsCount": 3,
+                "roomsCount": 1,
+                "rooms": [
+                  {
+                    "type": "King bed",
+                    "description": "Traditional, TV, free wi-fi",
+                    "rate": "30$/night",
+                    "rateType": "King bed"
+                  }
+                ],
+                "type": "hotelReservation"
+              }
+            ]
+          }
+  CancelledHotelReservation:
+    title: Cancelled Hotel Reservation
+    allOf:
+      - $ref: "#/definitions/BaseHotelReservation"
+    required:
+      - type
+      - cancelled
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "spg",
+                  "name": "Starwood Hotels",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "cancellationDeadline": null,
+                "isNonRefundable": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "1122334455",
+                    "description": "Confirmation number",
+                    "isPrimary": null
+                  }
+                ],
+                "hotelName": null,
+                "chainName": null,
+                "address": null,
+                "checkInDate": null,
+                "checkOutDate": null,
+                "phone": null,
+                "fax": null,
+                "guests": null,
+                "guestCount": null,
+                "kidsCount": null,
+                "roomsCount": null,
+                "rooms": null,
+                "type": "hotelReservation"
+              }
+            ]
+          }
+  BaseCruise:
+    allOf:
+      - $ref: "#/definitions/Itinerary"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `cruise`
+            enum: [cruise]
+          confirmationNumbers:
+            type: array
+            items:
+              type: object
+              $ref: '#/definitions/ConfNo'
+            description: Reservation confirmation number(s) specific to the travel provider. If there are other confirmation numbers specific to a travel agency, those would be listed under the [`travelAgency`. `confirmationNumbers`](#method-Itineraries_1). In some cases, there are multiple reservation numbers, for example if there are multiple hotel rooms booked.
+          travelers:
+            type: "array"
+            description: "Names of the people listed on the reservation"
+            items:
+              type: object
+              $ref: "#/definitions/Person"
+          segments:
+            type: "array"
+            description: "An array describing individual travel segments of the itinerary."
+            items:
+              type: object
+              $ref: "#/definitions/CruiseSegment"
+          cruiseDetails:
+            description: 'Cruise Details'
+            $ref: '#/definitions/CruiseDetails'
+  Cruise:
+    type: object
+    required:
+      - type
+      - segments
+    allOf:
+      - $ref: "#/definitions/BaseCruise"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 251.41,
+                  "cost": 193.75,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 34.56
+                    },
+                    {
+                      "name": "Insurance",
+                      "charge": 23.1
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "disneycruise",
+                  "name": "Disney Cruise Line",
+                  "accountNumbers": [
+                    {
+                      "number": "AM3398",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "Do not forget to check in with the receptionist at the main deck",
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Transaction number",
+                    "isPrimary": false
+                  }
+                ],
+                "travelers": [
+                  {
+                    "name": "John Doe",
+                    "full": true
+                  },
+                  {
+                    "name": "Jane Doe",
+                    "full": true
+                  }
+                ],
+                "segments": [
+                  {
+                    "departure": {
+                      "stationCode": null,
+                      "name": "PORT CANAVERAL",
+                      "localDateTime": "2030-01-01T13:30:00",
+                      "address": {
+                        "text": "PORT CANAVERAL",
+                        "addressLine": null,
+                        "city": null,
+                        "stateName": null,
+                        "countryName": null,
+                        "countryCode": null,
+                        "postalCode": null,
+                        "lat": null,
+                        "lng": null,
+                        "timezone": null,
+                        "timezoneId": null
+                      }
+                    },
+                    "arrival": {
+                      "stationCode": null,
+                      "name": "NASSAU",
+                      "localDateTime": "2030-01-02T08:00:00",
+                      "address": {
+                        "text": "NASSAU",
+                        "addressLine": null,
+                        "city": null,
+                        "stateName": null,
+                        "countryName": null,
+                        "countryCode": null,
+                        "postalCode": null,
+                        "lat": 25.0479835,
+                        "lng": -77.355413,
+                        "timezone": -14400,
+                        "timezoneId": "America/Nassau"
+                      }
+                    }
+                  },
+                  {
+                    "departure": {
+                      "stationCode": null,
+                      "name": "NASSAU",
+                      "localDateTime": "2030-01-02T12:00:00",
+                      "address": {
+                        "text": "NASSAU",
+                        "addressLine": null,
+                        "city": null,
+                        "stateName": null,
+                        "countryName": null,
+                        "countryCode": null,
+                        "postalCode": null,
+                        "lat": 25.0479835,
+                        "lng": -77.355413,
+                        "timezone": -14400,
+                        "timezoneId": "America/Nassau"
+                      }
+                    },
+                    "arrival": {
+                      "stationCode": null,
+                      "name": "PORT CANAVERAL",
+                      "localDateTime": "2030-01-03T14:00:00",
+                      "address": {
+                        "text": "PORT CANAVERAL",
+                        "addressLine": null,
+                        "city": null,
+                        "stateName": null,
+                        "countryName": null,
+                        "countryCode": null,
+                        "postalCode": null,
+                        "lat": null,
+                        "lng": null,
+                        "timezone": null,
+                        "timezoneId": null
+                      }
+                    }
+                  }
+                ],
+                "cruiseDetails": {
+                  "description": "Long cruise",
+                  "class": "Regular",
+                  "deck": "3",
+                  "room": "342",
+                  "ship": "Disney Dream",
+                  "shipCode": "SHCD",
+                  "voyageNumber": "K229"
+                },
+                "type": "cruise"
+              }
+            ]
+          }
+  CancelledCruise:
+    title: Cancelled Cruise
+    type: object
+    required:
+      - type
+      - confirmationNumbers
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseCruise"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "disneycruise",
+                  "name": "Disney Cruise Line",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": null
+                  }
+                ],
+                "travelers": null,
+                "segments": null,
+                "cruiseDetails": null,
+                "type": "cruise"
+              }
+            ]
+          }
+  BaseCarRental:
+    allOf:
+      - $ref: "#/definitions/Itinerary"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `carRental`
+            enum: [carRental]
+          confirmationNumbers:
+            type: array
+            items:
+              type: object
+              $ref: '#/definitions/ConfNo'
+            description: Reservation confirmation number(s) specific to the travel provider. If there are other confirmation numbers specific to a travel agency, those would be listed under the [`travelAgency`. `confirmationNumbers`](#method-Itineraries_1). In some cases, there are multiple reservation numbers.
+          pickup:
+            description: 'Object defining the pickup event (time and location) of the rental car.'
+            $ref: '#/definitions/CarRentalLocation'
+          dropoff:
+            description: 'Object defining the dropoff event (time and location) of the rental car.'
+            $ref: '#/definitions/CarRentalLocation'
+          car:
+            description: 'Object defining the rental car.'
+            $ref: '#/definitions/Car'
+          discounts:
+            description: 'An array of various discounts that were applied to the reservation.'
+            type: array
+            items:
+              type: object
+              $ref: '#/definitions/CarRentalDiscount'
+          driver:
+            description: 'Object describing the driver of the car.'
+            $ref: '#/definitions/Person'
+          pricedEquipment:
+            type: array
+            description: 'An array of additional equipment that was added to the reservation.'
+            items:
+              type: object
+              $ref: '#/definitions/Fee'
+          rentalCompany:
+            description: Name of the rental company.
+            type: string
+  CarRental:
+    title: Car Rental
+    type: object
+    description: 'Rental car reservation'
+    required:
+      - type
+      - pickup
+      - dropoff
+    allOf:
+      - $ref: "#/definitions/BaseCarRental"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 251.41,
+                  "cost": 193.75,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 34.56
+                    },
+                    {
+                      "name": "Insurance",
+                      "charge": 23.1
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "avis",
+                  "name": "Avis",
+                  "accountNumbers": [
+                    {
+                      "number": "AVS454545",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "$50 penalty if cancelled",
+                "notes": "Make a note of any damages before leaving the pickup area",
+                "confirmationNumbers": [
+                  {
+                    "number": "1122334455",
+                    "description": "Confirmation number",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Reference",
+                    "isPrimary": false
+                  }
+                ],
+                "pickup": {
+                  "address": {
+                    "text": "Palm Beach Intl Airport,PBI, 2500 Turnage Boulevard, West Palm Beach, FL 33406 US",
+                    "addressLine": "1000 James L Turnage Boulevard",
+                    "city": "West Palm Beach",
+                    "stateName": "Florida",
+                    "countryName": "United States",
+                    "countryCode": "US",
+                    "postalCode": "33415",
+                    "lat": 26.6857475,
+                    "lng": -80.0928165,
+                    "timezone": -14400,
+                    "timezoneId": "America/New_York"
+                  },
+                  "localDateTime": "2030-01-01T13:30:00",
+                  "openingHours": "Sun - Sat open 24 hrs",
+                  "phone": "+1-13-PICKUP",
+                  "fax": "+1-14-FAX"
+                },
+                "dropoff": {
+                  "address": {
+                    "text": "Palm Beach Intl Airport,PBI, 2500 Turnage Boulevard, West Palm Beach, FL 33406 US",
+                    "addressLine": "1000 James L Turnage Boulevard",
+                    "city": "West Palm Beach",
+                    "stateName": "Florida",
+                    "countryName": "United States",
+                    "countryCode": "US",
+                    "postalCode": "33415",
+                    "lat": 26.6857475,
+                    "lng": -80.0928165,
+                    "timezone": -14400,
+                    "timezoneId": "America/New_York"
+                  },
+                  "localDateTime": "2030-01-05T13:30:00",
+                  "openingHours": "Sun - Sat open 24 hrs",
+                  "phone": "+1-13-DROPOFF",
+                  "fax": "+1-14-FAX"
+                },
+                "car": {
+                  "type": "Regular",
+                  "model": "Ford Edge or similar",
+                  "imageUrl": "http://car.image/url"
+                },
+                "discounts": null,
+                "driver": {
+                  "name": "John Doe",
+                  "full": true
+                },
+                "pricedEquipment": null,
+                "rentalCompany": null,
+                "type": "carRental"
+              }
+            ]
+          }
+  CancelledCarRental:
+    title: Cancelled Car Rental
+    required:
+      - type
+      - confirmationNumbers
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseCarRental"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "avis",
+                  "name": "Avis",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "1122334455",
+                    "description": "Confirmation number",
+                    "isPrimary": null
+                  }
+                ],
+                "pickup": null,
+                "dropoff": null,
+                "car": null,
+                "discounts": null,
+                "driver": null,
+                "pricedEquipment": null,
+                "rentalCompany": null,
+                "type": "carRental"
+              }
+            ]
+          }
+  BaseEvent:
+    allOf:
+      - $ref: "#/definitions/Itinerary"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `event`
+            enum: [event]
+          confirmationNumbers:
+            type: array
+            items:
+              type: object
+              $ref: '#/definitions/ConfNo'
+            description: Reservation confirmation number(s) specific to the travel provider. If there are other confirmation numbers specific to a travel agency, those would be listed under the [`travelAgency`. `confirmationNumbers`](#method-Itineraries_1). In some cases, there are multiple reservation numbers.
+          address:
+            $ref: "#/definitions/Address"
+            description: The address of the event.
+          eventName:
+            type: "string"
+            description: Event name such as the name of the restaurant.
+          eventType:
+            type: "integer"
+            description: |
+              Type of the event. The possible values are:
+
+              **1** - for “Restaurant”
+
+              **2** - for “Meeting”
+
+              **3** - for “Show”
+
+              **4** - for “Event”
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+          startDateTime:
+            type: "string"
+            description: Date and time when the event starts.
+          endDateTime:
+            type: "string"
+            description: Date and time when the event ends.
+          phone:
+            type: "string"
+            description: Phone number associated with the event, such as restaurant’s phone number.
+          fax:
+            type: "string"
+            description: Fax number associated with the event, such as show organizer’s fax number.
+          guestCount:
+            type: "integer"
+            description: Number of adult guests participating in the event.
+            minimum: 1
+          kidsCount:
+            type: "integer"
+            description: Number of children participating in the event.
+          guests:
+            type: "array"
+            description: Arrays of guests participating in the event.
+            items:
+              type: object
+              $ref: "#/definitions/Person"
+          seats:
+            type: "array"
+            items:
+              type: "string"
+            description: Array of reserved seats
+  Event:
+    required:
+      - type
+      - address
+      - eventName
+      - eventType
+      - startDateTime
+    allOf:
+      - $ref: "#/definitions/BaseEvent"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 251.41,
+                  "cost": 193.75,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 34.56
+                    },
+                    {
+                      "name": "Insurance",
+                      "charge": 23.1
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "opentable",
+                  "name": "OpenTable.com",
+                  "accountNumbers": [
+                    {
+                      "number": "AM3398",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "Receipt will be available in your mobile application",
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Transaction number",
+                    "isPrimary": false
+                  }
+                ],
+                "address": {
+                  "text": "132 West 58th Street New York, NY 10019",
+                  "addressLine": "132 West 58th Street",
+                  "city": "New York",
+                  "stateName": "New York",
+                  "countryName": "United States",
+                  "countryCode": "US",
+                  "postalCode": "10019",
+                  "lat": 40.7653771,
+                  "lng": -73.9779742,
+                  "timezone": -14400,
+                  "timezoneId": "America/New_York"
+                },
+                "eventName": "Loi Estiatorio",
+                "eventType": 1,
+                "startDateTime": "2030-01-01T18:00:00",
+                "endDateTime": "2030-01-01T23:00:00",
+                "phone": "+1-23-44556",
+                "fax": "+1-99-33434",
+                "guestCount": 2,
+                "guests": [
+                  {
+                    "name": "John Doe",
+                    "full": true
+                  },
+                  {
+                    "name": "Jane Doe",
+                    "full": true
+                  }
+                ],
+                "seats": [
+                  "table 13"
+                ],
+                "type": "event"
+              }
+            ]
+          }
+  CancelledEvent:
+    title: Cancelled Event
+    required:
+      - type
+      - confirmationNumbers
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseEvent"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "opentable",
+                  "name": "OpenTable.com",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": null
+                  }
+                ],
+                "address": null,
+                "eventName": null,
+                "eventType": null,
+                "startDateTime": null,
+                "endDateTime": null,
+                "phone": null,
+                "fax": null,
+                "guestCount": null,
+                "guests": null,
+                "seats": null,
+                "type": "event"
+              }
+            ]
+          }
+  BaseParking:
+    allOf:
+      - $ref: "#/definitions/Itinerary"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `parking`
+            enum: [parking]
+          confirmationNumbers:
+            type: array
+            items:
+              type: object
+              $ref: '#/definitions/ConfNo'
+            description: Reservation confirmation number(s) specific to the parking provider. If there are other confirmation numbers specific to a travel agency, those would be listed under the [`travelAgency`. `confirmationNumbers`](#method-Itineraries_1). In some cases, there are multiple reservation numbers.
+          address:
+            $ref: "#/definitions/Address"
+            description: The address of the parking location.
+          locationName:
+            type: "string"
+            description: Parking location name.
+          spotNumber:
+            type: "string"
+            description: Parking spot number.
+          licensePlate:
+            type: "string"
+            description: Licanse plate.
+          startDateTime:
+            type: "string"
+            description: Parking start date and time.
+          endDateTime:
+            type: "string"
+            description: Parking end date and time.
+          phone:
+            type: "string"
+            description: Parking facility phone number.
+          openingHours:
+            type: "string"
+            description: Parking facility hours of operation.
+          owner:
+            $ref: "#/definitions/Person"
+            description: Car owner's name.
+          rateType:
+            type: "string"
+            description: Rate type.
+          carDescription:
+            type: "string"
+            description: Information about the parked vehicle
+  Parking:
+    description: Parking spot reservations (usually for airport long-term parking)
+    title: Parking
+    type: object
+    required:
+      - type
+      - startDateTime
+      - endDateTime
+    allOf:
+      - $ref: "#/definitions/BaseParking"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 105.15,
+                  "cost": 99.12,
+                  "discount": null,
+                  "spentAwards": null,
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Taxes",
+                      "charge": 6.03
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "parkingspot",
+                  "name": "The Parking Spot",
+                  "accountNumbers": [
+                    {
+                      "number": "AM3398",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "Look at the overhead signs for directions to the desired spot",
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Transcation number",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Invoice number",
+                    "isPrimary": false
+                  }
+                ],
+                "address": {
+                  "text": "132 West 58th Street New York, NY 10019",
+                  "addressLine": "132 West 58th Street",
+                  "city": "New York",
+                  "stateName": "New York",
+                  "countryName": "United States",
+                  "countryCode": "US",
+                  "postalCode": "10019",
+                  "lat": 40.7653771,
+                  "lng": -73.9779742,
+                  "timezone": -14400,
+                  "timezoneId": "America/New_York"
+                },
+                "locationName": "Downtown 2 hr",
+                "spotNumber": "4",
+                "licensePlate": "ABC GHY",
+                "startDateTime": "2030-01-01T18:00:00",
+                "endDateTime": "2030-01-01T23:00:00",
+                "phone": "+1-234-56789",
+                "openingHours": "Sun - Sat open 24 hrs",
+                "owner": {
+                  "name": "John Doe",
+                  "full": true
+                },
+                "rateType": "STANDARD SPOT",
+                "carDescription": "Volkswagen white",
+                "type": "parking"
+              }
+            ]
+          }
+  CancelledParking:
+    title: Cancelled Parking
+    type: object
+    required:
+      - type
+      - confirmationNumbers
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseParking"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "parkingspot",
+                  "name": "The Parking Spot",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Transcation number",
+                    "isPrimary": null
+                  }
+                ],
+                "address": null,
+                "locationName": null,
+                "spotNumber": null,
+                "licensePlate": null,
+                "startDateTime": null,
+                "endDateTime": null,
+                "phone": null,
+                "owner": null,
+                "rateType": null,
+                "carDescription": null,
+                "type": "parking"
+              }
+            ]
+          }
+  BaseFerry:
+    type: object
+    allOf:
+      - $ref: "#/definitions/Transportation"
+      - properties:
+          type:
+            type: "string"
+            description: |
+              Type of reservation. Value: `ferry`
+            enum: [ferry]
+          segments:
+            type: "array"
+            description: "An array describing individual travel segments of the itinerary."
+            items:
+              type: object
+              $ref: "#/definitions/FerrySegment"
+          ticketNumbers:
+            type: "array"
+            description: There may be different ticket numbers associated with an itinerary. All the ticket numbers that we gather would be presented as an array in this field.
+            items:
+              type: object
+              $ref: "#/definitions/ParsedNumber"
+  Ferry:
+    title: Ferry
+    type: object
+    required:
+      - type
+      - segments
+    allOf:
+      - $ref: "#/definitions/BaseFerry"
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": {
+                  "total": 251.41,
+                  "cost": 193.75,
+                  "discount": 40,
+                  "spentAwards": "10000 points",
+                  "currencyCode": "USD",
+                  "fees": [
+                    {
+                      "name": "Tax",
+                      "charge": 34.56
+                    },
+                    {
+                      "name": "Insurance",
+                      "charge": 23.1
+                    }
+                  ]
+                },
+                "status": "Confirmed",
+                "reservationDate": "2000-01-01T00:00:00",
+                "providerInfo": {
+                  "code": "aferry",
+                  "name": "AFerry",
+                  "accountNumbers": [
+                    {
+                      "number": "AM3398",
+                      "masked": false
+                    }
+                  ],
+                  "earnedRewards": "50 points"
+                },
+                "cancelled": false,
+                "cancellationPolicy": "Ticket is non-refundable",
+                "notes": "Access to your vehicle will be restricted during the trip",
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": true
+                  },
+                  {
+                    "number": "887756",
+                    "description": "Transaction number",
+                    "isPrimary": false
+                  }
+                ],
+                "travelers": [
+                  {
+                    "name": "John Doe",
+                    "full": true
+                  },
+                  {
+                    "name": "Jane Doe",
+                    "full": true
+                  }
+                ],
+                "segments": [
+                  {
+                    "departure": {
+                      "stationCode": "NO OSL",
+                      "name": "Oslo, Norway",
+                      "localDateTime": "2030-01-01T14:00:00",
+                      "address": {
+                        "text": "Akershusstranda 19, 0102 Oslo, Norway",
+                        "addressLine": "Akershusstranda 19",
+                        "city": "Oslo",
+                        "stateName": null,
+                        "countryName": "Norway",
+                        "countryCode": "NO",
+                        "postalCode": "0102",
+                        "lat": 59.904139,
+                        "lng": 10.738278,
+                        "timezone": null,
+                        "timezoneId": null
+                      }
+                    },
+                    "arrival": {
+                      "stationCode": "DEKEL",
+                      "name": "Kiel, Germany",
+                      "localDateTime": "2030-01-02T10:00:00",
+                      "address": {
+                        "text": "Norwegenkai, 24143 Kiel, Germany",
+                        "addressLine": null,
+                        "city": "Kiel",
+                        "stateName": null,
+                        "countryName": "Germany",
+                        "countryCode": "DE",
+                        "postalCode": null,
+                        "lat": 54.316333,
+                        "lng": 10.138806,
+                        "timezone": null,
+                        "timezoneId": null
+                      }
+                    },
+                    "accommodations": [
+                      "4-Bed inside cabin, shower/WC",
+                      "4-Bed inside cabin, shower/WC"
+                    ],
+                    "carrier": "ANEK SUPERFAST",
+                    "vessel": "Hellenic Spirit",
+                    "traveledMiles": "10km",
+                    "duration": "2h",
+                    "meal": "none",
+                    "cabin": "economy",
+                    "smoking": false,
+                    "adultsCount": 2,
+                    "kidsCount": 1,
+                    "pets": "1 cat",
+                    "vehicles": [
+                      {
+                        "type": "Auto",
+                        "model": "Audi",
+                        "length": "<5m",
+                        "height": "1.8",
+                        "width": "1.8-3m"
+                      }
+                    ],
+                    "trailers": [
+                      {
+                        "type": "Regular",
+                        "model": "Standard",
+                        "length": "<=2m",
+                        "height": "<=2",
+                        "width": "<=2"
+                      }
+                    ]
+                  }
+                ],
+                "ticketNumbers": [
+                  {
+                    "number": "345667",
+                    "masked": false
+                  },
+                  {
+                    "number": "345668",
+                    "masked": false
+                  }
+                ],
+                "type": "ferry"
+              }
+            ]
+          }
+  CancelledFerry:
+    title: Cancelled Ferry
+    type: object
+    required:
+      - type
+      - confirmationNumbers
+      - cancelled
+    allOf:
+      - $ref: "#/definitions/BaseFerry"
+    properties:
+      status:
+        description: this is canceled ferry status
+        type: string
+    examples:
+      - application/json: |
+          {
+            "itineraries": [
+              {
+                "travelAgency": null,
+                "pricingInfo": null,
+                "status": "cancelled",
+                "reservationDate": null,
+                "providerInfo": {
+                  "code": "aferry",
+                  "name": "AFerry",
+                  "accountNumbers": null,
+                  "earnedRewards": null
+                },
+                "cancelled": true,
+                "cancellationPolicy": null,
+                "notes": null,
+                "confirmationNumbers": [
+                  {
+                    "number": "A04-33984-12",
+                    "description": "Confirmation #",
+                    "isPrimary": null
+                  }
+                ],
+                "travelers": null,
+                "segments": null,
+                "ticketNumbers": null,
+                "type": "ferry"
+              }
+            ]
+          }
+  TravelAgency:
+    title: Travel Agency
+    type: "object"
+    properties:
+      providerInfo:
+        description: This object describes the travel agency, specifically the loyalty information as it pertains to this travel agency.
+        $ref: '#/definitions/ProviderInfo'
+      confirmationNumbers:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/ConfNo'
+        description: Confirmation numbers that were assigned to this trip by the travel agency. Different from the PNRs assigned by the airline.
+      phoneNumbers:
+        type: array
+        description: Phone numbers of the travel agency.
+        items:
+          type: object
+          $ref: '#/definitions/PhoneNumber'
+  ProviderInfo:
+    type: object
+    title: Provider Info
+    description: If there is a loyalty program associated with this reservation, the details specific to that program will be listed in this object.
+    properties:
+      name:
+        type: string
+        description: Loyalty program name
+      code:
+        type: string
+        description: Alpha-numeric value with no spaces that uniquely identifies any given loyalty program within AwardWallet.
+      accountNumbers:
+        type: array
+        items:
+          type: object
+          $ref: "#/definitions/ParsedNumber"
+        description: Array of related loyalty program account numbers
+      earnedRewards:
+        description: Rewards earned for booking the reservation
+        type: string
+  ConfNo:
+    type: object
+    title: Confirmation Numbers
+    properties:
+      number:
+        type: string
+        description: Confirmation number
+      description:
+        type: string
+        description: Confirmation number description
+      isPrimary:
+        type: boolean
+        description: Indicates whether this confirmation number can be considered as primary
+    required:
+      - "number"
+  PhoneNumber:
+    title: Phone Number
+    type: object
+    properties:
+      description:
+        type: string
+        description: Description of the phone number.
+      number:
+        type: string
+        description: Phone number
+    required:
+      - "number"
+  Room:
+    type: "object"
+    properties:
+      type:
+        type: "string"
+        description: Room type, i.e. “2 QUEEN BEDS NONSMOKING”
+      description:
+        type: "string"
+        description: Room description, i.e. “Non-Smoking Room Confirmed”
+      rate:
+        description: 'Room rate per night.'
+        type: string
+      rateType:
+        description: 'Room rate type, i.e. “2 QUEEN BEDS NONSMOKING”.'
+        type: string
+  CarRentalDiscount:
+    title: Car Rental Discount
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        description: Discount name, such as “Your Rate has been discounted based on the Hertz CDP provided”.
+      code:
+        type: "string"
+        description: Discount code, such as “AAA SOUTHERN NEW ENGLAND”
+    required:
+      - name
+      - code
+  CruiseDetails:
+    title: Cruise Details
+    type: "object"
+    properties:
+      description:
+        type: "string"
+        description: Cruise description, such as “7-Day Eastern Caribbean from Orlando (Port Canaveral)”
+      class:
+        type: "string"
+        description: Room class
+      deck:
+        type: "string"
+        description: Name of the deck, i.e. “The Haven Stateroom”
+      room:
+        type: "string"
+        description: Room number
+      ship:
+        type: "string"
+        description: The name of the ship, i.e. “Norwegian Epic”
+      shipCode:
+        type: "string"
+        description: This is usually a two-letter code that identifies the ship
+      voyageNumber:
+        type: "string"
+        description: Voyage number
+  PricingInfo:
+    title: Pricing Info
+    type: object
+    description: ''
+    properties:
+      total:
+        description: 'Total cost of the reservation including all taxes and fees.'
+        type: number
+      cost:
+        description: 'Cost of the reservation before taxes.'
+        type: number
+      discount:
+        description: 'Total amount of discounts, if any.'
+        type: number
+      spentAwards:
+        description: 'Frequent flier miles, points, or other kinds or bonuses spent on this reservation.'
+        type: string
+      currencyCode:
+        description: Currency code as gathered from the website. I.e. `USD`.
+        type: string
+      fees:
+        type: array
+        description: 'Various fees associated with the reservation.'
+        items:
+          type: object
+          $ref: '#/definitions/Fee'
+  Fee:
+    type: object
+    description: ''
+    required:
+      - name
+      - charge
+    properties:
+      name:
+        description: 'Fee description.'
+        type: string
+      charge:
+        description: 'Fee amount.'
+        type: number
+  Address:
+    type: object
+    description: ''
+    required:
+      - text
+    properties:
+      text:
+        description: 'Non-validated address string. You can usually use this line to search some API (i.e. Google API) to get detailed / structured information about that address. We usually just grab this text as-is from the provider’s website.'
+        type: string
+      addressLine:
+        description: 'Validated address line of the address (without the city, state, country and zip code) that we got from either Google API or another authoritative source.'
+        type: string
+      city:
+        description: 'Name of the city validated either by Google API or another authoritative source'
+        type: string
+      stateName:
+        description: 'Name of the state validated either by Google API or another authoritative source'
+        type: string
+      countryName:
+        description: 'Name of the country validated either by Google API or another authoritative source'
+        type: string
+      countryCode:
+        description: '2 letter country code validated either by Google API or another authoritative source'
+        type: string
+      postalCode:
+        description: 'Zip / postal code validated either by Google API or another authoritative source'
+        type: string
+      lat:
+        description: 'Latitude coordinate of the address'
+        type: number
+      lng:
+        description: 'Longitude coordinate of the address'
+        type: number
+      timezone:
+        description: 'Time zone in which this address is located.'
+        type: integer
+      timezoneId:
+        description: 'Name of the time zone'
+        type: string
+  Car:
+    type: object
+    description: ''
+    properties:
+      type:
+        description: 'Type of the rental car, i.e. “Intermediate SUV”.'
+        type: string
+      model:
+        description: 'Model of the rental car, i.e. “Ford Escape or similar”.'
+        type: string
+      imageUrl:
+        description: 'URL of the image of the car.'
+        type: string
+  CarRentalLocation:
+    title: Car Rental Location
+    description: "Pickup or drop off location of the rental car."
+    type: "object"
+    properties:
+      address:
+        $ref: "#/definitions/Address"
+        description: Rental car facility address.
+      localDateTime:
+        type: string
+        description: Scheduled date and time of the car pickup or drop-off in the time zone of the location of the rental car facility.
+      openingHours:
+        type: "string"
+        description: Rental car facility hours of operation.
+      phone:
+        type: "string"
+        description: Rental car facility phone number.
+      fax:
+        type: "string"
+        description: Rental car facility fax number.
+    required:
+      - "address"
+      - "localDateTime"
+  Person:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        description: Name of the person listed on the reservation.
+      full:
+        type: "boolean"
+        description: Sometimes passenger or guest names are shortened on the reservation, if we are able to detect it, this field will reflect that. It will be set to `true` if the we know the name is full (for example John J Smith) and `false` if the name is shortened, for example (John S.).
+      type:
+        type: "string"
+        description:
+        enum:
+          - "infant"
+    required:
+      - "name"
+  ParsedNumber:
+    title: Number
+    type: "object"
+    description: This object represents a ticket or an account number.
+    properties:
+      number:
+        type: "string"
+        description: Number as it was parsed from the email
+      masked:
+        type: "boolean"
+        description: Will be set to `true` if the number is partially masked (i.e."XXXX1234", "****5678").
+    required:
+      - "number"
+      - "masked"
+  FlightSegment:
+    title: Flight Segment
+    type: "object"
+    properties:
+      departure:
+        $ref: "#/definitions/TripLocation"
+        description: An object describing the departure event such as the departing airport (code, name, address, etc.) as well as the time of the departure.
+      arrival:
+        $ref: "#/definitions/TripLocation"
+        description: An object describing the arrival event such as the arriving airport (code, name, address, etc.) as well as the time of the arrival.
+      marketingCarrier:
+        $ref: '#/definitions/MarketingCarrier'
+        description: Object that defines the flight as it was ticketed. In other words, this is the information that the users would see on their ticket or boarding pass.
+      operatingCarrier:
+        $ref: '#/definitions/OperatingCarrier'
+        description: If an email contains information about an “operating airline” that is different from the airline listed under the `marketingCarrier` object, that airline would be defined here. Don’t confuse it with wet lease airline, sometimes wet lease airlines are listed as “operated by” but they are technically not codeshares and would be listed separately in the [`wetleaseCarrier`](#object-Airline) object.
+      wetleaseCarrier:
+        $ref: "#/definitions/Airline"
+        description: Wet lease airline is an airline that is DBA (doing business as) the operating airline. It wouldn’t have its own flight number or ticket numbers or confirmation numbers but you may see the wet lease airline listed on the ticket as “ExpressJet” or “KLM Cityhopper”, etc.
+      seats:
+        type: "array"
+        description: Assigned passenger seats.
+        items:
+          type: "string"
+      aircraft:
+        $ref: '#/definitions/Aircraft'
+        description: Object defining the aircraft.
+      traveledMiles:
+        type: "string"
+        description: Number of miles traveled on this flight segment, as we gathered it from the provider's website.
+      calculatedTraveledMiles:
+        type: "integer"
+        description: Estimated number of miles traveled on this flight segment, calculated based on the destination and arrival airports
+      cabin:
+        type: "string"
+        description: Cabin class, i.e. “Economy”
+      bookingCode:
+        type: "string"
+        description: Booking class code, i.e. “T”
+      duration:
+        type: "string"
+        description: Flight duration, as a string, as we gathered it from the provider’s website. Don’t expect to be able to use it programmatically to add or subtract time without some type of transformation on your end that would be specific to each provider.
+      calculatedDuration:
+        type: "integer"
+        description: Flight duration in minutes, calculated based on the departure and arrival times
+      status:
+        type: "string"
+        description: Status of the segment. I.e. cancelled, confirmed, etc.
+      cancelled:
+        type: "boolean"
+        description: Will be set to “true” if this flight was canceled
+      meal:
+        type: "string"
+        description: Meal, if any, that will be offered on the flight.
+      smoking:
+        type: "boolean"
+        description: Most flights nowadays are non-smoking; however, in case if the airline identifies the flight as a smoking flight it would be identified in this field.
+      stops:
+        type: "integer"
+        description: Number of stops this flight has.
+      flightStatsMethodUsed:
+        type: "string"
+        description: |
+          If FlightStats API was called to retrieve some missing files that are not present in the email and are required for this flight segment the name of the FlightStats API call will be returned in this field. The possible values are:
+           - ScheduleByFlight
+           - ScheduleByRoute
+           - ScheduleByAirport
+           - HistoricalByFlight
+           - HistoricalByRoute
+           - HistoricalByAirport
+    required:
+      - "departure"
+      - "arrival"
+      - "marketingCarrier"
+  MarketingCarrier:
+    title: Marketing Carrier
+    description: The flight and airline information as it shows up on the ticket.
+    type: "object"
+    required:
+      - airline
+      - flightNumber
+    properties:
+      airline:
+        $ref: '#/definitions/Airline'
+        description: Object describing the airline that is listed on the ticket, sometimes it is the 2 letter prefix that goes before the flight number as listed on the issued ticket.
+      flightNumber:
+        type: string
+        description: Flight number that is listed on the passenger’s ticket.
+      confirmationNumber:
+        type: string
+        description: Passenger name record, a.k.a. PNR that is associated with the airline the passenger was ticketed for.
+      phoneNumbers:
+        type: array
+        description: Airline phone numbers as shown in the email or the number(s) could be populated by AwardWallet automatically based on the airline even if the numbers were not present in the email.
+        items:
+          type: object
+          $ref: "#/definitions/PhoneNumber"
+      isCodeshare:
+        type: boolean
+        description: If this is a codeshare flight and we know the actual operating airline, we would set this attribute to `true` and then list the actual operating airline (only if it is different from the `marketingCarrier.airline`) in the `operatingCarrier` object.
+  IssuingAirline:
+    title: Issuing Carrier
+    description: Any air ticket is always issued by some airline, this object defines the airline that actually issued the ticket.
+    type: "object"
+    properties:
+      airline:
+        $ref: '#/definitions/Airline'
+        description: Object describing the airline that issued the ticket.
+      confirmationNumber:
+        type: string
+        description: PNR which corresponds to the airline that issued the ticket.
+      ticketNumbers:
+        type: array
+        description: In case if there are multiple travelers, all of their ticket numbers will be listed in this array.
+        items:
+          type: object
+          $ref: "#/definitions/ParsedNumber"
+      phoneNumbers:
+        type: array
+        description: Contact phone numbers
+        items:
+          type: object
+          $ref: "#/definitions/PhoneNumber"
+  OperatingCarrier:
+    title: Operating Carrier
+    description: Whenever the operating airline is different from the airline listed on the ticket (next to the flight number), that operating airline flight info would be listed in this object as the operating carrier. Don’t confuse this with a wet lease airline.
+    type: object
+    properties:
+      airline:
+        $ref: '#/definitions/Airline'
+        description: Object describing the operating airline if this airline is different from the one that was listed on the passenger’s ticket.
+      flightNumber:
+        type: string
+        description: Operating airline flight number
+      confirmationNumber:
+        type: string
+        description: PNR issued by the operating airline, in most cases will be unknown, i.e. `null`
+      phoneNumbers:
+        type: array
+        description: Contact phone numbers
+        items:
+          type: object
+          $ref: "#/definitions/PhoneNumber"
+  Airline:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Airline name
+      iata:
+        type: string
+        description: IATA code of the airline
+      icao:
+        type: string
+        description: International Civil Aviation Organization airline code.
+    required:
+      - "name"
+  Aircraft:
+    type: object
+    properties:
+      iataCode:
+        type: string
+        description: Aircraft IATA code
+      name:
+        type: string
+        description: Aircraft name
+      turboProp:
+        type: boolean
+        description: Indicates if this is a turboprop aircraft
+      jet:
+        type: boolean
+        description: Indicates if this is a jet engine aircraft
+      wideBody:
+        type: boolean
+        description: Indicates if this is a wide-body aircraft
+      regional:
+        type: boolean
+        description: Indicates if this is a regional aircraft
+      registrationNumber:
+        type: string
+        description: Registration number of the aircraft
+    required:
+      - "name"
+  BusSegment:
+    title: Bus segment
+    type: "object"
+    properties:
+      scheduleNumber:
+        type: "string"
+        description: ScheduleNumber is similar in concept to FlightNumber but applicable to Trains or Busses, etc. So it is designed to define a route number for various types of transportation itineraries.
+      departure:
+        $ref: "#/definitions/TransportLocation"
+        description: An object describing the departure event of this trip segment, such as a bus stop location and the time of departure.
+      arrival:
+        $ref: "#/definitions/TransportLocation"
+        description: An object describing the arrival event of this trip segment, such as a bus stop location and the time of arrival.
+      busInfo:
+        $ref: "#/definitions/Vehicle"
+        description: And object describing the bus
+      seats:
+        type: "array"
+        description: Assigned passenger seats.
+        items:
+          type: "string"
+      traveledMiles:
+        type: "string"
+        description: Number of miles traveled on this segment.
+      cabin:
+        type: "string"
+        description: Cabin class, i.e. “Economy”
+      bookingCode:
+        type: "string"
+        description: Booking class code, i.e. “SL” for “Sleeper class” booking code.
+      duration:
+        type: "string"
+        description: Trip duration
+      meal:
+        type: "string"
+        description: Meal, if any, that will be offered on the train, ferry, bus, etc.
+      smoking:
+        type: "boolean"
+        description: Most transporation services nowadays are non-smoking; however, in case if the provider identifies the car / train / bus as smoking  it would be listed in this field.
+      stops:
+        type: "integer"
+        description: Number of stops this transportation segment has.
+    required:
+      - "departure"
+      - "arrival"
+  TrainSegment:
+    title: Train segment
+    type: "object"
+    properties:
+      scheduleNumber:
+        type: "string"
+        description: ScheduleNumber is similar in concept to FlightNumber but applicable to Trains or Busses, etc. So it is designed to define a route number for various types of transportation itineraries.
+      departure:
+        $ref: "#/definitions/TransportLocation"
+        description: An object describing the departure event of this trip segment, such as a train station and the time of departure.
+      arrival:
+        $ref: "#/definitions/TransportLocation"
+        description: An object describing the arrival event of this trip segment, such as a train station and the time of arrival.
+      serviceName:
+        type: "string"
+        description: Short name of the particular service or route
+      trainInfo:
+        $ref: "#/definitions/Vehicle"
+        description: And object describing the train
+      car:
+        type: string
+        description: Train car number.
+      seats:
+        type: "array"
+        description: Assigned passenger seats in a car
+        items:
+          type: "string"
+      traveledMiles:
+        type: "string"
+        description: Number of miles traveled on this segment.
+      cabin:
+        type: "string"
+        description: Cabin class, i.e. “Economy”
+      bookingCode:
+        type: "string"
+        description: Booking class code, i.e. “SL” for “Sleeper class” booking code.
+      duration:
+        type: "string"
+        description: Trip duration
+      meal:
+        type: "string"
+        description: Meal, if any, that will be offered on the train, ferry, bus, etc.
+      smoking:
+        type: "boolean"
+        description: Most transporation services nowadays are non-smoking; however, in case if the provider identifies the car / train / bus as smoking  it would be listed in this field.
+      stops:
+        type: "integer"
+        description: Number of stops this transportation segment has.
+      ticketLinks:
+        type: "array"
+        items:
+          type: object
+          $ref: "#/definitions/TicketLink"
+        description: Array of links to train tickets or boarding passes for this segment
+    required:
+      - "departure"
+      - "arrival"
+  TicketLink:
+    title: Link to a ticket or a boarding pass
+    type: "object"
+    properties:
+      link:
+        type: "string"
+        description: Link to a downloadable ticket, which is usually a PDF file with a QR code
+      name:
+        type: "string"
+        description: Name of the ticket owner
+  TransferSegment:
+    title: Transfer segment
+    type: "object"
+    properties:
+      departure:
+        $ref: "#/definitions/TransferLocation"
+        description: An object describing the departure event of this trip segment, such as an address or an airport and the time of departure.
+      arrival:
+        $ref: "#/definitions/TransferLocation"
+        description: An object describing the arrival event of this trip segment, such as an address or an airport and the time of arrival.
+      vehicleInfo:
+        $ref: "#/definitions/Car"
+        description: And object describing the vehicle
+      adults:
+        type: "integer"
+        decription: Number of adult passengers
+      kids:
+        type: "integer"
+        decription: Number of children
+      traveledMiles:
+        type: "string"
+        description: Number of miles traveled on this segment.
+      duration:
+        type: "string"
+        description: Trip duration
+    required:
+      - "departure"
+      - "arrival"
+  CruiseSegment:
+    title: Cruise Segment
+    type: "object"
+    properties:
+      departure:
+        $ref: "#/definitions/TransportLocation"
+        description: "Object describing the departure port"
+      arrival:
+        $ref: "#/definitions/TransportLocation"
+        description: "Object describing the arrival port"
+    required:
+      - "departure"
+      - "arrival"
+  FerrySegment:
+    title: Ferry segment
+    type: "object"
+    properties:
+      carrier:
+        type: "string"
+        description: The name of the company operating the ferry.
+      vessel:
+        type: "string"
+        description: Name or type of the vessel / ferry.
+      departure:
+        $ref: "#/definitions/TransportLocation"
+        description: An object describing the departure event of this trip segment, such as a port and the time of departure.
+      arrival:
+        $ref: "#/definitions/TransportLocation"
+        description: An object describing the arrival event of this trip segment, such as a port and the time of arrival.
+      adultsCount:
+        type: "integer"
+        description: Number of adults listed on the reservation.
+        minimum: 1
+      kidsCount:
+        type: "integer"
+        description: Number of kids listed on the reservation.
+        minimum: 0
+      pets:
+        type: "string"
+        description: Information about the pets listed on the ticket.
+      accommodations:
+        type: "array"
+        description: Assigned passenger accommodations on a ferry
+        items:
+          type: "string"
+      traveledMiles:
+        type: "string"
+        description: Number of miles traveled on this segment.
+      duration:
+        type: "string"
+        description: Trip duration.
+      meal:
+        type: "string"
+        description: Meal, if any, that will be offered on the ferry.
+      cabin:
+        type: "string"
+        description: Cabin class, i.e. “Economy”
+      smoking:
+        type: "boolean"
+        description: If accomodation is identified as a smoking place it would be identified in this field.
+      vehicles:
+        type: "array"
+        description: An array describing the vehicle(s) listed on the reservation.
+        items:
+          type: object
+          $ref: "#/definitions/VehicleExt"
+      trailers:
+        type: "array"
+        description: An array describing the trailer(s) listed on the reservation.
+        items:
+          type: object
+          $ref: "#/definitions/VehicleExt"
+    required:
+      - "departure"
+      - "arrival"
+  TripLocation:
+    title: Flight Departure or Arrival
+    type: "object"
+    description: This object is describing the arrival or departure events of air travel.
+    properties:
+      airportCode:
+        type: "string"
+        description: If this location happened to be an airport this field will return a Validated IATA airport code.
+      terminal:
+        type: "string"
+        description: In cases when terminal is known it will be returned in this field.
+      name:
+        type: "string"
+        description: Train station name or airport name such as “John F. Kennedy International Airport”.
+      localDateTime:
+        type: "string"
+        description: Local date and time of arrival or departure (depending on the type of this location).
+      address:
+        $ref: "#/definitions/Address"
+        description: Object defining the address of this location.
+    required:
+      - "name"
+      - "address"
+      - "localDateTime"
+      - "airportCode"
+  TransportLocation:
+    title: Transportation Departure or Arrival
+    type: "object"
+    description: This object describes the transportation departure and arrival events
+    properties:
+      stationCode:
+        type: "string"
+        description: This attribute shows the bus station or train station or port code as it shows up on the email. This field is not validated.
+      name:
+        type: "string"
+        description: Station or location name
+      localDateTime:
+        type: "string"
+        description: Local date and time of arrival or departure (depending on the type of this location).
+      address:
+        $ref: "#/definitions/Address"
+        description: Object defining the address of this location.
+    required:
+      - "name"
+      - "address"
+      - "localDateTime"
+  TransferLocation:
+    title: Transfer Departure or Arrival
+    type: "object"
+    description: This object describes the transfer departure and arrival events
+    properties:
+      airportCode:
+        type: "string"
+        description: Iata code of an airport.
+      name:
+        type: "string"
+        description: Location name
+      localDateTime:
+        type: "string"
+        description: Local date and time of arrival or departure (depending on the type of this location).
+      address:
+        $ref: "#/definitions/Address"
+        description: Object defining the address of this location.
+    required:
+      - "name"
+      - "address"
+      - "localDateTime"
+  Vehicle:
+    type: "object"
+    description: This object describes the vehicle used to trasport a passenger
+    properties:
+      type:
+        type: "string"
+        description: Short description
+      model:
+        type: "string"
+        description: Model of the vehicle
+  VehicleExt:
+    type: "object"
+    title: Vehicle or Trailer
+    description: This object describes a vehicle/trailer
+    properties:
+      type:
+        type: "string"
+        description: Short description
+      model:
+        type: "string"
+        description: Model of the vehicle/trailer
+      length:
+        type: "string"
+        description: Length of the vehicle/trailer (size description, includes number, e.g. "Less than 6.00 metres")
+      height:
+        type: "string"
+        description: Height of the vehicle/trailer (size description, includes number, e.g. "Less than 1.80 metres")
+      width:
+        type: "string"
+        description: Width of the vehicle/trailer (size description, includes number.)

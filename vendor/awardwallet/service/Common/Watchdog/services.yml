@@ -1,0 +1,20 @@
+services:
+  _defaults:
+    public: true
+
+  aw.watchdog.server:
+    class: AwardWallet\Common\Watchdog\Server
+    arguments:
+      - "@logger"
+      - '@aw.rabbit_channel'
+      - '@jms_serializer'
+      - "@event_dispatcher"
+      - "@aw.time_communicator"
+
+  aw.watchdog.client:
+    class: AwardWallet\Common\Watchdog\Client
+    arguments:
+    - "@logger"
+    - '@aw.rabbit_channel'
+    - '@jms_serializer'
+    - "@aw.time_communicator"

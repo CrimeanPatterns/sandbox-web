@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        public: true
+
+    AwardWallet\Common\AirLabs\Communicator:
+        public: true
+        autowire: true
+        arguments:
+            - "@aw.curl_driver"
+            - "@logger"
+            - "@jms_serializer"
+            - "@aw.shared_memcached"
+            - "%airlabs_api_key%"

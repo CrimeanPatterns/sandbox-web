@@ -1,0 +1,45 @@
+{
+    "manifest_version": 2,
+    "name": "extension bridge, paired with ExtensionCommunicator",
+    "version": "1.0.0",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8I5wl0fmD9gtxrK5mV3I7mkD8fpRnTIGy6xCsUkxS/iV/zmFWxxgDNa1q8BVHa/vVXNFy4UqiG7sfzsfqFXD43EH4IwaUxMjgUfI20jjbLVs8ZQatmtVNk2cygS9e0WIGF94YrahANjWKYyQpdiv5VroGjfvZaO5MwkIaiOlumK8dsQb1Pg9Lqll4p1XmLHM5pcrKCOFzcX9RXiuG0b8wJIAqFmRnqtnbxi1nVr+xEs2MB53CYctUjGczrdfi2ZcK+1xGCsRBWKEQk998LV8Is9ARcHzmAbTguEyD4sq2kA49VzQ3dOzRetAfC96SmWZfocriY9ilgI5bIkPIKfmZQIDAQAB",
+    "applications": {
+        "gecko": {
+            "id": "bridge@awardwallet.com"
+        }
+    },
+    "externally_connectable": {
+        "matches": ["*://awardwallet-browser-control.s3.amazonaws.com/*"],
+        "ids": ["*"]
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "browsingData",
+        "cookies",
+        "proxy",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle",
+            "all_frames": false
+        }
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "externally_connectable": {
+        "matches": ["http://localhost/*"]
+    }
+}

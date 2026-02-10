@@ -1,0 +1,1 @@
+{"price":{"total":15678.56,"currencyCode":"USD"},"providerCode":"testprovider","type":"Transfer","itineraries":[{"segments":[{"carType":"regular car","carModel":"mercedes","depCode":"LAX","depDate":1516147200,"arrName":"some hotel","noArrDate":true,"miles":"1km","duration":"2h"}],"noConfirmationNumber":true,"type":"transfer"}]}

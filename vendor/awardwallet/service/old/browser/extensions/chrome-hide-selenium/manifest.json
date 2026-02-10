@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "hide selenium",
+    "version": "1.0.0",
+    "applications": {
+        "gecko": {
+            "id": "hide-selenium@awardwallet.com"
+        }
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "injected-javascript.js"
+            ],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    }
+}

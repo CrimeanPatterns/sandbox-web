@@ -1,0 +1,7 @@
+/vendor/
+/.idea
+tests/_output/*
+tests/_support/_generated/
+.env
+docker-compose-local.yml
+/Common/Selenium/Puppeteer/node_modules
