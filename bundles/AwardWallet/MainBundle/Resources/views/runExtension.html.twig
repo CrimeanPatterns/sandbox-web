@@ -1,0 +1,6 @@
+{% extends '@AwardWalletMain/layout.html.twig' %}
+
+{% block content %}
+    <div><span style="font-weight: bold;">Log:</span> <a href="/admin/common/logFile.php?Dir={{ logDir | url_encode }}&File=log.html" target="_blank">{{ logDir }}</a></div>
+    <pre>{{ result | json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+{% endblock %}

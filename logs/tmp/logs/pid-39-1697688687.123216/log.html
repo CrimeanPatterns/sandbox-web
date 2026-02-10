@@ -1,0 +1,520 @@
+<span class='time'>04:11:27 </span><span style='color: #686868;'><span class="awlog-debug">attempt: 0</span></span><br><span class='time'>04:11:27 </span><span style='color: #686868;'><span class="awlog-debug">state size: 0</span></span><br><span class='time'>04:11:27 </span><span style='color: green;'>set http2: true</span><br><span class='time'>04:11:27 </span><span style='color: red;'><span class="awlog-error">failed to load state</span></span><br><span class='time'>04:11:27 </span><h2 class="awlog-info">Account Check Parameters</h2><br><span class='time'>04:11:27 </span><span class="awlog-info">Provider engine: HttpBrowser</span><br><span class='time'>04:11:27 </span><span class="awlog-info">Provider code: spothero</span><br><span class='time'>04:11:27 </span><span class="awlog-info">Account ID: 0</span><br><span class='time'>04:11:27 </span><span class="awlog-info">Class name: TAccountCheckerSpothero</span><br><span class='time'>04:11:27 </span><span class="awlog-info">Server: parserbox-web, Thu, 19 Oct 2023 04:11:27 +0000<style>.time { display: none; }</style> <a href='#' onclick="$('span.time').show(); return false;">show timings</a></span><br><span class='time'>04:11:27 </span>Credentials: Array<br />
+(<br />
+    [Login] =&gt; veresch80@yahoo.com<br />
+    [Login2] =&gt; <br />
+    [Login3] =&gt; <br />
+    [Pass] =&gt; Banana1234!<br />
+    [AccountID] =&gt; 0<br />
+)<br />
+<br><span class='time'>04:11:27 </span>Answers on enter: Array<br />
+(<br />
+)<br />
+<br><span class='time'>04:11:27 </span><span class="awlog-info">Question on enter: </span><br><span class='time'>04:11:27 </span><span class="awlog-info">Step: </span><br><span class='time'>04:11:27 </span><span class="awlog-info">Last request time: none</span><br><span class='time'>04:11:27 </span><hr><br><span class='time'>04:11:27 </span><span style='color: #686868;'><span class="awlog-debug">checking, if already logged in</span></span><br><span class='time'>04:11:27 </span><span style='color: #8A2BE2;'><span class="awlog-notice">TAccountCheckerSpothero::loginSuccessful</span></span><br><span class='time'>04:11:27 </span><span style='color: #8A2BE2;'><span class="awlog-notice">TAccountCheckerSpothero::getData</span></span><br><span class='time'>04:11:28 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://spothero.com/api/v1/users/logged-in/" style="color:black; text-decoration:none;">https://spothero.com/api/v1/users/logged-in/</a></b></span><br><span class='time'>04:11:28 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:28 </span><span style='color: #696969;'><pre>GET /api/v1/users/logged-in/ HTTP/2
+Host: spothero.com
+accept: application/json, text/plain, */*
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+authorization: Bearer 
+origin: https://spothero.com</span><br><span class='time'>04:11:28 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:28 </span><span style='color: #696969;'><b>HTTP/2 401 </b> 1240 msec</span><br><span class='time'>04:11:28 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:28 </span><span style='color: #696969;'><pre>content-type: application/json
+access-control-allow-origin: *
+allow: GET, HEAD, OPTIONS
+date: Thu, 19 Oct 2023 04:11:28 GMT
+vary: Accept, Cookie, Origin
+www-authenticate: Basic realm=&quot;api&quot;
+x-frame-options: DENY
+x-cache: Error from cloudfront
+via: 1.1 bae9b5cf91e37b01cfae8886aa7bf606.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P4
+x-amz-cf-id: sqn9Amn7GwNn_nW8Y75oNwl9Bkw95ahVtKPVk1kvicdJ8CNYI1rcIQ==</span><br><span class='time'>04:11:28 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:28 </span>saved step00.html<!-- url:https://spothero.com/api/v1/users/logged-in/ --><br><span class='time'>04:11:28 </span><span style='color: red;'>error: HTTP Code 401</span><br><span class='time'>04:11:28 </span><hr><br><span class='time'>04:11:28 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>{"meta":{},"data":{"errors":[{"messages":["Invalid bearer header. No credentials provided."],"code":"authentication_failed","extra":{}}]},"notifications":[]}</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>04:11:28 </span><span style='color: #686868;'><span class="awlog-debug">not logged in, loading login form</span></span><br><span class='time'>04:11:28 </span><h2 class="awlog-info">Load Login Form</h2><br><span class='time'>04:11:29 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://accounts.spothero.com/authorize?audience=https%3A%2F%2Fapi.spothero.com%2Fv1%2F&scope=openid%20profile%20email%20read%3Acurrent_user%20update%3Acurrent_user_metadata&client_id=E5LUulB6sqmsH5tAfn7FqaCzPYZEIBy6&redirect_uri=https%3A%2F%2Fspothero.com%2Fauth%2Fpending&response_type=code&response_mode=query&state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ==&nonce=Slc3SDVjSThFWkJhd0RYMVlGVzNZZHhCUVhrVWRVOTIwQlJVT3BCQjZQMQ==&code_challenge=xifOwAMOpJIOtpkrAYtcDSKzuQKrAEotMDrMcNxGjW0&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS42LjAifQ==" style="color:black; text-decoration:none;">https://accounts.spothero.com/authorize?audience=https%3A%2F%2Fapi.spothero.com%2Fv1%2F&scope=openid%20profile%20email%20read%3Acurrent_user%20update%3Acurrent_user_metadata&client_id=E5LUulB6sqmsH5tAfn7FqaCzPYZEIBy6&redirect_uri=https%3A%2F%2Fspothero.com%2Fauth%2Fpending&response_type=code&response_mode=query&state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ==&nonce=Slc3SDVjSThFWkJhd0RYMVlGVzNZZHhCUVhrVWRVOTIwQlJVT3BCQjZQMQ==&code_challenge=xifOwAMOpJIOtpkrAYtcDSKzuQKrAEotMDrMcNxGjW0&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS42LjAifQ==</a></b></span><br><span class='time'>04:11:29 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:29 </span><span style='color: #696969;'><pre>GET /authorize?audience=https%3A%2F%2Fapi.spothero.com%2Fv1%2F&amp;scope=openid%20profile%20email%20read%3Acurrent_user%20update%3Acurrent_user_metadata&amp;client_id=E5LUulB6sqmsH5tAfn7FqaCzPYZEIBy6&amp;redirect_uri=https%3A%2F%2Fspothero.com%2Fauth%2Fpending&amp;response_type=code&amp;response_mode=query&amp;state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ==&amp;nonce=Slc3SDVjSThFWkJhd0RYMVlGVzNZZHhCUVhrVWRVOTIwQlJVT3BCQjZQMQ==&amp;code_challenge=xifOwAMOpJIOtpkrAYtcDSKzuQKrAEotMDrMcNxGjW0&amp;code_challenge_method=S256&amp;auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS42LjAifQ== HTTP/2
+Host: accounts.spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://accounts.spothero.com
+referer: https://spothero.com/api/v1/users/logged-in/</span><br><span class='time'>04:11:29 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:29 </span><span style='color: #696969;'><b>HTTP/2 302 </b> 961 msec</span><br><span class='time'>04:11:29 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:29 </span><span style='color: #696969;'><pre>date: Thu, 19 Oct 2023 04:11:29 GMT
+content-type: text/html; charset=utf-8
+content-length: 446
+location: /u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY
+cf-ray: 81862d6408e020ae-IAD
+cf-cache-status: DYNAMIC
+cache-control: no-store, max-age=0, no-transform
+strict-transport-security: max-age=31536000; includeSubDomains
+vary: Accept
+ot-baggage-auth0-request-id: 81862d6408e020ae
+ot-tracer-sampled: true
+ot-tracer-spanid: 7fcfe560379f932f
+ot-tracer-traceid: 0849905a27335063
+pragma: no-cache
+traceparent: 00-00000000000000000849905a27335063-7fcfe560379f932f-01
+tracestate: auth0-request-id=81862d6408e020ae,auth0=true
+x-auth0-requestid: 50047b9915f3b41bca71
+x-content-type-options: nosniff
+x-ratelimit-limit: 300
+x-ratelimit-remaining: 299
+x-ratelimit-reset: 1697688690
+server: cloudflare
+alt-svc: h3=&quot;:443&quot;; ma=86400</span><br><span class='time'>04:11:29 </span><b>Set-Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ; Max-Age=31557600; Path=/; Expires=Fri, 18 Oct 2024 10:11:29 GMT; HttpOnly; Secure; SameSite=None
+<b>auth0</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY; Path=/; Expires=Sun, 22 Oct 2023 04:11:29 GMT; HttpOnly; Secure; SameSite=None
+<b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ; Max-Age=31557600; Path=/; Expires=Fri, 18 Oct 2024 10:11:29 GMT; HttpOnly; Secure
+<b>auth0_compat</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY; Path=/; Expires=Sun, 22 Oct 2023 04:11:29 GMT; HttpOnly; Secure<br><span class='time'>04:11:29 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:29 </span>saved step01.html<!-- url:https://accounts.spothero.com/authorize?audience=https%3A%2F%2Fapi.spothero.com%2Fv1%2F&scope=openid%20profile%20email%20read%3Acurrent_user%20update%3Acurrent_user_metadata&client_id=E5LUulB6sqmsH5tAfn7FqaCzPYZEIBy6&redirect_uri=https%3A%2F%2Fspothero.com%2Fauth%2Fpending&response_type=code&response_mode=query&state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ==&nonce=Slc3SDVjSThFWkJhd0RYMVlGVzNZZHhCUVhrVWRVOTIwQlJVT3BCQjZQMQ==&code_challenge=xifOwAMOpJIOtpkrAYtcDSKzuQKrAEotMDrMcNxGjW0&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS42LjAifQ== --><br><span class='time'>04:11:29 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY" style="color:black; text-decoration:none;">https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</a></b></span><br><span class='time'>04:11:29 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:29 </span><span style='color: #696969;'><pre>GET /u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY HTTP/2
+Host: accounts.spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://accounts.spothero.com
+referer: https://spothero.com/api/v1/users/logged-in/</span><br><span class='time'>04:11:29 </span><b>Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0_compat</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><span class='time'>04:11:29 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:29 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 428 msec</span><br><span class='time'>04:11:29 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:29 </span><span style='color: #696969;'><pre>date: Thu, 19 Oct 2023 04:11:29 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 81862d664aab20ae-IAD
+cf-cache-status: DYNAMIC
+cache-control: no-store, max-age=0, no-transform
+content-language: en
+etag: W/&quot;6476-eAvXV7a5Sv0AGcR18ZSK1D4Ue2A&quot;
+expires: Thu, 19 Oct 2023 04:11:29 GMT
+strict-transport-security: max-age=31536000; includeSubDomains
+vary: Accept-Encoding
+content-security-policy: frame-ancestors 'none'
+ot-baggage-auth0-request-id: 81862d664aab20ae
+ot-tracer-sampled: true
+ot-tracer-spanid: 60f3abf3605263a6
+ot-tracer-traceid: 4a93b9a42d6a0ca4
+pragma: no-cache
+referrer-policy: same-origin
+traceparent: 00-00000000000000004a93b9a42d6a0ca4-60f3abf3605263a6-01
+tracestate: auth0-request-id=81862d664aab20ae,auth0=true
+x-auth0-requestid: cc83b04e694225bd8a00
+x-content-type-options: nosniff
+x-frame-options: deny
+x-ratelimit-limit: 20
+x-ratelimit-remaining: 19
+x-ratelimit-reset: 1697688696
+x-robots-tag: noindex, nofollow
+x-xss-protection: 1; mode=block
+server: cloudflare
+alt-svc: h3=&quot;:443&quot;; ma=86400</span><br><span class='time'>04:11:29 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:29 </span>saved step02.html<!-- url:https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY --><br><span class='time'>04:11:29 </span><hr><br><span class='time'>04:11:29 </span>setting input username to 'veresch80@yahoo.com'<br><span class='time'>04:11:29 </span>setting input action to 'default'<br><span class='time'>04:11:29 </span><span style='color: #686868;'><span class="awlog-debug">form loaded, logging in</span></span><br><span class='time'>04:11:29 </span><h2 class="awlog-info">Login</h2><br><span class='time'>04:11:30 </span><span style='color: #696969;'><b>POST <a target="_blank" href="https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY" style="color:black; text-decoration:none;">https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</a></b></span><br><span class='time'>04:11:30 </span><b>post fields:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:30 </span><span style='color: #696969;'>state: hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'>username: veresch80@yahoo.com</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'>js-available: false</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'>webauthn-available: false</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'>is-brave: false</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'>webauthn-platform-available: false</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'>action: default</span><br></div>
+<span class='time'>04:11:30 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:30 </span><span style='color: #696969;'><pre>POST /u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY HTTP/2
+Host: accounts.spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://accounts.spothero.com
+referer: https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY
+content-length: 320
+content-type: application/x-www-form-urlencoded</span><br><span class='time'>04:11:30 </span><b>Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0_compat</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><span class='time'>04:11:30 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:30 </span><span style='color: #696969;'><b>HTTP/2 302 </b> 378 msec</span><br><span class='time'>04:11:30 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:30 </span><span style='color: #696969;'><pre>date: Thu, 19 Oct 2023 04:11:30 GMT
+content-type: text/html; charset=utf-8
+content-length: 442
+location: /u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY
+cf-ray: 81862d697d8d20ae-IAD
+cf-cache-status: DYNAMIC
+cache-control: private, no-store, no-cache, must-revalidate, post-check=0, pre-check=0, no-transform
+strict-transport-security: max-age=31536000; includeSubDomains
+vary: Accept
+ot-baggage-auth0-request-id: 81862d697d8d20ae
+ot-tracer-sampled: true
+ot-tracer-spanid: 12c3a5991d48dd1e
+ot-tracer-traceid: 5fc7f3287e350bf6
+traceparent: 00-00000000000000005fc7f3287e350bf6-12c3a5991d48dd1e-01
+tracestate: auth0-request-id=81862d697d8d20ae,auth0=true
+x-auth0-requestid: c696c1cf404c6c1bca81
+x-content-type-options: nosniff
+x-ratelimit-limit: 10
+x-ratelimit-remaining: 9
+x-ratelimit-reset: 1697688703
+server: cloudflare
+alt-svc: h3=&quot;:443&quot;; ma=86400</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:30 </span>saved step03.html<!-- url:https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY --><br><span class='time'>04:11:30 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY" style="color:black; text-decoration:none;">https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</a></b></span><br><span class='time'>04:11:30 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:30 </span><span style='color: #696969;'><pre>GET /u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY HTTP/2
+Host: accounts.spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://accounts.spothero.com
+referer: https://accounts.spothero.com/u/login/identifier?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</span><br><span class='time'>04:11:30 </span><b>Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0_compat</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><span class='time'>04:11:30 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:30 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 542 msec</span><br><span class='time'>04:11:30 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:30 </span><span style='color: #696969;'><pre>date: Thu, 19 Oct 2023 04:11:30 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 81862d6bef9320ae-IAD
+cf-cache-status: DYNAMIC
+cache-control: no-store, max-age=0, no-transform
+content-language: en
+etag: W/&quot;5b5c-9elYX1AfqEWlif377ZsQow2AHO4&quot;
+expires: Thu, 19 Oct 2023 04:11:30 GMT
+strict-transport-security: max-age=31536000; includeSubDomains
+vary: Accept-Encoding
+content-security-policy: frame-ancestors 'none'
+ot-baggage-auth0-request-id: 81862d6bef9320ae
+ot-tracer-sampled: true
+ot-tracer-spanid: 5d1f096f76f0811d
+ot-tracer-traceid: 4338d75059c6794c
+pragma: no-cache
+referrer-policy: same-origin
+traceparent: 00-00000000000000004338d75059c6794c-5d1f096f76f0811d-01
+tracestate: auth0-request-id=81862d6bef9320ae,auth0=true
+x-auth0-requestid: 412c4a0aeb7059f7c557
+x-content-type-options: nosniff
+x-frame-options: deny
+x-ratelimit-limit: 20
+x-ratelimit-remaining: 19
+x-ratelimit-reset: 1697688697
+x-robots-tag: noindex, nofollow
+x-xss-protection: 1; mode=block
+server: cloudflare
+alt-svc: h3=&quot;:443&quot;; ma=86400</span><br><span class='time'>04:11:30 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:30 </span>saved step04.html<!-- url:https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY --><br><span class='time'>04:11:30 </span><hr><br><span class='time'>04:11:30 </span>node not found: //span[@class=&quot;ulp-input-error-message&quot;] | //div[@id=&quot;prompt-alert&quot;]/p<br><span class='time'>04:11:30 </span>setting input password to 'Banana1234!'<br><span class='time'>04:11:30 </span>setting input action to 'default'<br><span class='time'>04:11:31 </span><span style='color: #696969;'><b>POST <a target="_blank" href="https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY" style="color:black; text-decoration:none;">https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</a></b></span><br><span class='time'>04:11:31 </span><b>post fields:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:31 </span><span style='color: #696969;'>state: hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</span><br><span class='time'>04:11:31 </span><span style='color: #696969;'>username: veresch80@yahoo.com</span><br><span class='time'>04:11:31 </span><span style='color: #696969;'>password: Banana1234!</span><br><span class='time'>04:11:31 </span><span style='color: #696969;'>action: default</span><br></div>
+<span class='time'>04:11:31 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:31 </span><span style='color: #696969;'><pre>POST /u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY HTTP/2
+Host: accounts.spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://accounts.spothero.com
+referer: https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY
+content-length: 250
+content-type: application/x-www-form-urlencoded</span><br><span class='time'>04:11:31 </span><b>Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8.9C4ksku7yYorIsWvqorvC%2B%2FAg3q56at5KsYE7Y0KwwQ<br><b>auth0_compat</b>&nbsp;=&nbsp;s%3Av1.gadzZXNzaW9ugqZoYW5kbGXEQL_f8RnCHJ0OcltHtAw02Mxpd3YzHK_vO9foS7dPMUbDun1zizfveI-86QcNQkpvu__05uBxWR609SW_oumljWumY29va2llg6dleHBpcmVz1_9m_zAAZTSg8a5vcmlnaW5hbE1heEFnZc4PcxQAqHNhbWVTaXRlpG5vbmU.TiJZzW7bu7bf%2Bwki9MtNKcdK3K5tOSOBg%2B5P2nayICY<br><span class='time'>04:11:31 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:31 </span><span style='color: #696969;'><b>HTTP/2 302 </b> 492 msec</span><br><span class='time'>04:11:31 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:31 </span><span style='color: #696969;'><pre>date: Thu, 19 Oct 2023 04:11:31 GMT
+content-type: text/html; charset=utf-8
+content-length: 156
+location: /authorize/resume?state=pgkoXgp9G4d1RhxORNoy1BJtGYyj79RL
+cf-ray: 81862d6f9a5220ae-IAD
+cf-cache-status: DYNAMIC
+cache-control: private, no-store, no-cache, must-revalidate, post-check=0, pre-check=0, no-transform
+strict-transport-security: max-age=31536000; includeSubDomains
+vary: Accept
+ot-baggage-auth0-request-id: 81862d6f9a5220ae
+ot-tracer-sampled: true
+ot-tracer-spanid: 334639f2743a7cbb
+ot-tracer-traceid: 0969e3953c8c587b
+traceparent: 00-00000000000000000969e3953c8c587b-334639f2743a7cbb-01
+tracestate: auth0-request-id=81862d6f9a5220ae,auth0=true
+x-auth0-requestid: b2581d3160bc16b9568e
+x-content-type-options: nosniff
+x-ratelimit-limit: 10
+x-ratelimit-remaining: 9
+x-ratelimit-reset: 1697688704
+server: cloudflare
+alt-svc: h3=&quot;:443&quot;; ma=86400</span><br><span class='time'>04:11:31 </span><b>Set-Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8%3A2edfbef43daa1900e3283b8b24ef4d1a4e7bb60bb44dbc1adfd1e3daeecdf851.82eTXY9ughRJtQR1vLmShJyP0DIR8eisrfy1vBuJf3k; Max-Age=31557600; Path=/; Expires=Fri, 18 Oct 2024 10:11:31 GMT; HttpOnly; Secure; SameSite=None
+<b>auth0</b>&nbsp;=&nbsp;s%3AJuTsMEpQT5zu3Nd-hBU_vHYU6MOHZHA0.B9%2Bg%2BZpQLenPTAHL7PZ%2FrB051a%2FxdnuOB3uttcnT4%2BE; Path=/; Expires=Sun, 22 Oct 2023 04:11:31 GMT; HttpOnly; Secure; SameSite=None
+<b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8%3A2edfbef43daa1900e3283b8b24ef4d1a4e7bb60bb44dbc1adfd1e3daeecdf851.82eTXY9ughRJtQR1vLmShJyP0DIR8eisrfy1vBuJf3k; Max-Age=31557600; Path=/; Expires=Fri, 18 Oct 2024 10:11:31 GMT; HttpOnly; Secure
+<b>auth0_compat</b>&nbsp;=&nbsp;s%3AJuTsMEpQT5zu3Nd-hBU_vHYU6MOHZHA0.B9%2Bg%2BZpQLenPTAHL7PZ%2FrB051a%2FxdnuOB3uttcnT4%2BE; Path=/; Expires=Sun, 22 Oct 2023 04:11:31 GMT; HttpOnly; Secure<br><span class='time'>04:11:31 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:31 </span>saved step05.html<!-- url:https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY --><br><span class='time'>04:11:31 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://accounts.spothero.com/authorize/resume?state=pgkoXgp9G4d1RhxORNoy1BJtGYyj79RL" style="color:black; text-decoration:none;">https://accounts.spothero.com/authorize/resume?state=pgkoXgp9G4d1RhxORNoy1BJtGYyj79RL</a></b></span><br><span class='time'>04:11:31 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:31 </span><span style='color: #696969;'><pre>GET /authorize/resume?state=pgkoXgp9G4d1RhxORNoy1BJtGYyj79RL HTTP/2
+Host: accounts.spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://accounts.spothero.com
+referer: https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</span><br><span class='time'>04:11:31 </span><b>Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8%3A2edfbef43daa1900e3283b8b24ef4d1a4e7bb60bb44dbc1adfd1e3daeecdf851.82eTXY9ughRJtQR1vLmShJyP0DIR8eisrfy1vBuJf3k<br><b>auth0</b>&nbsp;=&nbsp;s%3AJuTsMEpQT5zu3Nd-hBU_vHYU6MOHZHA0.B9%2Bg%2BZpQLenPTAHL7PZ%2FrB051a%2FxdnuOB3uttcnT4%2BE<br><b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8%3A2edfbef43daa1900e3283b8b24ef4d1a4e7bb60bb44dbc1adfd1e3daeecdf851.82eTXY9ughRJtQR1vLmShJyP0DIR8eisrfy1vBuJf3k<br><b>auth0_compat</b>&nbsp;=&nbsp;s%3AJuTsMEpQT5zu3Nd-hBU_vHYU6MOHZHA0.B9%2Bg%2BZpQLenPTAHL7PZ%2FrB051a%2FxdnuOB3uttcnT4%2BE<br><span class='time'>04:11:31 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:31 </span><span style='color: #696969;'><b>HTTP/2 302 </b> 465 msec</span><br><span class='time'>04:11:31 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:31 </span><span style='color: #696969;'><pre>date: Thu, 19 Oct 2023 04:11:31 GMT
+content-type: text/html; charset=utf-8
+content-length: 362
+location: https://spothero.com/auth/pending?code=JOrVnw6jYtSJmn8XrvZ2PVul1Vvg74gCmRC-KOzD5BGKI&amp;state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ%3D%3D
+cf-ray: 81862d736d6b20ae-IAD
+cf-cache-status: DYNAMIC
+cache-control: no-store, max-age=0, no-transform
+strict-transport-security: max-age=31536000; includeSubDomains
+vary: Accept
+ot-baggage-auth0-request-id: 81862d736d6b20ae
+ot-tracer-sampled: true
+ot-tracer-spanid: 3306f617643cc2b7
+ot-tracer-traceid: 340e9c420ce6baa1
+pragma: no-cache
+traceparent: 00-0000000000000000340e9c420ce6baa1-3306f617643cc2b7-01
+tracestate: auth0-request-id=81862d736d6b20ae,auth0=true
+x-auth0-requestid: eb1ac117891874830a47
+x-content-type-options: nosniff
+x-ratelimit-limit: 300
+x-ratelimit-remaining: 299
+x-ratelimit-reset: 1697688692
+server: cloudflare
+alt-svc: h3=&quot;:443&quot;; ma=86400</span><br><span class='time'>04:11:31 </span><b>Set-Cookies:</b><br><b>auth0</b>&nbsp;=&nbsp;s%3A5mNVz92_nPeQcI2oj-TM61y6vP3xeXg6.2YPAhrI9B0X6Rnw%2FYTobPA5NOaxqmNkoioGb7f%2B%2BDcY; Path=/; Expires=Sun, 22 Oct 2023 04:11:31 GMT; HttpOnly; Secure; SameSite=None
+<b>auth0_compat</b>&nbsp;=&nbsp;s%3A5mNVz92_nPeQcI2oj-TM61y6vP3xeXg6.2YPAhrI9B0X6Rnw%2FYTobPA5NOaxqmNkoioGb7f%2B%2BDcY; Path=/; Expires=Sun, 22 Oct 2023 04:11:31 GMT; HttpOnly; Secure<br><span class='time'>04:11:31 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:31 </span>saved step06.html<!-- url:https://accounts.spothero.com/authorize/resume?state=pgkoXgp9G4d1RhxORNoy1BJtGYyj79RL --><br><span class='time'>04:11:33 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://spothero.com/auth/pending?code=JOrVnw6jYtSJmn8XrvZ2PVul1Vvg74gCmRC-KOzD5BGKI&state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ%3D%3D" style="color:black; text-decoration:none;">https://spothero.com/auth/pending?code=JOrVnw6jYtSJmn8XrvZ2PVul1Vvg74gCmRC-KOzD5BGKI&state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ%3D%3D</a></b></span><br><span class='time'>04:11:33 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:33 </span><span style='color: #696969;'><pre>GET /auth/pending?code=JOrVnw6jYtSJmn8XrvZ2PVul1Vvg74gCmRC-KOzD5BGKI&amp;state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ%3D%3D HTTP/2
+Host: spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://accounts.spothero.com
+referer: https://accounts.spothero.com/u/login/password?state=hKFo2SBaRjVCdjJQLWFlVk5CY09vZGhRN0lvbDJtdkM0UHJXcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHBna29YZ3A5RzRkMVJoeE9STm95MUJKdEdZeWo3OVJMo2NpZNkgRTVMVXVsQjZzcW1zSDV0QWZuN0ZxYUN6UFlaRUlCeTY</span><br><span class='time'>04:11:33 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:33 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1849 msec</span><br><span class='time'>04:11:33 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:33 </span><span style='color: #696969;'><pre>content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+date: Thu, 19 Oct 2023 04:11:32 GMT
+etag: W/&quot;2362a-boa2rymP87G2//YNRH1KMcz4seA&quot;
+vary: Accept-Encoding
+x-powered-by: Express
+x-cache: Miss from cloudfront
+via: 1.1 bae9b5cf91e37b01cfae8886aa7bf606.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P4
+x-amz-cf-id: 25XMNwMbkRvtxXwySKQPwpiyaf76JSNS3aBKxa2Db95xPOf05Di59Q==</span><br><span class='time'>04:11:33 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:33 </span>saved step07.html<!-- url:https://spothero.com/auth/pending?code=JOrVnw6jYtSJmn8XrvZ2PVul1Vvg74gCmRC-KOzD5BGKI&state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ%3D%3D --><br><span class='time'>04:11:33 </span><hr><br><span class='time'>04:11:34 </span><span style='color: #696969;'><b>POST <a target="_blank" href="https://accounts.spothero.com/oauth/token" style="color:black; text-decoration:none;">https://accounts.spothero.com/oauth/token</a></b></span><br><span class='time'>04:11:34 </span><b>post fields:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:34 </span><span style='color: #696969;'>{&quot;client_id&quot;:&quot;E5LUulB6sqmsH5tAfn7FqaCzPYZEIBy6&quot;,&quot;code&quot;:&quot;JOrVnw6jYtSJmn8XrvZ2PVul1Vvg74gCmRC-KOzD5BGKI&quot;,&quot;code_verifier&quot;:&quot;4FWlSD4d-PGS96eD4ZpAJX8JXjgF1M3JbIxW58Knsvi&quot;,&quot;grant_type&quot;:&quot;authorization_code&quot;,&quot;redirect_uri&quot;:&quot;https:\/\/spothero.com\/auth\/pending&quot;}</span><br></div>
+<span class='time'>04:11:34 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:34 </span><span style='color: #696969;'><pre>POST /oauth/token HTTP/2
+Host: accounts.spothero.com
+accept: */*
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+content-type: application/json
+auth0-client: eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS42LjAifQ==
+origin: https://accounts.spothero.com
+referer: https://spothero.com/auth/pending?code=JOrVnw6jYtSJmn8XrvZ2PVul1Vvg74gCmRC-KOzD5BGKI&amp;state=LlEweldIOHNpOE1kNDZxUU1EbVlLcGtPZ2hQM1h5U3ZfVE5TNEpkZ2pxUQ%3D%3D
+content-length: 254</span><br><span class='time'>04:11:34 </span><b>Cookies:</b><br><b>did</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8%3A2edfbef43daa1900e3283b8b24ef4d1a4e7bb60bb44dbc1adfd1e3daeecdf851.82eTXY9ughRJtQR1vLmShJyP0DIR8eisrfy1vBuJf3k<br><b>auth0</b>&nbsp;=&nbsp;s%3A5mNVz92_nPeQcI2oj-TM61y6vP3xeXg6.2YPAhrI9B0X6Rnw%2FYTobPA5NOaxqmNkoioGb7f%2B%2BDcY<br><b>did_compat</b>&nbsp;=&nbsp;s%3Av0%3A943027d0-6e35-11ee-be61-d185851f80c8%3A2edfbef43daa1900e3283b8b24ef4d1a4e7bb60bb44dbc1adfd1e3daeecdf851.82eTXY9ughRJtQR1vLmShJyP0DIR8eisrfy1vBuJf3k<br><b>auth0_compat</b>&nbsp;=&nbsp;s%3A5mNVz92_nPeQcI2oj-TM61y6vP3xeXg6.2YPAhrI9B0X6Rnw%2FYTobPA5NOaxqmNkoioGb7f%2B%2BDcY<br><span class='time'>04:11:34 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:34 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 380 msec</span><br><span class='time'>04:11:34 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:34 </span><span style='color: #696969;'><pre>date: Thu, 19 Oct 2023 04:11:34 GMT
+content-type: application/json
+cf-ray: 81862d830a7420ae-IAD
+cf-cache-status: DYNAMIC
+access-control-allow-origin: https://accounts.spothero.com
+cache-control: no-store
+strict-transport-security: max-age=31536000; includeSubDomains
+vary: Accept-Encoding, Origin
+access-control-expose-headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset
+ot-baggage-auth0-request-id: 81862d830a7420ae
+ot-tracer-sampled: true
+ot-tracer-spanid: 37e46d83277b4ebf
+ot-tracer-traceid: 474c71e94f9629d8
+pragma: no-cache
+traceparent: 00-0000000000000000474c71e94f9629d8-37e46d83277b4ebf-01
+tracestate: auth0-request-id=81862d830a7420ae,auth0=true
+x-auth0-requestid: 897865839243c4f42deb
+x-content-type-options: nosniff
+x-ratelimit-limit: 300
+x-ratelimit-remaining: 299
+x-ratelimit-reset: 1697688695
+server: cloudflare
+alt-svc: h3=&quot;:443&quot;; ma=86400</span><br><span class='time'>04:11:34 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:34 </span>saved step08.html<!-- url:https://accounts.spothero.com/oauth/token --><br><span class='time'>04:11:34 </span><hr><br><span class='time'>04:11:34 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg","id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2p1c3RfY3JlYXRlZCI6ZmFsc2UsIm5pY2tuYW1lIjoidmVyZXNjaDgwIiwibmFtZSI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJwaWN0dXJlIjoiaHR0cHM6Ly9zLmdyYXZhdGFyLmNvbS9hdmF0YXIvYTEwMWJjZWJmMDZlMGU1Mjc5Y2UyYzRmNDMyOWJiMWI_cz00ODAmcj1wZyZkPWh0dHBzJTNBJTJGJTJGY2RuLmF1dGgwLmNvbSUyRmF2YXRhcnMlMkZ2ZS5wbmciLCJ1cGRhdGVkX2F0IjoiMjAyMy0xMC0xOVQwNDoxMTozMS4zNjJaIiwiZW1haWwiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJpc3MiOiJodHRwczovL2FjY291bnRzLnNwb3RoZXJvLmNvbS8iLCJhdWQiOiJFNUxVdWxCNnNxbXNINXRBZm43RnFhQ3pQWVpFSUJ5NiIsImlhdCI6MTY5NzY4ODY5NCwiZXhwIjoxNjk3NzI0Njk0LCJzdWIiOiJhdXRoMHw0MzFjOTBkYi02MGFiLTQwYzMtOGE5MC03MTZiNWYxODY5ZjUiLCJzaWQiOiJKdVRzTUVwUVQ1enUzTmQtaEJVX3ZIWVU2TU9IWkhBMCIsIm5vbmNlIjoiU2xjM1NEVmpTVGhGV2tKaGQwUllNVmxHVnpOWlpIaENVVmhyVldSVk9USXdRbEpWVDNCQ1FqWlFNUT09In0.YVGp298VQ121EaWVirz_n4YAYXKxAXA4zmWmMEPDhrQVdo3_w1yhdzky4AjGhL54BCuyyZL9gCCrXipjJ22FKEHvJfQaAA_r5Tf0sdUC53NUH5eY6PuWYVGoI9sQeF2GN6Os8QYBz4uZq650PHwP1s1UvRZPxCFWmIQaahggndGMR1SgbOAxLQLw53zGSTguULUqwCAc_umT6qV_DlIBTY3dM_hJiADGU6VknwyvQGEo0Hfgv6Ku68zKl_DkgFaZRrAgQBgJivBZEiUcW6d7i3AvTdc6uB2G6FABIu05V7aXVCUWsoRNzSQJF_DEov5M1FHjt7xK_Zo-AegQ8Y0oXA","scope":"openid profile email","expires_in":86400,"token_type":"Bearer"}</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>04:11:34 </span><span style='color: green;'>Set-Cookie: AUTH_TOKEN =&gt; eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg; domain=.spothero.com; expires=Sat, 19 Oct 2024 04:11:34 GMT; path=/</span><br><span class='time'>04:11:34 </span><span style='color: #8A2BE2;'><span class="awlog-notice">TAccountCheckerSpothero::loginSuccessful</span></span><br><span class='time'>04:11:34 </span><span style='color: #8A2BE2;'><span class="awlog-notice">TAccountCheckerSpothero::getData</span></span><br><span class='time'>04:11:34 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://spothero.com/api/v1/users/logged-in/" style="color:black; text-decoration:none;">https://spothero.com/api/v1/users/logged-in/</a></b></span><br><span class='time'>04:11:34 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:34 </span><span style='color: #696969;'><pre>GET /api/v1/users/logged-in/ HTTP/2
+Host: spothero.com
+accept: application/json, text/plain, */*
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg
+origin: https://spothero.com
+referer: https://accounts.spothero.com/oauth/token</span><br><span class='time'>04:11:34 </span><b>Cookies:</b><br><b>AUTH_TOKEN</b>&nbsp;=&nbsp;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg<br><span class='time'>04:11:34 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:34 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 461 msec</span><br><span class='time'>04:11:34 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:34 </span><span style='color: #696969;'><pre>content-type: application/json
+access-control-allow-origin: *
+allow: GET, HEAD, OPTIONS
+date: Thu, 19 Oct 2023 04:11:34 GMT
+vary: Accept, User-Agent, Cookie, Origin
+x-frame-options: DENY
+x-cache: Miss from cloudfront
+via: 1.1 bae9b5cf91e37b01cfae8886aa7bf606.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P4
+x-amz-cf-id: lz0hNoxCNT5_WS04H4RgDes8egju_f8xMIj2ttK8FiGzy4u9kDgk5A==</span><br><span class='time'>04:11:34 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:34 </span>saved step09.html<!-- url:https://spothero.com/api/v1/users/logged-in/ --><br><span class='time'>04:11:34 </span><hr><br><span class='time'>04:11:34 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>{"meta":{},"data":{"logged_in":true},"notifications":[]}</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>04:11:34 </span><span style='color: red;'><span class="awlog-error">logged in, parsing</span></span><br><span class='time'>04:11:34 </span><h2 class="awlog-info">Parse</h2><br><span class='time'>04:11:35 </span><span style='color: #696969;'><b>POST <a target="_blank" href="https://spothero.com/auth/set-cookie/" style="color:black; text-decoration:none;">https://spothero.com/auth/set-cookie/</a></b></span><br><span class='time'>04:11:35 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:35 </span><span style='color: #696969;'><pre>POST /auth/set-cookie/ HTTP/2
+Host: spothero.com
+accept: application/json, text/plain, */*
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg
+origin: https://spothero.com
+referer: https://spothero.com/api/v1/users/logged-in/
+content-length: 0
+content-type: application/x-www-form-urlencoded</span><br><span class='time'>04:11:35 </span><b>Cookies:</b><br><b>AUTH_TOKEN</b>&nbsp;=&nbsp;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg<br><span class='time'>04:11:35 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:35 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 434 msec</span><br><span class='time'>04:11:35 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:35 </span><span style='color: #696969;'><pre>content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+date: Thu, 19 Oct 2023 04:11:35 GMT
+vary: User-Agent, Cookie, Origin
+x-frame-options: DENY
+x-cache: Miss from cloudfront
+via: 1.1 bae9b5cf91e37b01cfae8886aa7bf606.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P4
+x-amz-cf-id: gsKUbFmT7PAxUowYeRfragMhoWbpKDdqNP2pHrdr8baIMRL9MeSXwA==</span><br><span class='time'>04:11:35 </span><b>Set-Cookies:</b><br><b>AUTH_TOKEN</b>&nbsp;=&nbsp;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg:1qtKNj:oP1KP7Exl6rcC0_Ru5IUhgHonK-qPfRMLllzlEHUdcU; Domain=.spothero.com; expires=Fri, 20 Oct 2023 04:11:34 GMT; Max-Age=86399; Path=/
+<b>csrftoken</b>&nbsp;=&nbsp;QdzcNqOWPdZN01whI0ct3FbjdL1wEYCd; expires=Thu, 17 Oct 2024 04:11:35 GMT; Max-Age=31449600; Path=/; SameSite=Lax<br><span class='time'>04:11:35 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:35 </span>saved step10.html<!-- url:https://spothero.com/auth/set-cookie/ --><br><span class='time'>04:11:35 </span><span style='color: red;'>error: empty body</span><br><span class='time'>04:11:35 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://spothero.com/api/v1/users/me/" style="color:black; text-decoration:none;">https://spothero.com/api/v1/users/me/</a></b></span><br><span class='time'>04:11:35 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:35 </span><span style='color: #696969;'><pre>GET /api/v1/users/me/ HTTP/2
+Host: spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://spothero.com
+referer: https://spothero.com/auth/set-cookie/</span><br><span class='time'>04:11:35 </span><b>Cookies:</b><br><b>AUTH_TOKEN</b>&nbsp;=&nbsp;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg:1qtKNj:oP1KP7Exl6rcC0_Ru5IUhgHonK-qPfRMLllzlEHUdcU<br><b>csrftoken</b>&nbsp;=&nbsp;QdzcNqOWPdZN01whI0ct3FbjdL1wEYCd<br><span class='time'>04:11:35 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:35 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 630 msec</span><br><span class='time'>04:11:35 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:35 </span><span style='color: #696969;'><pre>content-type: application/json
+access-control-allow-origin: *
+allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+date: Thu, 19 Oct 2023 04:11:35 GMT
+vary: Accept, User-Agent, Cookie, Accept-Encoding, Origin
+x-frame-options: DENY
+x-cache: Miss from cloudfront
+via: 1.1 bae9b5cf91e37b01cfae8886aa7bf606.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P4
+x-amz-cf-id: x8pFZXMBjnB1OmxU2GX0crCwzFvgpAeqOwAYBFq514zeZQMSMaaoCA==</span><br><span class='time'>04:11:35 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:35 </span>saved step11.html<!-- url:https://spothero.com/api/v1/users/me/ --><br><span class='time'>04:11:35 </span><hr><br><span class='time'>04:11:35 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>{"meta":{},"data":{"id":852913,"external_id":"431c90db-60ab-40c3-8a90-716b5f1869f5","auth0_user_id":"auth0|431c90db-60ab-40c3-8a90-716b5f1869f5","accessible_apps":[],"email":"veresch80@yahoo.com","first_name":"","last_name":"","display_name":"","spothero_credit":0,"credit_wallets":[{"currency_type":"usd","currency_symbol":"$","display_amount":"0.00","amount":0},{"currency_type":"cad","currency_symbol":"$","display_amount":"0.00","amount":0}],"purchased_credits":[{"currency_type":"usd","currency_symbol":"$","display_amount":"0.00","amount":0},{"currency_type":"cad","currency_symbol":"$","display_amount":"0.00","amount":0}],"user_purchased_credits":false,"referral_token":"3xsha9","just_created":false,"phone_number":null},"notifications":[]}</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>04:11:35 </span><span class="awlog-info">balance set: 0</span><br><span class='time'>04:11:35 </span><h2 class="awlog-info">Parse Itineraries</h2><br><span class='time'>04:11:36 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://spothero.com/account-reservations" style="color:black; text-decoration:none;">https://spothero.com/account-reservations</a></b></span><br><span class='time'>04:11:36 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:36 </span><span style='color: #696969;'><pre>GET /account-reservations HTTP/2
+Host: spothero.com
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 (AwardWallet Service. Contact us at awardwallet.com/contact)
+origin: https://spothero.com
+referer: https://spothero.com/api/v1/users/me/</span><br><span class='time'>04:11:36 </span><b>Cookies:</b><br><b>AUTH_TOKEN</b>&nbsp;=&nbsp;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlKZ0VTWnR6NkxlcU5YelVqZDhrbCJ9.eyJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2VtYWlsIjoidmVyZXNjaDgwQHlhaG9vLmNvbSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvdXNlcl9pZCI6IjQzMWM5MGRiLTYwYWItNDBjMy04YTkwLTcxNmI1ZjE4NjlmNSIsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL2NyZWF0ZWRfYXQiOiIyMDIzLTA5LTIyVDEwOjA5OjU2LjUwNVoiLCJodHRwczovL2FwaS5zcG90aGVyby5jb20vY2xhaW1zL21vbm9saXRoX29yaWdpbmF0ZWQiOnRydWUsImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS9jbGFpbXMvY2xpZW50TmFtZSI6IlNwb3RIZXJvIiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5zcG90aGVyby5jb20vIiwic3ViIjoiYXV0aDB8NDMxYzkwZGItNjBhYi00MGMzLThhOTAtNzE2YjVmMTg2OWY1IiwiYXVkIjpbImh0dHBzOi8vYXBpLnNwb3RoZXJvLmNvbS92MS8iLCJodHRwczovL3Nwb3RoZXJvLXByZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjk3Njg4Njk0LCJleHAiOjE2OTc3NzUwOTQsImF6cCI6IkU1TFV1bEI2c3Ftc0g1dEFmbjdGcWFDelBZWkVJQnk2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.nJAsrHFrJte2JfE0fg2n37FC_Vcy_O9PtHGnW1Jo6zP4Vy1HiWBg0j1kDbZyjtBO7FeF162FChX7RRDz1lrkaJLiJ4DRIFctTkvzFUXmqY1FbikJxJHH20jZ0cEaxwI3pV_VS-b2e87p9tZRs1flXZzuh0pYg1vs44ZdYpRoM1o2plsmsEsZvRoUZsR5qHL4z6s-a8uf1Zm8Hl43qx4lkOEnlvU4pmTOX7o4vGJeaYsFFGV28-BKSQH6uNi89V4dYocz9gh4ZZ5RRXeOOojYeuOYTe77rqW3luLuaWykO8t6bk-wi6WbytkKVcOu4VlZubplabPeeKUMSqBrZsFEbg:1qtKNj:oP1KP7Exl6rcC0_Ru5IUhgHonK-qPfRMLllzlEHUdcU<br><b>csrftoken</b>&nbsp;=&nbsp;QdzcNqOWPdZN01whI0ct3FbjdL1wEYCd<br><span class='time'>04:11:36 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:36 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 636 msec</span><br><span class='time'>04:11:36 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>04:11:36 </span><span style='color: #696969;'><pre>content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+date: Thu, 19 Oct 2023 04:11:36 GMT
+vary: User-Agent, Cookie, Origin
+x-frame-options: DENY
+x-cache: Miss from cloudfront
+via: 1.1 bae9b5cf91e37b01cfae8886aa7bf606.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P4
+x-amz-cf-id: Tnw-fzy_45KeJx-YTdX8JK85a57XxMqy8nLmkj44CxaQQVKc0NgHmA==</span><br><span class='time'>04:11:36 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>04:11:36 </span>saved step12.html<!-- url:https://spothero.com/account-reservations --><br><span class='time'>04:11:36 </span><hr><br><span class='time'>04:11:36 </span><span class="awlog-warning">Notification should be sent: Exception - Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: Service "AwardWallet\Common\Parsing\JsExecutor" not found: the container inside "TAccountCheckerSpothero" is a smaller service locator that only knows about the "AwardWallet\Common\Parsing\ProxyChecker", "AwardWallet\Common\Selenium\FingerprintFactory" and "AwardWallet\Common\Selenium\SeleniumDriverFactory" services. <pre><b>/www/awardwallet/vendor/symfony/dependency-injection/ServiceLocator.php:51</b><br/></br>#0 /www/awardwallet/src/engine/spothero/functions.php(165): Symfony\Component\DependencyInjection\ServiceLocator->get('AwardWallet\\Com...')
+#1 /www/awardwallet/vendor/awardwallet/service/old/TAccountChecker.php(1040): TAccountCheckerSpothero->ParseItineraries()
+#2 /www/awardwallet/vendor/awardwallet/service/old/TAccountChecker.php(880): TAccountChecker->afterLogin()
+#3 /www/awardwallet/src/admin/debugParser.php(176): TAccountChecker->Check(false)
+#4 /www/awardwallet/src/app_dev.php(17): require('/www/awardwalle...')
+#5 {main}</pre></span><br><span class='time'>04:11:36 </span><span style='color: #686868;'><span class="awlog-debug">trace: <pre><b>/www/awardwallet/vendor/symfony/dependency-injection/ServiceLocator.php:51</b><br/></br>#0 /www/awardwallet/src/engine/spothero/functions.php(165): Symfony\Component\DependencyInjection\ServiceLocator->get('AwardWallet\\Com...')
+#1 /www/awardwallet/vendor/awardwallet/service/old/TAccountChecker.php(1040): TAccountCheckerSpothero->ParseItineraries()
+#2 /www/awardwallet/vendor/awardwallet/service/old/TAccountChecker.php(880): TAccountChecker->afterLogin()
+#3 /www/awardwallet/src/admin/debugParser.php(176): TAccountChecker->Check(false)
+#4 /www/awardwallet/src/app_dev.php(17): require('/www/awardwalle...')
+#5 {main}</pre></span></span><br><span class='time'>04:11:36 </span><h2 class="awlog-info">Account Check Result</h2><br><span class='time'>04:11:36 </span><span style='color: red;'><span class="awlog-error">error: Unknown error [Engine error]</span></span><br><span class='time'>04:11:36 </span><span style='color: #686868;'><span class="awlog-debug">debug info: exception caught - Service &quot;AwardWallet\Common\Parsing\J...</span></span><br><span class='time'>04:11:36 </span><span class="awlog-info">balance: 0</span><br><span class='time'>04:11:36 </span><span class="awlog-info">properties:</span><br><span class='time'>04:11:36 </span><span class="awlog-info"><pre>array (
+)</pre></span><br><span class='time'>04:11:36 </span><span class="awlog-info">files:</span><br><span class='time'>04:11:36 </span><span class="awlog-info"><pre>array (
+)</pre></span><br><span class='time'>04:11:36 </span><span class="awlog-info">step: </span><br><span class='time'>04:11:36 </span><span class="awlog-info">question: </span><br><span class='time'>04:11:36 </span><span class="awlog-info">invalid answers:</span><br><span class='time'>04:11:36 </span><span class="awlog-info"><pre>Array
+(
+)
+</pre></span><br><span class='time'>04:11:36 </span><span class="awlog-info">itineraries:</span><br><span class='time'>04:11:36 </span><span class="awlog-info"><pre>array (
+)</pre></span><br><span class='time'>04:11:36 </span>Check itineraries required fields:<br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+</div>
+<span class='time'>04:11:37 </span><span>show tables like "FlightStatsCache"</span><br><span class='time'>04:11:37 </span><span>select ProviderID, Code, IATACode, Kind, ShortName from Provider where Code = ? ["spothero"] []
+</span><br>

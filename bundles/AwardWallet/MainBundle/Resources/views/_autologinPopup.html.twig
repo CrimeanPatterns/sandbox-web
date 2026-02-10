@@ -1,0 +1,28 @@
+<div style="display: none;">
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable ui-dialog-buttons" style="width:600px; visibility: hidden; display: none;" id="checkPopup">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span class="ui-dialog-title">
+            {{ 'Auto-login to <span class="red">%name%</span> website'|raw }}
+        </span>
+    </div>
+    <div class="ui-dialog-content">
+        <div class="popup-advertising" id="checkAdContent">
+            <!-- advertising here-->
+            <!-- end -->
+        </div>
+        <p class="small">*{{ 'All advertising links open in a new window, auto-login will not stop. <br>You are being directed to a third party website. AwardWallet  has no affiliation or relationship with this website.'|raw }}</p>
+    </div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+            <div class="loading-popup">
+                <div class="loader"></div>
+                <p>{{ 'We are attempting to automatically log you in' }}</p>
+            </div>
+            <button type="button" class="btn-blue ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" id="checkStopButton"><span class="ui-button-text">{{ 'Stop' }}</span></button>
+        </div>
+    </div>
+    <div id="checkNote" style="display: none"></div>
+    <div id="checkText" style="display: none"></div>
+    <div id="checkPopupHeader" style="display: none"></div>
+</div>
+</div>

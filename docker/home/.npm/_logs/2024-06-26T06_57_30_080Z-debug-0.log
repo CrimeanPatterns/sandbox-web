@@ -1,0 +1,586 @@
+0 verbose cli /usr/local/lib/nodejs/node-v16.17.0-linux-x64/bin/node /usr/local/lib/nodejs/node-v16.17.0-linux-x64/bin/npm
+1 info using npm@8.15.0
+2 info using node@v16.17.0
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 3ms
+5 timing config:load:file:/usr/local/lib/nodejs/node-v16.17.0-linux-x64/lib/node_modules/npm/npmrc Completed in 4ms
+6 timing config:load:builtin Completed in 4ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:/www/awardwallet/.npmrc Completed in 2ms
+10 timing config:load:project Completed in 41ms
+11 timing config:load:file:/home/user/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:/usr/local/lib/nodejs/node-v16.17.0-linux-x64/etc/npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:validate Completed in 0ms
+16 timing config:load:credentials Completed in 5ms
+17 timing config:load:setEnvs Completed in 4ms
+18 timing config:load Completed in 69ms
+19 timing npm:load:configload Completed in 69ms
+20 timing npm:load:mkdirpcache Completed in 3ms
+21 timing npm:load:mkdirplogs Completed in 1ms
+22 verbose title npm i
+23 verbose argv "i"
+24 timing npm:load:setTitle Completed in 6ms
+25 timing config:load:flatten Completed in 8ms
+26 timing npm:load:display Completed in 13ms
+27 verbose logfile logs-max:10 dir:/home/user/.npm/_logs
+28 verbose logfile /home/user/.npm/_logs/2024-06-26T06_57_30_080Z-debug-0.log
+29 timing npm:load:logFile Completed in 17ms
+30 timing npm:load:timers Completed in 0ms
+31 timing npm:load:configScope Completed in 0ms
+32 timing npm:load Completed in 115ms
+33 timing arborist:ctor Completed in 3ms
+34 silly logfile done cleaning log files
+35 timing idealTree:init Completed in 520ms
+36 timing idealTree:userRequests Completed in 1ms
+37 silly idealTree buildDeps
+38 timing idealTree:#root Completed in 1ms
+39 timing idealTree:buildDeps Completed in 2ms
+40 timing idealTree:fixDepFlags Completed in 1ms
+41 timing idealTree Completed in 541ms
+42 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+43 timing reify:loadTrees Completed in 764ms
+44 timing reify:diffTrees Completed in 18ms
+45 silly reify mark retired [ '/www/awardwallet/node_modules/ansi-styles' ]
+46 silly reify mark retired [ '/www/awardwallet/node_modules/ansi-colors' ]
+47 silly reify mark retired [ '/www/awardwallet/node_modules/ansi-regex' ]
+48 silly reify mark retired [ '/www/awardwallet/node_modules/chalk' ]
+49 silly reify mark retired [ '/www/awardwallet/node_modules/color-name' ]
+50 silly reify mark retired [ '/www/awardwallet/node_modules/colorette' ]
+51 silly reify mark retired [ '/www/awardwallet/node_modules/commander' ]
+52 silly reify mark retired [ '/www/awardwallet/node_modules/color-convert' ]
+53 silly reify mark retired [ '/www/awardwallet/node_modules/cosmiconfig' ]
+54 silly reify mark retired [ '/www/awardwallet/node_modules/debug' ]
+55 silly reify mark retired [ '/www/awardwallet/node_modules/dedent' ]
+56 silly reify mark retired [ '/www/awardwallet/node_modules/execa' ]
+57 silly reify mark retired [ '/www/awardwallet/node_modules/enquirer' ]
+58 silly reify mark retired [ '/www/awardwallet/node_modules/is-stream' ]
+59 silly reify mark retired [ '/www/awardwallet/node_modules/is-unicode-supported' ]
+60 silly reify mark retired [ '/www/awardwallet/node_modules/log-symbols' ]
+61 silly reify mark retired [ '/www/awardwallet/node_modules/lines-and-columns' ]
+62 silly reify mark retired [ '/www/awardwallet/node_modules/listr2' ]
+63 silly reify mark retired [ '/www/awardwallet/node_modules/micromatch' ]
+64 silly reify mark retired [
+64 silly reify   '/www/awardwallet/node_modules/lint-staged',
+64 silly reify   '/www/awardwallet/node_modules/.bin/lint-staged'
+64 silly reify ]
+65 silly reify mark retired [ '/www/awardwallet/node_modules/picomatch' ]
+66 silly reify mark retired [ '/www/awardwallet/node_modules/signal-exit' ]
+67 silly reify mark retired [ '/www/awardwallet/node_modules/rxjs' ]
+68 silly reify mark retired [ '/www/awardwallet/node_modules/strip-ansi' ]
+69 silly reify mark retired [ '/www/awardwallet/node_modules/string-width' ]
+70 silly reify mark retired [ '/www/awardwallet/node_modules/tslib' ]
+71 silly reify mark retired [ '/www/awardwallet/node_modules/supports-color' ]
+72 silly reify mark retired [ '/www/awardwallet/node_modules/@types/parse-json' ]
+73 silly reify mark retired [ '/www/awardwallet/node_modules/@babel/code-frame' ]
+74 silly reify mark retired [ '/www/awardwallet/node_modules/@babel/helper-validator-identifier' ]
+75 silly reify mark retired [ '/www/awardwallet/node_modules/@babel/highlight' ]
+76 silly reify moves {
+76 silly reify   '/www/awardwallet/node_modules/ansi-styles': '/www/awardwallet/node_modules/.ansi-styles-Qr8LGDVz',
+76 silly reify   '/www/awardwallet/node_modules/ansi-colors': '/www/awardwallet/node_modules/.ansi-colors-z0NUBQfi',
+76 silly reify   '/www/awardwallet/node_modules/ansi-regex': '/www/awardwallet/node_modules/.ansi-regex-3xHrSnLG',
+76 silly reify   '/www/awardwallet/node_modules/chalk': '/www/awardwallet/node_modules/.chalk-t8hQ5lOd',
+76 silly reify   '/www/awardwallet/node_modules/color-name': '/www/awardwallet/node_modules/.color-name-iOUdcmTs',
+76 silly reify   '/www/awardwallet/node_modules/colorette': '/www/awardwallet/node_modules/.colorette-Q0E8SGqn',
+76 silly reify   '/www/awardwallet/node_modules/commander': '/www/awardwallet/node_modules/.commander-HKeW4Vfm',
+76 silly reify   '/www/awardwallet/node_modules/color-convert': '/www/awardwallet/node_modules/.color-convert-QCu4IOUz',
+76 silly reify   '/www/awardwallet/node_modules/cosmiconfig': '/www/awardwallet/node_modules/.cosmiconfig-CdiyUvLN',
+76 silly reify   '/www/awardwallet/node_modules/debug': '/www/awardwallet/node_modules/.debug-FTdyBXBw',
+76 silly reify   '/www/awardwallet/node_modules/dedent': '/www/awardwallet/node_modules/.dedent-pkwnbmvl',
+76 silly reify   '/www/awardwallet/node_modules/execa': '/www/awardwallet/node_modules/.execa-JRU6BSre',
+76 silly reify   '/www/awardwallet/node_modules/enquirer': '/www/awardwallet/node_modules/.enquirer-dMZohlX0',
+76 silly reify   '/www/awardwallet/node_modules/is-stream': '/www/awardwallet/node_modules/.is-stream-nlbhwzI7',
+76 silly reify   '/www/awardwallet/node_modules/is-unicode-supported': '/www/awardwallet/node_modules/.is-unicode-supported-jx1eDa5n',
+76 silly reify   '/www/awardwallet/node_modules/log-symbols': '/www/awardwallet/node_modules/.log-symbols-G6AsbxHw',
+76 silly reify   '/www/awardwallet/node_modules/lines-and-columns': '/www/awardwallet/node_modules/.lines-and-columns-kAho9F6C',
+76 silly reify   '/www/awardwallet/node_modules/listr2': '/www/awardwallet/node_modules/.listr2-DCw1ujXK',
+76 silly reify   '/www/awardwallet/node_modules/micromatch': '/www/awardwallet/node_modules/.micromatch-8f5fYAjZ',
+76 silly reify   '/www/awardwallet/node_modules/lint-staged': '/www/awardwallet/node_modules/.lint-staged-Df54fsTk',
+76 silly reify   '/www/awardwallet/node_modules/.bin/lint-staged': '/www/awardwallet/node_modules/.bin/.lint-staged-VfK6QSOD',
+76 silly reify   '/www/awardwallet/node_modules/picomatch': '/www/awardwallet/node_modules/.picomatch-Qbs3uGNU',
+76 silly reify   '/www/awardwallet/node_modules/signal-exit': '/www/awardwallet/node_modules/.signal-exit-wLwH5uh2',
+76 silly reify   '/www/awardwallet/node_modules/rxjs': '/www/awardwallet/node_modules/.rxjs-HU0XxEzo',
+76 silly reify   '/www/awardwallet/node_modules/strip-ansi': '/www/awardwallet/node_modules/.strip-ansi-1In8PVKG',
+76 silly reify   '/www/awardwallet/node_modules/string-width': '/www/awardwallet/node_modules/.string-width-Pqwk4eOm',
+76 silly reify   '/www/awardwallet/node_modules/tslib': '/www/awardwallet/node_modules/.tslib-HOa2QQrz',
+76 silly reify   '/www/awardwallet/node_modules/supports-color': '/www/awardwallet/node_modules/.supports-color-OHRBiOF5',
+76 silly reify   '/www/awardwallet/node_modules/@types/parse-json': '/www/awardwallet/node_modules/@types/.parse-json-FYwcxLFR',
+76 silly reify   '/www/awardwallet/node_modules/@babel/code-frame': '/www/awardwallet/node_modules/@babel/.code-frame-ruI96Erh',
+76 silly reify   '/www/awardwallet/node_modules/@babel/helper-validator-identifier': '/www/awardwallet/node_modules/@babel/.helper-validator-identifier-Oky8qneX',
+76 silly reify   '/www/awardwallet/node_modules/@babel/highlight': '/www/awardwallet/node_modules/@babel/.highlight-UkcaCQHw'
+76 silly reify }
+77 timing reify:retireShallow Completed in 72ms
+78 timing reify:createSparse Completed in 78ms
+79 timing reify:loadBundles Completed in 0ms
+80 silly audit bulk request {
+80 silly audit   '@awardwallet/extension-client': [ '1.0.25' ],
+80 silly audit   '@awardwallet/extension-v3': [ '1.1.8' ],
+80 silly audit   '@babel/code-frame': [ '7.23.5' ],
+80 silly audit   '@babel/helper-validator-identifier': [ '7.22.20' ],
+80 silly audit   '@babel/highlight': [ '7.23.4' ],
+80 silly audit   '@discoveryjs/json-ext': [ '0.5.7' ],
+80 silly audit   '@jridgewell/gen-mapping': [ '0.3.3' ],
+80 silly audit   '@jridgewell/resolve-uri': [ '3.1.1' ],
+80 silly audit   '@jridgewell/set-array': [ '1.1.2' ],
+80 silly audit   '@jridgewell/source-map': [ '0.3.5' ],
+80 silly audit   '@jridgewell/sourcemap-codec': [ '1.4.15' ],
+80 silly audit   '@jridgewell/trace-mapping': [ '0.3.22' ],
+80 silly audit   '@protobufjs/aspromise': [ '1.1.2' ],
+80 silly audit   '@protobufjs/base64': [ '1.1.2' ],
+80 silly audit   '@protobufjs/codegen': [ '2.0.4' ],
+80 silly audit   '@protobufjs/eventemitter': [ '1.1.0' ],
+80 silly audit   '@protobufjs/fetch': [ '1.1.0' ],
+80 silly audit   '@protobufjs/float': [ '1.0.2' ],
+80 silly audit   '@protobufjs/inquire': [ '1.1.0' ],
+80 silly audit   '@protobufjs/path': [ '1.1.2' ],
+80 silly audit   '@protobufjs/pool': [ '1.1.0' ],
+80 silly audit   '@protobufjs/utf8': [ '1.1.0' ],
+80 silly audit   '@types/eslint': [ '8.56.2' ],
+80 silly audit   '@types/eslint-scope': [ '3.7.7' ],
+80 silly audit   '@types/estree': [ '1.0.5' ],
+80 silly audit   '@types/json-schema': [ '7.0.15' ],
+80 silly audit   '@types/node': [ '20.11.16' ],
+80 silly audit   '@types/parse-json': [ '4.0.2' ],
+80 silly audit   '@webassemblyjs/ast': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/floating-point-hex-parser': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/helper-api-error': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/helper-buffer': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/helper-numbers': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/helper-wasm-bytecode': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/helper-wasm-section': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/ieee754': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/leb128': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/utf8': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/wasm-edit': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/wasm-gen': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/wasm-opt': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/wasm-parser': [ '1.11.6' ],
+80 silly audit   '@webassemblyjs/wast-printer': [ '1.11.6' ],
+80 silly audit   '@webpack-cli/configtest': [ '2.1.1' ],
+80 silly audit   '@webpack-cli/info': [ '2.0.2' ],
+80 silly audit   '@webpack-cli/serve': [ '2.0.5' ],
+80 silly audit   '@xtuc/ieee754': [ '1.2.0' ],
+80 silly audit   '@xtuc/long': [ '4.2.2' ],
+80 silly audit   acorn: [ '8.11.3' ],
+80 silly audit   'acorn-import-assertions': [ '1.9.0' ],
+80 silly audit   'aggregate-error': [ '3.1.0' ],
+80 silly audit   ajv: [ '6.12.6' ],
+80 silly audit   'ajv-keywords': [ '3.5.2' ],
+80 silly audit   'ansi-colors': [ '4.1.3' ],
+80 silly audit   'ansi-escapes': [ '4.3.2' ],
+80 silly audit   'ansi-regex': [ '5.0.1' ],
+80 silly audit   'ansi-styles': [ '3.2.1', '4.3.0' ],
+80 silly audit   'astral-regex': [ '2.0.0' ],
+80 silly audit   'base64-arraybuffer': [ '1.0.2' ],
+80 silly audit   bower: [ '1.8.14' ],
+80 silly audit   braces: [ '3.0.2' ],
+80 silly audit   browserslist: [ '4.22.3' ],
+80 silly audit   'buffer-from': [ '1.1.2' ],
+80 silly audit   callsites: [ '3.1.0' ],
+80 silly audit   'caniuse-lite': [ '1.0.30001585' ],
+80 silly audit   centrifuge: [ '5.0.1' ],
+80 silly audit   chalk: [ '2.4.2', '4.1.2' ],
+80 silly audit   'has-flag': [ '3.0.0', '4.0.0' ],
+80 silly audit   'supports-color': [ '5.5.0', '8.1.1', '7.2.0' ],
+80 silly audit   'chrome-trace-event': [ '1.0.3' ],
+80 silly audit   'clean-stack': [ '2.2.0' ],
+80 silly audit   'cli-cursor': [ '3.1.0' ],
+80 silly audit   'cli-truncate': [ '2.1.0' ],
+80 silly audit   'clone-deep': [ '4.0.1' ],
+80 silly audit   'color-convert': [ '1.9.3', '2.0.1' ],
+80 silly audit   'color-name': [ '1.1.3', '1.1.4' ],
+80 silly audit   colorette: [ '1.4.0', '2.0.20' ],
+80 silly audit   commander: [ '8.3.0', '2.20.3', '10.0.1' ],
+80 silly audit   cosmiconfig: [ '7.1.0' ],
+80 silly audit   'cross-spawn': [ '7.0.3' ],
+80 silly audit   'css-line-break': [ '2.1.0' ],
+80 silly audit   debug: [ '4.3.4' ],
+80 silly audit   'electron-to-chromium': [ '1.4.661' ],
+80 silly audit   'emoji-regex': [ '8.0.0' ],
+80 silly audit   'enhanced-resolve': [ '5.15.0' ],
+80 silly audit   enquirer: [ '2.4.1' ],
+80 silly audit   envinfo: [ '7.11.1' ],
+80 silly audit   'error-ex': [ '1.3.2' ],
+80 silly audit   'es-module-lexer': [ '1.4.1' ],
+80 silly audit   escalade: [ '3.1.2' ],
+80 silly audit   'escape-string-regexp': [ '1.0.5' ],
+80 silly audit   'eslint-scope': [ '5.1.1' ],
+80 silly audit   esrecurse: [ '4.3.0' ],
+80 silly audit   estraverse: [ '5.3.0', '4.3.0' ],
+80 silly audit   events: [ '3.3.0' ],
+80 silly audit   execa: [ '5.1.1' ],
+80 silly audit   'fast-deep-equal': [ '3.1.3' ],
+80 silly audit   'fast-json-stable-stringify': [ '2.1.0' ],
+80 silly audit   'fastest-levenshtein': [ '1.0.16' ],
+80 silly audit   'fill-range': [ '7.0.1' ],
+80 silly audit   'find-up': [ '4.1.0' ],
+80 silly audit   flat: [ '5.0.2' ],
+80 silly audit   'function-bind': [ '1.1.2' ],
+80 silly audit   'get-own-enumerable-property-symbols': [ '3.0.2' ],
+80 silly audit   'get-stream': [ '6.0.1' ],
+80 silly audit   'glob-to-regexp': [ '0.4.1' ],
+80 silly audit   'graceful-fs': [ '4.2.11' ],
+80 silly audit   hasown: [ '2.0.0' ],
+80 silly audit   html2canvas: [ '1.4.1' ],
+80 silly audit   'human-signals': [ '2.1.0' ],
+80 silly audit   husky: [ '6.0.0' ],
+80 silly audit   'import-fresh': [ '3.3.0' ],
+80 silly audit   'import-local': [ '3.1.0' ],
+80 silly audit   'indent-string': [ '4.0.0' ],
+80 silly audit   interpret: [ '3.1.1' ],
+80 silly audit   'is-arrayish': [ '0.2.1' ],
+80 silly audit   'is-core-module': [ '2.13.1' ],
+80 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+80 silly audit   'is-number': [ '7.0.0' ],
+80 silly audit   'is-obj': [ '1.0.1' ],
+80 silly audit   'is-plain-object': [ '2.0.4' ],
+80 silly audit   'is-regexp': [ '1.0.0' ],
+80 silly audit   'is-stream': [ '2.0.1' ],
+80 silly audit   isexe: [ '2.0.0' ],
+80 silly audit   isobject: [ '3.0.1' ],
+80 silly audit   'jest-worker': [ '27.5.1' ],
+80 silly audit   'js-tokens': [ '4.0.0' ],
+80 silly audit   'json-parse-even-better-errors': [ '2.3.1' ],
+80 silly audit   'json-schema-traverse': [ '0.4.1' ],
+80 silly audit   'kind-of': [ '6.0.3' ],
+80 silly audit   'lines-and-columns': [ '1.2.4' ],
+80 silly audit   'lint-staged': [ '11.2.6' ],
+80 silly audit   listr2: [ '3.14.0' ],
+80 silly audit   'loader-runner': [ '4.3.0' ],
+80 silly audit   'locate-path': [ '5.0.0' ],
+80 silly audit   'log-update': [ '4.0.0' ],
+80 silly audit   'slice-ansi': [ '4.0.0', '3.0.0' ],
+80 silly audit   'wrap-ansi': [ '6.2.0', '7.0.0' ],
+80 silly audit   long: [ '5.2.3' ],
+80 silly audit   'lru-cache': [ '6.0.0' ],
+80 silly audit   'merge-stream': [ '2.0.0' ],
+80 silly audit   micromatch: [ '4.0.5' ],
+80 silly audit   'mime-db': [ '1.52.0' ],
+80 silly audit   'mime-types': [ '2.1.35' ],
+80 silly audit   'mimic-fn': [ '2.1.0' ],
+80 silly audit   ms: [ '2.1.2' ],
+80 silly audit   'neo-async': [ '2.6.2' ],
+80 silly audit   'node-releases': [ '2.0.14' ],
+80 silly audit   'normalize-path': [ '3.0.0' ],
+80 silly audit   'npm-run-path': [ '4.0.1' ],
+80 silly audit   onetime: [ '5.1.2' ],
+80 silly audit   'p-limit': [ '2.3.0' ],
+80 silly audit   'p-locate': [ '4.1.0' ],
+80 silly audit   'p-map': [ '4.0.0' ],
+80 silly audit   'p-try': [ '2.2.0' ],
+80 silly audit   'parent-module': [ '1.0.1' ],
+80 silly audit   'parse-json': [ '5.2.0' ],
+80 silly audit   'path-exists': [ '4.0.0' ],
+80 silly audit   'path-key': [ '3.1.1' ],
+80 silly audit   'path-parse': [ '1.0.7' ],
+80 silly audit   'path-type': [ '4.0.0' ],
+80 silly audit   picocolors: [ '1.0.0' ],
+80 silly audit   picomatch: [ '2.3.1' ],
+80 silly audit   'pkg-dir': [ '4.2.0' ],
+80 silly audit   'please-upgrade-node': [ '3.2.0' ],
+80 silly audit   protobufjs: [ '7.2.6' ],
+80 silly audit   punycode: [ '2.3.1' ],
+80 silly audit   randombytes: [ '2.1.0' ],
+80 silly audit   rechoir: [ '0.8.0' ],
+80 silly audit   resolve: [ '1.22.8' ],
+80 silly audit   'resolve-cwd': [ '3.0.0' ],
+80 silly audit   'resolve-from': [ '5.0.0', '4.0.0' ],
+80 silly audit   'restore-cursor': [ '3.1.0' ],
+80 silly audit   rfdc: [ '1.3.1' ],
+80 silly audit   rxjs: [ '7.8.1' ],
+80 silly audit   'safe-buffer': [ '5.2.1' ],
+80 silly audit   'schema-utils': [ '3.3.0' ],
+80 silly audit   semver: [ '7.6.0' ],
+80 silly audit   'semver-compare': [ '1.0.0' ],
+80 silly audit   'serialize-javascript': [ '6.0.2' ],
+80 silly audit   'shallow-clone': [ '3.0.1' ],
+80 silly audit   'shebang-command': [ '2.0.0' ],
+80 silly audit   'shebang-regex': [ '3.0.0' ],
+80 silly audit   'signal-exit': [ '3.0.7' ],
+80 silly audit   'source-map': [ '0.6.1', '0.7.4' ],
+80 silly audit   'source-map-support': [ '0.5.21' ],
+80 silly audit   'string-argv': [ '0.3.1' ],
+80 silly audit   'string-width': [ '4.2.3' ],
+80 silly audit   'stringify-object': [ '3.3.0' ],
+80 silly audit   'strip-ansi': [ '6.0.1' ],
+80 silly audit   'strip-final-newline': [ '2.0.0' ],
+80 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+80 silly audit   tapable: [ '2.2.1' ],
+80 silly audit   terser: [ '5.27.0' ],
+80 silly audit   'terser-webpack-plugin': [ '5.3.10' ],
+80 silly audit   'text-segmentation': [ '1.0.3' ],
+80 silly audit   through: [ '2.3.8' ],
+80 silly audit   'to-regex-range': [ '5.0.1' ],
+80 silly audit   'ts-loader': [ '9.5.1' ],
+80 silly audit   tslib: [ '2.6.2' ],
+80 silly audit   'type-fest': [ '0.21.3' ],
+80 silly audit   typescript: [ '5.3.3' ],
+80 silly audit   'undici-types': [ '5.26.5' ],
+80 silly audit   'update-browserslist-db': [ '1.0.13' ],
+80 silly audit   'uri-js': [ '4.4.1' ],
+80 silly audit   utrie: [ '1.0.2' ],
+80 silly audit   watchpack: [ '2.4.0' ],
+80 silly audit   'webextension-polyfill': [ '0.10.0' ],
+80 silly audit   webpack: [ '5.90.1' ],
+80 silly audit   'webpack-cli': [ '5.1.4' ],
+80 silly audit   'webpack-merge': [ '5.10.0' ],
+80 silly audit   'webpack-sources': [ '3.2.3' ],
+80 silly audit   which: [ '2.0.2' ],
+80 silly audit   wildcard: [ '2.0.1' ],
+80 silly audit   yallist: [ '4.0.0' ],
+80 silly audit   yaml: [ '1.10.2' ]
+80 silly audit }
+81 silly tarball no local data for utrie@https://registry.npmjs.org/utrie/-/utrie-1.0.2.tgz. Extracting by manifest.
+82 silly tarball no local data for text-segmentation@https://registry.npmjs.org/text-segmentation/-/text-segmentation-1.0.3.tgz. Extracting by manifest.
+83 silly tarball no local data for html2canvas@https://registry.npmjs.org/html2canvas/-/html2canvas-1.4.1.tgz. Extracting by manifest.
+84 silly tarball no local data for css-line-break@https://registry.npmjs.org/css-line-break/-/css-line-break-2.1.0.tgz. Extracting by manifest.
+85 silly tarball no local data for base64-arraybuffer@https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-1.0.2.tgz. Extracting by manifest.
+86 silly tarball no local data for @awardwallet/extension-v3@https://npm.pkg.github.com/download/@awardwallet/extension-v3/1.1.8/59903decc11b8c131a2c55528b31e8a13c24a31a. Extracting by manifest.
+87 silly tarball no local data for @awardwallet/extension-client@https://npm.pkg.github.com/download/@awardwallet/extension-client/1.0.25/67cdd2b4567723041ef638420ae652543930d0e1. Extracting by manifest.
+88 timing reifyNode:node_modules/@webassemblyjs/helper-api-error Completed in 2499ms
+89 timing reifyNode:node_modules/shallow-clone Completed in 2545ms
+90 timing reifyNode:node_modules/path-parse Completed in 2546ms
+91 timing reifyNode:node_modules/clone-deep Completed in 2560ms
+92 timing reifyNode:node_modules/buffer-from Completed in 2565ms
+93 timing reifyNode:node_modules/@webassemblyjs/helper-wasm-bytecode Completed in 2571ms
+94 timing reifyNode:node_modules/@webassemblyjs/helper-buffer Completed in 2572ms
+95 timing reifyNode:node_modules/@types/eslint-scope Completed in 2572ms
+96 timing reifyNode:node_modules/@webassemblyjs/wasm-opt Completed in 2574ms
+97 timing reifyNode:node_modules/@types/parse-json Completed in 2568ms
+98 timing reifyNode:node_modules/ansi-styles Completed in 2570ms
+99 timing reifyNode:node_modules/wrap-ansi/node_modules/color-name Completed in 2574ms
+100 timing reifyNode:node_modules/ts-loader/node_modules/color-name Completed in 2585ms
+101 timing reifyNode:node_modules/slice-ansi/node_modules/color-name Completed in 2577ms
+102 timing reifyNode:node_modules/log-update/node_modules/color-name Completed in 2576ms
+103 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 2601ms
+104 timing auditReport:getReport Completed in 2607ms
+105 silly audit report {
+105 silly audit report   braces: [
+105 silly audit report     {
+105 silly audit report       id: 1097496,
+105 silly audit report       url: 'https://github.com/advisories/GHSA-grv7-fg5c-xmjg',
+105 silly audit report       title: 'Uncontrolled resource consumption in braces',
+105 silly audit report       severity: 'high',
+105 silly audit report       vulnerable_versions: '<3.0.3',
+105 silly audit report       cwe: [Array],
+105 silly audit report       cvss: [Object]
+105 silly audit report     }
+105 silly audit report   ]
+105 silly audit report }
+106 timing reifyNode:node_modules/serialize-javascript Completed in 2607ms
+107 timing reifyNode:node_modules/resolve-cwd Completed in 2607ms
+108 timing reifyNode:node_modules/pkg-dir Completed in 2608ms
+109 timing reifyNode:node_modules/chalk/node_modules/has-flag Completed in 2596ms
+110 timing reifyNode:node_modules/p-try Completed in 2609ms
+111 timing reifyNode:node_modules/p-locate Completed in 2610ms
+112 timing reifyNode:node_modules/path-exists Completed in 2610ms
+113 timing reifyNode:node_modules/p-limit Completed in 2611ms
+114 timing reifyNode:node_modules/lru-cache Completed in 2611ms
+115 timing reifyNode:node_modules/is-plain-object Completed in 2612ms
+116 timing reifyNode:node_modules/isobject Completed in 2614ms
+117 timing reifyNode:node_modules/locate-path Completed in 2614ms
+118 timing reifyNode:node_modules/find-up Completed in 2615ms
+119 timing reifyNode:node_modules/@webassemblyjs/ieee754 Completed in 2615ms
+120 timing reifyNode:node_modules/@webassemblyjs/helper-numbers Completed in 2616ms
+121 timing reifyNode:node_modules/@webassemblyjs/floating-point-hex-parser Completed in 2616ms
+122 timing reifyNode:node_modules/supports-color Completed in 2614ms
+123 timing reifyNode:node_modules/string-width Completed in 2615ms
+124 timing reifyNode:node_modules/strip-ansi Completed in 2616ms
+125 timing reifyNode:node_modules/signal-exit Completed in 2616ms
+126 timing reifyNode:node_modules/is-stream Completed in 2619ms
+127 timing reifyNode:node_modules/ansi-regex Completed in 2620ms
+128 timing reifyNode:node_modules/ts-loader/node_modules/supports-color Completed in 2635ms
+129 timing reifyNode:node_modules/resolve-cwd/node_modules/resolve-from Completed in 2635ms
+130 timing metavuln:cache:get:security-advisory:braces:KXF04h9d5THheVuiveZQPyT0zDOcQ+ZCBCWC4fEeKdNWir6MTPm1eUnuCrcrkFnC7VeN47nv2Evh9JNDWszaCw== Completed in 56ms
+131 timing reifyNode:node_modules/chalk/node_modules/supports-color Completed in 2641ms
+132 timing reifyNode:node_modules/yallist Completed in 2659ms
+133 timing reifyNode:node_modules/kind-of Completed in 2654ms
+134 timing reifyNode:node_modules/interpret Completed in 2655ms
+135 timing reifyNode:node_modules/import-local Completed in 2655ms
+136 timing reifyNode:node_modules/glob-to-regexp Completed in 2656ms
+137 timing reifyNode:node_modules/esrecurse Completed in 2656ms
+138 timing reifyNode:node_modules/@webpack-cli/serve Completed in 2656ms
+139 timing reifyNode:node_modules/@webpack-cli/info Completed in 2656ms
+140 timing reifyNode:node_modules/@webpack-cli/configtest Completed in 2657ms
+141 timing reifyNode:node_modules/@webassemblyjs/wast-printer Completed in 2657ms
+142 timing reifyNode:node_modules/@webassemblyjs/helper-wasm-section Completed in 2658ms
+143 timing reifyNode:node_modules/@types/json-schema Completed in 2658ms
+144 timing reifyNode:node_modules/lines-and-columns Completed in 2652ms
+145 timing reifyNode:node_modules/micromatch Completed in 2653ms
+146 timing reifyNode:node_modules/colorette Completed in 2653ms
+147 timing reifyNode:node_modules/ts-loader/node_modules/ansi-styles Completed in 2667ms
+148 timing reifyNode:node_modules/slice-ansi/node_modules/ansi-styles Completed in 2657ms
+149 timing reifyNode:node_modules/wrap-ansi/node_modules/ansi-styles Completed in 2658ms
+150 timing reifyNode:node_modules/picocolors Completed in 2669ms
+151 timing reifyNode:node_modules/log-update/node_modules/ansi-styles Completed in 2658ms
+152 timing reifyNode:node_modules/loader-runner Completed in 2669ms
+153 timing reifyNode:node_modules/mime-types Completed in 2669ms
+154 timing reifyNode:node_modules/graceful-fs Completed in 2671ms
+155 timing reifyNode:node_modules/@xtuc/ieee754 Completed in 2670ms
+156 timing reifyNode:node_modules/@webassemblyjs/wasm-edit Completed in 2670ms
+157 timing reifyNode:node_modules/@types/estree Completed in 2670ms
+158 timing reifyNode:node_modules/@protobufjs/path Completed in 2670ms
+159 timing reifyNode:node_modules/@protobufjs/codegen Completed in 2671ms
+160 timing reifyNode:node_modules/@protobufjs/eventemitter Completed in 2671ms
+161 timing reifyNode:node_modules/@protobufjs/fetch Completed in 2672ms
+162 timing reifyNode:node_modules/@protobufjs/aspromise Completed in 2672ms
+163 timing reifyNode:node_modules/@protobufjs/base64 Completed in 2673ms
+164 timing reifyNode:node_modules/color-name Completed in 2666ms
+165 timing reifyNode:node_modules/update-browserslist-db Completed in 2682ms
+166 timing reifyNode:node_modules/safe-buffer Completed in 2681ms
+167 timing reifyNode:node_modules/randombytes Completed in 2683ms
+168 timing reifyNode:node_modules/@protobufjs/pool Completed in 2683ms
+169 timing reifyNode:node_modules/@babel/code-frame Completed in 2678ms
+170 timing reifyNode:node_modules/webpack-cli/node_modules/colorette Completed in 2692ms
+171 timing reifyNode:node_modules/@babel/highlight Completed in 2686ms
+172 timing reifyNode:node_modules/rechoir Completed in 2692ms
+173 timing reifyNode:node_modules/punycode Completed in 2693ms
+174 timing reifyNode:node_modules/listr2/node_modules/colorette Completed in 2682ms
+175 timing reifyNode:node_modules/acorn-import-assertions Completed in 2694ms
+176 timing reifyNode:node_modules/@webassemblyjs/wasm-gen Completed in 2695ms
+177 timing reifyNode:node_modules/debug Completed in 2688ms
+178 timing reifyNode:node_modules/ansi-colors Completed in 2688ms
+179 timing reifyNode:node_modules/color-convert Completed in 2690ms
+180 timing reifyNode:node_modules/ts-loader/node_modules/color-convert Completed in 2705ms
+181 timing reifyNode:node_modules/wrap-ansi/node_modules/color-convert Completed in 2699ms
+182 timing reifyNode:node_modules/slice-ansi/node_modules/color-convert Completed in 2702ms
+183 timing reifyNode:node_modules/log-update/node_modules/color-convert Completed in 2703ms
+184 timing reifyNode:node_modules/estraverse Completed in 2719ms
+185 timing reifyNode:node_modules/flat Completed in 2721ms
+186 timing reifyNode:node_modules/chrome-trace-event Completed in 2721ms
+187 timing reifyNode:node_modules/@webassemblyjs/leb128 Completed in 2721ms
+188 http fetch GET 401 https://npm.pkg.github.com/download/@awardwallet/extension-client/1.0.25/67cdd2b4567723041ef638420ae652543930d0e1 2330ms (cache skip)
+189 timing reifyNode:node_modules/chalk Completed in 2723ms
+190 timing reifyNode:node_modules/esrecurse/node_modules/estraverse Completed in 2734ms
+191 http fetch GET 401 https://npm.pkg.github.com/download/@awardwallet/extension-v3/1.1.8/59903decc11b8c131a2c55528b31e8a13c24a31a 2349ms (cache skip)
+192 timing reifyNode:node_modules/escalade Completed in 2742ms
+193 timing reifyNode:node_modules/@protobufjs/utf8 Completed in 2744ms
+194 timing reifyNode:node_modules/@webassemblyjs/utf8 Completed in 2745ms
+195 timing reifyNode:node_modules/ts-loader/node_modules/chalk Completed in 2751ms
+196 timing reifyNode:node_modules/supports-preserve-symlinks-flag Completed in 2752ms
+197 timing reifyNode:node_modules/node-releases Completed in 2752ms
+198 timing reifyNode:node_modules/@protobufjs/float Completed in 2751ms
+199 timing reifyNode:node_modules/@jridgewell/set-array Completed in 2752ms
+200 timing reifyNode:node_modules/terser/node_modules/commander Completed in 2759ms
+201 timing reifyNode:node_modules/json-schema-traverse Completed in 2760ms
+202 timing reifyNode:node_modules/@webassemblyjs/wasm-parser Completed in 2762ms
+203 timing reifyNode:node_modules/@protobufjs/inquire Completed in 2763ms
+204 timing reifyNode:node_modules/source-map-support Completed in 2772ms
+205 timing reifyNode:node_modules/rfdc Completed in 2772ms
+206 timing reifyNode:node_modules/is-core-module Completed in 2771ms
+207 timing reifyNode:node_modules/hasown Completed in 2772ms
+208 timing reifyNode:node_modules/fast-deep-equal Completed in 2795ms
+209 timing reifyNode:node_modules/@jridgewell/resolve-uri Completed in 2793ms
+210 timing reifyNode:node_modules/envinfo Completed in 2804ms
+211 timing reifyNode:node_modules/browserslist Completed in 2804ms
+212 timing reifyNode:node_modules/watchpack Completed in 2811ms
+213 timing reifyNode:node_modules/es-module-lexer Completed in 2831ms
+214 timing reifyNode:node_modules/@jridgewell/sourcemap-codec Completed in 2831ms
+215 timing reifyNode:node_modules/@babel/helper-validator-identifier Completed in 2834ms
+216 timing reifyNode:node_modules/long Completed in 2841ms
+217 timing reifyNode:node_modules/fastest-levenshtein Completed in 2848ms
+218 timing reifyNode:node_modules/terser-webpack-plugin Completed in 2893ms
+219 timing reifyNode:node_modules/function-bind Completed in 2898ms
+220 timing reifyNode:node_modules/picomatch Completed in 2890ms
+221 timing reifyNode:node_modules/execa Completed in 2891ms
+222 timing reifyNode:node_modules/wildcard Completed in 2908ms
+223 timing reifyNode:node_modules/mime-db Completed in 2912ms
+224 timing reifyNode:node_modules/fast-json-stable-stringify Completed in 2931ms
+225 timing reifyNode:node_modules/@jridgewell/gen-mapping Completed in 2930ms
+226 timing reifyNode:node_modules/webextension-polyfill Completed in 2946ms
+227 timing reifyNode:node_modules/eslint-scope Completed in 2943ms
+228 timing reifyNode:node_modules/@xtuc/long Completed in 2948ms
+229 timing reifyNode:node_modules/commander Completed in 2940ms
+230 timing reifyNode:node_modules/tslib Completed in 2948ms
+231 timing reifyNode:node_modules/webpack-merge Completed in 2964ms
+232 timing reifyNode:node_modules/@jridgewell/source-map Completed in 2963ms
+233 timing reifyNode:node_modules/@discoveryjs/json-ext Completed in 2963ms
+234 timing reifyNode:node_modules/tapable Completed in 2971ms
+235 timing reifyNode:node_modules/webpack-cli/node_modules/commander Completed in 2994ms
+236 timing reifyNode:node_modules/webpack-cli Completed in 2995ms
+237 timing reifyNode:node_modules/electron-to-chromium Completed in 3010ms
+238 timing reifyNode:node_modules/@jridgewell/trace-mapping Completed in 3009ms
+239 timing reifyNode:node_modules/lint-staged Completed in 3003ms
+240 timing reifyNode:node_modules/schema-utils Completed in 3016ms
+241 timing reifyNode:node_modules/@types/eslint Completed in 3013ms
+242 timing reifyNode:node_modules/webpack-sources Completed in 3042ms
+243 http fetch GET 200 https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-1.0.2.tgz 2696ms (cache miss)
+244 timing reifyNode:node_modules/base64-arraybuffer Completed in 3054ms
+245 timing reifyNode:node_modules/ts-loader/node_modules/source-map Completed in 3062ms
+246 timing reifyNode:node_modules/jest-worker Completed in 3063ms
+247 timing reifyNode:node_modules/events Completed in 3063ms
+248 timing reifyNode:node_modules/undici-types Completed in 3075ms
+249 timing reifyNode:node_modules/ajv-keywords Completed in 3073ms
+250 timing reifyNode:node_modules/@webassemblyjs/ast Completed in 3078ms
+251 timing reifyNode:node_modules/acorn Completed in 3084ms
+252 http fetch GET 200 https://registry.npmjs.org/braces 492ms (cache miss)
+253 timing metavuln:packument:braces Completed in 498ms
+254 timing metavuln:load:security-advisory:braces:1097496 Completed in 7ms
+255 timing reifyNode:node_modules/cosmiconfig Completed in 3114ms
+256 timing reifyNode:node_modules/semver Completed in 3163ms
+257 timing metavuln:cache:put:security-advisory:braces:KXF04h9d5THheVuiveZQPyT0zDOcQ+ZCBCWC4fEeKdNWir6MTPm1eUnuCrcrkFnC7VeN47nv2Evh9JNDWszaCw== Completed in 67ms
+258 timing metavuln:calculate:security-advisory:braces:1097496 Completed in 574ms
+259 timing metavuln:cache:get:security-advisory:micromatch:RoARH2X7RHPoHBWE7/6WeCy3B8g2NLWBJLumV3gHV2EMtIHOkkrq6KDxLR5piJOh7ezJtre33ihLiJlX47T1Cg== Completed in 8ms
+260 timing reifyNode:node_modules/enhanced-resolve Completed in 3185ms
+261 timing reifyNode:node_modules/enquirer Completed in 3177ms
+262 timing reifyNode:node_modules/source-map Completed in 3216ms
+263 timing reifyNode:node_modules/ts-loader Completed in 3221ms
+264 http fetch GET 200 https://registry.npmjs.org/text-segmentation/-/text-segmentation-1.0.3.tgz 2952ms (cache miss)
+265 timing reifyNode:node_modules/text-segmentation Completed in 3265ms
+266 timing reifyNode:node_modules/uri-js Completed in 3274ms
+267 http fetch GET 200 https://registry.npmjs.org/utrie/-/utrie-1.0.2.tgz 3011ms (cache miss)
+268 timing reifyNode:node_modules/utrie Completed in 3303ms
+269 timing reifyNode:node_modules/listr2 Completed in 3291ms
+270 http fetch GET 200 https://registry.npmjs.org/css-line-break/-/css-line-break-2.1.0.tgz 2983ms (cache miss)
+271 timing reifyNode:node_modules/css-line-break Completed in 3328ms
+272 timing reifyNode:node_modules/neo-async Completed in 3434ms
+273 http fetch GET 200 https://registry.npmjs.org/micromatch 279ms (cache miss)
+274 timing metavuln:packument:micromatch Completed in 283ms
+275 timing metavuln:load:security-advisory:micromatch:KXF04h9d5THheVuiveZQPyT0zDOcQ+ZCBCWC4fEeKdNWir6MTPm1eUnuCrcrkFnC7VeN47nv2Evh9JNDWszaCw== Completed in 15ms
+276 timing reifyNode:node_modules/centrifuge Completed in 3501ms
+277 timing metavuln:cache:put:security-advisory:micromatch:RoARH2X7RHPoHBWE7/6WeCy3B8g2NLWBJLumV3gHV2EMtIHOkkrq6KDxLR5piJOh7ezJtre33ihLiJlX47T1Cg== Completed in 55ms
+278 timing metavuln:calculate:security-advisory:micromatch:KXF04h9d5THheVuiveZQPyT0zDOcQ+ZCBCWC4fEeKdNWir6MTPm1eUnuCrcrkFnC7VeN47nv2Evh9JNDWszaCw== Completed in 356ms
+279 timing auditReport:init Completed in 930ms
+280 timing reify:audit Completed in 3543ms
+281 timing reifyNode:node_modules/ajv Completed in 3540ms
+282 http fetch GET 200 https://registry.npmjs.org/npm 4526ms (cache updated)
+283 timing reifyNode:node_modules/terser Completed in 3607ms
+284 timing reifyNode:node_modules/resolve Completed in 3621ms
+285 timing reifyNode:node_modules/protobufjs Completed in 3737ms
+286 timing reifyNode:node_modules/@types/node Completed in 4081ms
+287 http fetch GET 200 https://registry.npmjs.org/html2canvas/-/html2canvas-1.4.1.tgz 4354ms (cache miss)
+288 timing reifyNode:node_modules/html2canvas Completed in 4691ms
+289 timing reifyNode:node_modules/caniuse-lite Completed in 4895ms
+290 timing reifyNode:node_modules/webpack Completed in 4970ms
+291 timing reifyNode:node_modules/rxjs Completed in 5844ms
+292 timing reifyNode:node_modules/typescript Completed in 5885ms
+293 timing reify:rollback:createSparse Completed in 2033ms
+294 timing reify:rollback:retireShallow Completed in 19ms
+295 timing command:i Completed in 8950ms
+296 notice
+296 notice New [31mmajor[39m version of npm available! [31m8.15.0[39m -> [32m10.8.1[39m
+296 notice Changelog: [36mhttps://github.com/npm/cli/releases/tag/v10.8.1[39m
+296 notice Run [32mnpm install -g npm@10.8.1[39m to update!
+296 notice
+297 verbose stack HttpErrorGeneral: 401 Unauthorized - GET https://npm.pkg.github.com/download/@awardwallet/extension-v3/1.1.8/59903decc11b8c131a2c55528b31e8a13c24a31a - authentication token not provided
+297 verbose stack     at /usr/local/lib/nodejs/node-v16.17.0-linux-x64/lib/node_modules/npm/node_modules/npm-registry-fetch/lib/check-response.js:93:15
+297 verbose stack     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+298 verbose statusCode 401
+299 verbose pkgid @awardwallet/extension-v3@https://npm.pkg.github.com/download/@awardwallet/extension-v3/1.1.8/59903decc11b8c131a2c55528b31e8a13c24a31a
+300 verbose cwd /www/awardwallet
+301 verbose Linux 6.6.26-linuxkit
+302 verbose node v16.17.0
+303 verbose npm  v8.15.0
+304 error code E401
+305 error 401 Unauthorized - GET https://npm.pkg.github.com/download/@awardwallet/extension-v3/1.1.8/59903decc11b8c131a2c55528b31e8a13c24a31a - authentication token not provided
+306 verbose exit 1
+307 timing npm Completed in 9189ms
+308 verbose unfinished npm timer reify 1719385050318
+309 verbose unfinished npm timer reify:unpack 1719385051314
+310 verbose unfinished npm timer reifyNode:node_modules/@awardwallet/extension-v3 1719385051324
+311 verbose unfinished npm timer reifyNode:node_modules/@awardwallet/extension-client 1719385051324
+312 verbose code 1
+313 error A complete log of this run can be found in:
+313 error     /home/user/.npm/_logs/2024-06-26T06_57_30_080Z-debug-0.log

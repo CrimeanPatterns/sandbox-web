@@ -1,0 +1,46 @@
+# This file is auto-generated during the composer install
+parameters:
+    google_api_key: AIzaSyBcebaWwgM_nAQNJGj8zIrnpB-rn7PyDm0
+    positionstack_api_key: xxx
+    timezonedb_endpoint: 'http://api.timezonedb.com'
+    timezonedb_apikey: ZZMG848IULBJ
+    flight_stats_restricted_partners: {  }
+    disable_flight_stats: true
+    parsing_constants:
+        illuminati_customer: c_53542d33
+        illuminati_zone: static
+        illuminati_pass: 
+        antigate_key: 8dd590e3807eb6212ea35dcc4ed35c0e
+        rucaptcha_key: c09a0e0fbf0cc90375ffb3a793b0db91
+        antigate_proxy_password: 83hfuo2ncbwo38764d
+        goproxies_username: awardwallet
+        goproxies_password: 4T9j3vFW
+        aa_proxy: host.docker.internal
+        netnut_username: AwardWallet
+        netnut_password: FOXNX!O77hSE
+        oxylabs_username: juicymilesproxy
+        oxylabs_password: RAxJzAHt_L6VyXHdK2tvTgzjR
+        mount_username: KE7ECP17BRVO
+        mount_password: nA9j3r2U38
+        aa_wsdl_login: xxx
+        aa_wsdl_password: xxx
+        aa_wsdl_authorization_password: xxx
+        capitalcards_client_id: null
+        capitalcards_sandbox_client_id: null
+        capitalcards_client_secret: null
+        capitalcards_sandbox_client_secret: null
+        bankofamerica_client_id: xxx
+        bankofamerica_client_secret: xxx
+        bankofamerica_ssl_cert_file: /www/awardwallet/app/config/awardwalletPremiumSslEv.pem
+    bing_maps_api_key: xxx
+    selenium_memcached_host: memcached
+    shared_memcached_host: memcached
+    memcached_host: memcached
+    airlabs_api_key: xxx
+    webdriver_cluster_endpoint: 'http://webdriver.infra.awardwallet.com'
+    selenium_share: /tmp
+    selenium_consul_address: null
+    geoapify_api_key: xxxx
+    flight_info.app_id: xxx
+    flight_info.app_key: xxx
+    lpm_host: lpm

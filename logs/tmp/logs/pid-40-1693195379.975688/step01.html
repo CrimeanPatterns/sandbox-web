@@ -1,0 +1,817 @@
+<!doctype html>
+<html class="no-js " lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Barnes &amp; Noble">
+<title>B&amp;N | Manage Your Memberships</title>
+<!-- set meta description -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@BNBuzz" />
+<meta property="og:description" content=""/>
+<meta property="og:type" content="product"/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content="Barnes &amp; Noble"/>
+<link rel="icon" type="image/x-icon" href="//img.images-bn.com/static/redesign/srcs/images/favicon.ico" />
+<link rel="icon" sizes="16x16" type="image/x-icon" href="//img.images-bn.com/static/redesign/srcs/images/favicon.ico">
+<link rel="icon" sizes="32x32" type="image/x-icon" href="//img.images-bn.com/static/redesign/srcs/images/favicon.ico">
+<link rel="icon" sizes="24x24" type="image/x-icon" href="//img.images-bn.com/static/redesign/srcs/images/favicon.ico">
+<link rel="icon" sizes="192x192" href="//img.images-bn.com/static/redesign/srcs/images/new-bn-icon-192x192.png">
+<link rel="icon" sizes="32x32" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-32.png"> <!-- New cheat safari tab-->
+<link rel="icon" sizes="96x96" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-192.png"> <!-- New cheat for firefox -->
+<link rel="icon" sizes="48x48" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon_96.png"> <!-- New cheat for firefox -->
+<meta name="apple-mobile-web-app-title" content="Barnes & Noble">
+<link rel="apple-touch-icon" sizes="any" href="//img.images-bn.com/static/redesign/srcs/images/bn-apple-touch-icon-180-any.png">
+<!--Legacy Apple -->
+<link rel="apple-touch-icon" sizes="57x57" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-144.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//img.images-bn.com/static/redesign/srcs/images/bn-icon-180.png">
+<!-- New Android -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" type="text/css" href="//css.css-bn.com/static/redesign/release/css/bn-responsive.min.css?v10.10.6&setviewtype=full" />
+<style>
+
+@-webkit-keyframes bugfix { from { padding: 0px; } to { padding: 0px; } }
+label span { -webkit-animation: bugfix infinite 1ms; }
+</style>
+<script>
+var SITE_PROTOCOL = document.location.protocol||window.location.protocol||'http:',
+SITE_DOMAIN = document.location.hostname||window.location.hostname||'www.barnesandnoble.com',
+SITE_PORT = document.location.port||window.location.port||'80',
+THIS_PATH = document.location.pathname||window.location.pathname||'/account/manage/memberships/associate-membership.jsp',
+SITE_DOMAIN_URL = THIS_PAGE = SITE_ROOT = port = "",
+STATIC_ASSETS_PATH = "/static",
+webContextRoot ='',
+staticAssetVersion = '?v10.10.6',
+XHR_FOLDER ='/xhr',
+XHR_HANDLER_PATH = XHR_FOLDER+'/handler.jsp',
+PAGE_DEBUG_MODE = false;
+// indexExchngHeaderBiddingJsUrl="";
+// enableIndexExchangeJS="";
+if(SITE_PROTOCOL=="https:") {
+XHR_FOLDER = '/xhr';
+XHR_HANDLER_PATH = XHR_FOLDER+'/handler.jsp';
+}
+if(SITE_PORT.length > 0 && SITE_PORT!=80)
+port = ":"+SITE_PORT;
+SITE_DOMAIN_URL = SITE_PROTOCOL + "//" + SITE_DOMAIN + port;
+SITE_ROOT = SITE_DOMAIN_URL + webContextRoot;
+THIS_PAGE = SITE_DOMAIN_URL + THIS_PATH;
+port = null;
+function consoleLog() {
+if (PAGE_DEBUG_MODE!==true) return;
+if (typeof console != "undefined" && typeof console.log != "undefined") {
+if (typeof console.log.apply != "undefined") {
+console.log.apply(console,arguments);
+} else {
+for(var i=0;i<arguments.length;i++) {
+var arg = arguments[i];
+console.log(arg);
+}
+}
+}
+}
+function consoleWarn() {
+if (PAGE_DEBUG_MODE!==true) return;
+if (typeof console == "undefined") return;
+if (typeof console.warn != "undefined" && typeof console.warn.apply != "undefined") {
+console.warn.apply(console,arguments);
+} else {
+consoleLog.apply(console,arguments);
+}
+}
+function consoleError() {
+if (PAGE_DEBUG_MODE!==true) return;
+if (typeof console == "undefined") return;
+if (typeof console.error != "undefined" && typeof console.error.apply != "undefined") {
+console.error.apply(console,arguments);
+} else {
+consoleWarn.apply(console,arguments);
+}
+}
+var captchaV3Enabled = 'true';
+
+function addOnLoadEvent(func) {
+var oldonload = window.onload;
+var newonload = function(){
+/* if(enableIndexExchangeJS ==="true" && indexExchngHeaderBiddingJsUrl !=="" ){
+// ATG-24008 : Add header bidding management from IndexExchange
+headerBiddingJS();
+}  */
+func();
+};
+if (typeof window.onload != 'function') {
+window.onload = newonload;
+} else {
+window.onload = function() {
+if (oldonload) {
+oldonload();
+}
+newonload();
+}
+}
+}
+</script>
+<!-- migration changes SLR-92 -->
+<script>document.write("<script type='text/javascript' src='//js.js-bn.com/static/redesign/release/js/head.js?v10.10.6'><\/script>");</script><!--// migration changes SLR-92 -->
+<script>
+function updateMiniCartCount(count) {
+if(typeof count != 'undefined' && count != $.trim($('.bagTotal').text())) {
+$('.bagTotal').text(count);
+}
+}
+function miniCartEvents($container) {
+var spinnerSrc = "",
+spinnerImgPath = $('input[name=spinnerPath]').val();
+if(spinnerImgPath && spinnerImgPath.indexOf('null') < 0 && spinnerImgPath.indexOf('undefined') < 0 ){
+spinnerSrc = spinnerImgPath;
+}
+var $spinner = $('<div class="spinner spinner__large"><img tabindex="0" src="' + spinnerSrc + '" role="presentation" aria-live="polite" aria-label="Laoding..."></div>').addClass('mini-cart-spinner'),
+$quantityUpdateForms = $('.mini-cart-quantity-update');
+BN.MiniCart = new MiniCart('#miniCart', '#shoppingBag');
+// shopping bag flyout only
+$('#bagContentsContainer').find('.mini-cart-quantity-update').each(function() {
+BN.uXHR.Form.apply(this);
+});
+$quantityUpdateForms.find('.product-quantity').each(function() {
+var $this = $(this);
+$this.data('initial-value', $this.val());
+});
+$quantityUpdateForms.find('input[type=submit]').on('click', function(e) {
+var $theForm = $(this).closest('form'),
+$eleProductQuantity = $theForm.find('.product-quantity').first(),
+productQuantity = $eleProductQuantity.length ? $eleProductQuantity.val().trim() : '';
+if (productQuantity.length == 0) {
+e.preventDefault();
+/* reset to the initial quantity if the user tried to submit an empty value */
+if ($eleProductQuantity.length && $eleProductQuantity.data('initial-value')) {
+$eleProductQuantity.val($eleProductQuantity.data('initial-value'));
+}
+}
+});
+$quantityUpdateForms.on('submit', function() {
+var $this = $(this),
+$miniCartItem = $this.parents('#miniCart');
+$spinner.appendTo($miniCartItem);
+}).on('amplifiFormSuccess', function(e, response) {
+//Adobe Analytics: updates cart object
+if(typeof s_setP !== 'undefined') updateAnalyticsCart();
+// check to shopping bag reload flag is on page
+// if shopping bag is updated in dropdown and page
+// contains the items, it must be refreshed
+if ($("#shoppingBagReloadFlag").length){
+consoleLog("Reload Page to update shopping bag.");
+location.reload(true);
+} else {
+$('#miniCartItems .miniCartItems-list').load(webContextRoot+"/checkout/includes/get-mini-cart-commerce-items.jsp", miniCartEvents);
+$('#subtotalLine .subtotal-amount').html('$'+response.data.subtotal);
+$('#subtotalLine .item-count').html('('+response.data.totalQuantity+' items)');
+$('.bagTotal').html(response.data.totalQuantity);
+if(response.data.totalQuantity < 1) {
+//DONT SHOW CART IF TYPE AHEAD IS OPEN
+if($('#headSearchTypeAheadHolder').is(':visible')) {
+loadHeaderElement($("#bagContentsContainer"), webContextRoot+"/includes/shopping-bag.jsp", true, true);
+} else {
+loadHeaderElement($("#bagContentsContainer"), webContextRoot+"/includes/shopping-bag.jsp", true, false);
+}
+}
+}
+$spinner.remove();
+if(e.target.id && /remove/i.test(e.target.id) || $(this).data('form-type') === 'remove') {
+$(this).trigger('analytics-mini-cart-remove');
+} else {
+$(this).trigger('analytics-mini-cart-add');
+}
+}).on('amplifiFormError', function(e, response) {
+$spinner.remove();
+});
+}
+function loadHeaderElement($container, frag, miniCartLoaded, hideCart) {
+$.ajax({
+url: frag,
+cache: false,
+type: "get",
+beforeSend: function() {
+if(!$('#miniCart').length) {
+/*  if (hideCart) {
+$container.html('<div id="miniCart" style="height: 150px; display:none;"><div class="triangle-up"></div><div class="mini-cart-spinner"></div>');
+} else {
+$container.html('<div id="miniCart" style="height: 150px"><div class="triangle-up"></div><div class="mini-cart-spinner"></div>');
+}
+*/
+}
+}
+}).done(function(data) {
+$container.html(data);
+if (hideCart) {
+$("#miniCart").css("display", "none");
+}
+if (miniCartLoaded) {
+updateMiniCartCount($('#miniCartQuantityVal').val());
+miniCartEvents();
+}
+//to update the mini cart count after redesign
+$('.cart-slide-out__banner').find('.bagTotal').html($('#bagTotal').html());
+if($('body').hasClass('landingPage') || $('body').hasClass('shopping-bag') || $('body').hasClass('homepage')){
+$('#checkoutFormSB .sign-in-checkout').attr('data-params','{"tplParams":{"isCheckout":"true","isNew":"true"}}');
+}
+/*                 //to bind the spinner functionality
+$('[data-trigger="spinner"]').spinner('delay', 0).spinner('changed', function (e) {
+$(e.target).trigger('change');
+}); */
+});
+}
+function displayHeaderFooterData(dataObj) {
+try {
+if(typeof dataObj != 'undefined' && dataObj != '') {
+//set login status variables
+if(typeof BN != 'undefined') {
+BN.isExplicitlyLoggedIn = dataObj.isSecureLogin;
+BN.isSoftLoggedIn = dataObj.isSoftLoggedIn;
+} else {
+$(document).ready(function() {
+BN.isExplicitlyLoggedIn = dataObj.isSecureLogin;
+BN.isSoftLoggedIn = dataObj.isSoftLoggedIn;
+});
+}
+//populate sign in/account links data
+//$('#authBar').html(dataObj.signInHtml);
+if($('.account-links').find('#signInLink').length > 0){
+$('#signInLink').remove();
+}
+if($('.account-links').find('.account-sign-in').length > 0){
+$('.account-sign-in').remove();
+}
+$('.account-links').prepend(dataObj.signInHtml);
+$('#myAccountMenu').html(dataObj.accountLinksHtml);
+if(dataObj.isSecureLogin === true){
+$('.account-links').attr('data-user-state','signed-in');
+}
+$(document).on('click', '#myAccountMenu #myAccountLink', function(){
+$(this).addClass('focus');
+});
+updateMiniCartCount(dataObj.cartQuantity);
+HEADERLOADED = true;
+HEADERDATA = '';
+bnLoggingEnabled = dataObj.bnLoggingEnabled;
+$("#myAccountMenu").click(function(e) {
+if($(e.target).attr('id') == 'myAccountLink')
+e.preventDefault();
+$("#myAccountLinks").toggleClass("showMyAccountLinks");
+});
+}
+} catch(err) {
+console.log(err);
+}
+}
+function loadEmailSignUp() {
+// check for email signup class in CQ template
+if ($(".global-footer-email-signup").length){
+// bind form to framework
+var $form = $('#emailSignupForm');
+BN.Validate.Listen($form);
+BN.uXHR.Form.apply($form);
+// success action
+$('#emailSignupForm').on('amplifiFormSuccess', function() {
+$('#emailSignupDiv').html("<span>Thank you for submitting your email address.</span>");
+$('.global-footer-email-signup').find('.mini-cart-spinner').remove();
+}).on("amplifiFormBeforeSerialize", function(){
+$('#emailSignupForm').find('.handler-email-signup').remove();
+$('#emailSignupForm').append('<input class="handler-email-signup" type="hidden" name="amplifiHandler" value="/atg/userprofiling/ProfileFormHandler.emailSignup">');
+}).on("amplifiFormError",function(event,err,xhr,status,msgs){
+var errors = msgs.items;
+BN.Validate.DisplayErrors(this, errors);
+$form.find('input[type=text]').addClass('user-error');
+$('.global-footer-email-signup').find('.mini-cart-spinner').remove();
+}).on("amplifiFormBeforeSubmit",function(){
+consoleLog("Calling displaySpinner");
+$form.find('input[type=text]').removeClass('user-error');
+$('.global-footer-email-signup').append($('<div/>').addClass('mini-cart-spinner'));
+});
+}
+}
+/* ATG-10818: Pre-populate footer email field only when user is logged in */
+function populateEmailSignUp(data) {
+$(document).ready(function() {
+if(data.isSecureLogin){
+$('#emailAddr').val(data.email);
+}
+});
+}
+//load header elements for akamai caching
+//SIGN IN Links, PTA Link, EMAIL SIGN UP, CART DETAILS
+function loadDynamicHeaderElements(callback) {
+$.ajax({
+url: '/xhr/header-footer-data.jsp',
+cache: false,
+type: "get",
+dataType: 'json'
+}).done(function(data) {
+HEADERDATA = data;
+HEADERLOADED = false;
+if($('#userLinks').length) {
+displayHeaderFooterData(HEADERDATA);
+} else {
+$(document).ready(function() {
+displayHeaderFooterData(HEADERDATA);
+});
+}
+populateEmailSignUp(data);
+});
+$(document).ready(function() {
+loadEmailSignUp();
+//miniCartEvents();
+});
+}
+</script>
+<script>
+
+loadDynamicHeaderElements();
+</script>
+<!-- ATG-25918 -->
+<script src="//assets.adobedtm.com/d55bc227c346/0aaa96eebcd0/launch-d923d12e2af4.min.js"></script>
+<!-- ATG-26292 -->
+<script src="https://apps.bazaarvoice.com/deployments/barnesandnoble/local_implementation/production/en_US/bv.js" async></script>
+<script>
+var enableGoogleAdsAfterPageLoad = true;
+</script>
+<script>
+var asyncRelatedAdsEnabled = true;
+</script>
+<script type="text/javascript">
+/*$(document).ready(function() {
+$('#primaryNav').on('hover touchstart', function() {
+$('.nav-menu').css('display', 'block');
+});
+$('#primaryNav li.nav-item a').on('focus', function() {
+$('.nav-menu').css('display', 'block');
+});
+});*/
+function set_cookie (cvalue) {
+
+var cname = "internalCampaign";
+cvalue = cvalue.replace(/ /gi,'-').replace(/[`~!@#^&*()|+\=ï¿½ï¿½?;:'",<>\{\}\[\]\\\/]/gi, '').toLowerCase()
+cvalue = '_' +  cvalue;
+//cvalue = encodeURI(cvalue);
+var d = new Date();
+d.setTime(d.getTime() + (1*24*60*60*1000));
+var curCookie = cname + "=" + cvalue +
+"; expires=" + d.toGMTString() +
+"; path=" + "/"  +
+"; domain=" + SITE_DOMAIN;
+document.cookie = curCookie;
+
+}
+// ATG-24008 : Add header bidding management from IndexExchange
+/*  function headerBiddingJS(){
+var indxexctag=document.createElement("script");
+indxexctag.type = "text/javascript";
+indxexctag.async=true;
+indxexctag.src = indexExchngHeaderBiddingJsUrl;
+var node = document.getElementsByTagName("head")[0];
+node.appendChild(indxexctag);
+} */
+</script>
+<script>window['adrum-start-time'] = new Date().getTime();</script>
+<META NAME="robots" content="noindex,nofollow"/>
+<script type="text/javascript" src="//js.js-bn.com/static/redesign/srcs/js/vendor/com.liquidpixels.Resolve.js?v10.10.6" async></script>
+<script src="https://www.barnesandnoble.com/static/redesign/srcs/js/react.production.min.js" crossorigin></script>
+<script src="https://www.barnesandnoble.com/static/redesign/srcs/js/react-dom.production.min.js" crossorigin></script>
+<script>document.write("<script type='text/javascript' src='//js.js-bn.com/static/redesign/release/js/commerce-header-footer.js?v10.10.6'><\/script>");</script>
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"679473",ustr:"cookiepresent",originlat:"0",clientrtt:"178",ghostip:"23.48.215.39",ipv6:false,pct:"10",clientip:"54.204.36.66",requestid:"b6b9d93",region:"35789",protocol:"h2",blver:14,akM:"a",akN:"ae",akTT:"O",akTX:"1",akTI:"b6b9d93",ai:"238807",ra:"true",pmgn:"HTTP2Traffic",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+<body data-global-svg-assets-url="/static/redesign/srcs/images/global-assets.svg" class="account Manage-Membership-page bncom-responsive">
+<script>
+if (performance.mark === undefined) {
+console.log("performance.mark not supported");
+}else{
+performance.mark("Above_the_fold_loading_starts");
+}
+if(typeof performance.measure === 'undefined')
+{
+console.log("Create Measures: performance.measure not supported");
+}
+</script>
+<input type="hidden" id='sessionXtndEnabled' value="false" />
+<script>
+if(typeof performance.mark !== 'undefined')
+{
+/* ATG-24315 Fix start */
+var bodyClass = 'account Manage-Membership-page';
+var indexOfPDPPageClass = bodyClass.indexOf('pdpPage');
+if( indexOfPDPPageClass > -1){
+/* ATG-24315 Fix end */
+performance.mark('Cover_Image/Video_loading_starts');
+performance.mark("Addtocart_loading_starts");
+}
+performance.mark("Global_Header_loading_starts");
+}
+</script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LdspeQUAAAAADObEWJ6oo7G-QvgkhiLgMgDXn_v" defer>
+</script>
+<script>
+var captchaV3ApiKey= '6LdspeQUAAAAADObEWJ6oo7G-QvgkhiLgMgDXn_v';
+</script>
+<div id="header"></div>
+<script type="text/javascript">
+/*CommerceHeaderFooter is the name of the library that we defined in webpack.config.js */
+CommerceHeaderFooter.showHeader('header', {env:'prod', consumer_host:'https://www.barnesandnoble.com', styling:'responsive'});
+</script>
+<div id="screen"></div>
+<main role="main" class="bg-whole-site-color">
+<div class="gnb"><style type="text/css">.homepage .tile-grid {margin:3px 0 0 0; padding:0; } #globalNavBanner {margin: 0 auto 0; padding-bottom:4px; } #globalNavBanner.image { padding-bottom:3px; } .globalNavBanner{width:100%;max-width: 100%;text-align: center;} .globalNavBannerLink {display:block;text-decoration: none; border:1px solid transparent; line-height: 0;border-left: 0;border-right:0;margin:0 auto; width: 100%;} .globalNavBannerLink:hover,.globalNavBannerLink:focus{border-color:#7c83bc;text-decoration: none;} a.globalNavBannerLink.nolink{cursor:default;} .globalNavBanner img { width: 100%;} @media screen and (min-width:601px) and (max-width:899px){ .globalNavBanner img { max-width: 120%; width: 120%; position: relative; left: -10%;} } #globalNavBanner:not(.image) .gsb-table{display:table;min-height: 66px;width: 100%;max-width:1440px;margin: 0 auto;} .globalNavBanner .gsb-row{display:table-row} .globalNavBanner .gsb-td{display:table-cell;vertical-align:middle; } .globalNavBanner .gsb-message{ color:#000000;font-family:Lato,serif;font-size:18px; line-height:1.45; letter-spacing: 0.56px;font-weight:600; padding:7px 16%; position:relative} .globalNavBanner .gsb-code-phrase {font-weight: normal; border-left:solid 1px #979797; padding-left:14px; margin-left:9px; line-height:1.45; } .globalNavBanner .gsb-code { font-size: 16px; line-height:1.45; font-weight: bold; letter-spacing: 0.57px; } .globalNavBanner .gsb-cta{ font-family:Lato;font-size:16px;font-weight:normal; line-height: 1.2; letter-spacing:0.12px;color:#000000; display:inline-block;width:fit-content;text-align:center;padding:0;border-bottom:1px #000000 solid; position:absolute;right:30px; margin-top: 2px; } @media screen and (max-width:949px){ .globalNavBanner .gsb-message{font-size:16px; line-height:1.45; letter-spacing:0.57px} .globalNavBanner .gsb-code-phrase { font-size: 16px; letter-spacing: 0.57px;} .globalNavBanner .gsb-code { font-size: 14px; font-weight: bold; letter-spacing: 0.5px; } .globalNavBanner .gsb-cta{font-size:14px; letter-spacing:0.11px;width:fit-content; bottom:6px;} } @media screen and (max-width:850px){ .globalNavBanner .gsb-code-phrase { border-left-width:0; padding-left: 0; margin-left: 0; display: block; } } @media screen and (max-width:775px){ .globalNavBanner .gsb-message{font-size:15px; line-height:1.35; } .globalNavBanner .gsb-code-phrase {font-size: 15px;line-height:1.35; letter-spacing: 0.09px;} .globalNavBanner .gsb-code { font-size: 15px; line-height:1.35; font-weight: bold; } .globalNavBanner .gsb-cta{font-size:13px; } } @media screen and (max-width:600px){ .globalNavBanner .gsb-message{font-size:14px; line-height:1.35;letter-spacing: 0.11px; padding:10px 5%; } .globalNavBanner .gsb-code-phrase { font-size: 12px;line-height:1.35; letter-spacing: 0.09px;} .globalNavBanner .gsb-code { font-size: 12px; font-weight: bold;line-height:1.35; } .globalNavBanner .gsb-cta{font-size:12px; letter-spacing: 0.09px; } #globalNavBanner:not(.image) .gsb-table, #globalNavBanner.noncpn .gsb-table{display:table;min-height:42px; ;} #globalNavBanner.noncpn .globalNavBanner .gsb-cta{ position: static; bottom: unset; right: unset; font-size: 14px; line-height: 1.35; letter-spacing: 0.11px; margin-left: 8px; } } @media screen and (min-width:992px) and (max-width:1023px){ .globalNavBanner .gsb-cta{right:22px;} } @media screen and (min-width:601px) and (max-width:991px){ .globalNavBanner .gsb-cta{right:16px;} } @media screen and (max-width:600px){ .globalNavBanner .gsb-cta{right:12px;} } @media screen and (max-width:350px){ .globalNavBanner .gsb-message{line-height:1.25; } .globalNavBanner .gsb-code-phrase { line-height:1.25; } .globalNavBanner .gsb-code {line-height:1.25; } .globalNavBanner .gsb-cta{bottom: 4px;} } </style><style type="text/css">.globalBannerWrap{background-color: #C0E1F4;} #globalNavBanner.image .globalBannerWrap{background-color:transparent !important;} #globalNavBanner.image .globalBannerWrap.primary {background-image:none;} #globalNavBanner.image .globalBannerWrap.secondary {background-image:none;} </style><div id="globalNavBanner"><div class="globalNavBanner hidden globalBannerWrap"><a class="globalNavBannerLink"> </a></div><script type="text/javascript">
+(function(){
+
+var secondBanner = false;
+var thisPathName = window.location.pathname;
+$(".globalNavBanner:not(.loaded)").each(function(index){
+
+if(thisPathName !== "/h/help/about/terms-of-use" && thisPathName !== "/h/copyright-policy") {
+
+if(58 > 1){
+$('a.globalNavBannerLink').attr('href','https://www.barnesandnoble.com/b/book-haul-50-off/_/N-2r5n');
+}else{
+$('a.globalNavBannerLink').addClass('nolink');
+}
+if( 58 > 1 && "same" === "modal" ){
+$('a.globalNavBannerLink').attr('target', '_blank').attr('data-modal-class', 'BN.Modal.External.Link').attr('data-modal-scrolling', 'yes').attr('data-modal-title', '');
+}else if ( 58 > 1 && "same" === "new" ){
+$('a.globalNavBannerLink').attr('target', '_blank');
+}
+$(this).addClass('primary loaded').parents('#globalNavBanner').addClass("noncpn image");
+var msgElem;
+
+
+msgElem = `<picture><source media="(max-width: 600px)" srcset="//dispatch.barnesandnoble.com/content/dam/ccr/global/global-nav-banner/2023/08/PROD-27234_Global_Nav_Banner_BookHaul2023_08-11-mobile.jpg"><source media="(min-width: 601px)" srcset="//dispatch.barnesandnoble.com/content/dam/ccr/global/global-nav-banner/2023/08/PROD-27234_Global_Nav_Banner_BookHaul2023_08-11.jpg"><img src="//dispatch.barnesandnoble.com/content/dam/ccr/global/global-nav-banner/2023/08/PROD-27234_Global_Nav_Banner_BookHaul2023_08-11.jpg" class="globalNavBannerImg" alt="Book Haul is Back! 50% Off Hundreds of Hardcovers and More Deals.   In Stores &amp; Online. Cannot be combined with other offers. See page for details. Ends 9/4.  Explore Now "></picture>`;
+
+
+
+$('a.globalNavBannerLink').html(msgElem);
+$("a.globalNavBanner").on("click", function(){
+set_cookie("globalNavBanner_book-haul-is-back-50-off-hundreds-of-hardcovers-and-more-deals.---in-stores--online.-cannot-be-combined-with-other-offers.-see-page-for-details.-ends-94.--explore-now_na_text");
+});
+$(this).removeClass('hidden');
+
+} else if(secondBanner && (thisPathName === "/h/help/about/terms-of-use" || thisPathName === "/h/copyright-policy")) {
+
+if(0 > 1){
+$('a.globalNavBannerLink').attr('href','');
+}else{
+$('a.globalNavBannerLink').addClass('nolink');
+}
+if( 0 > 1 && "same" === "modal" ){
+$('a.globalNavBannerLink').attr('target', '_blank').attr('data-modal-class', 'BN.Modal.External.Link').attr('data-modal-scrolling', 'yes').attr('data-modal-title', '');
+}else if ( 0 > 1 && "same" === "new" ){
+$('a.globalNavBannerLink').attr('target', '_blank');
+}
+$(this).addClass('secondary loaded').parents('#globalNavBanner').addClass("noncpn  ");
+var msgElem2;
+
+
+
+msgElem2 = `<div class="gsb-table"> <div class="gsb-row"> <div class="gsb-message gsb-td">    <div class="gsb-cta  gsb-tdd"></div> </div> </div></div>`;
+
+
+$('a.globalNavBannerLink').html(msgElem2);
+$("a.globalNavBanner").on("click", function(){
+set_cookie("globalNavBanner__na_text");
+});
+$(this).removeClass('hidden');
+
+} else {
+$( ".cqGlobalNavBanner" ).hide();
+};
+
+});
+}());
+$(function() {
+if (window.location.href.indexOf("barnesandnoble.com/w/") > -1){
+var pCategory = digitalData.product[0].category.primaryCategory.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
+if (pCategory.length > 0){
+sessionStorage.setItem('optPrimaryCategory', pCategory);
+sessionStorage.setItem('optDDprimaryCategory', pCategory);
+}else{
+sessionStorage.setItem('optPrimaryCategory', 'none');
+sessionStorage.setItem('optDDprimaryCategory', 'none');
+}
+var optDDproductType = digitalData.product[0].category.productType.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
+if (optDDproductType.length > 0){
+sessionStorage.setItem('optDDproductType', optDDproductType);
+}else{
+sessionStorage.setItem('optDDproductType', 'none');
+}
+}
+});
+</script> </div><div id="globalSubBanner" class="globalSubBanner"><style type="text/css">.globalSubBanner{margin:0 auto 4px;} .globalSubWrap{width:100%;text-align:center;background:#3d5962;margin:0;} .globalSubBanner .gsb-table{display: table; width: 100%;min-height:42px;max-width:1440px;margin: 0 auto;} .globalSubBanner .gsb-row{display:table-row} .globalSubBanner .gsb-td{display:table-cell;vertical-align:middle} .globalSubBannerlink {width:100%; display:block;text-decoration: none; border:1px solid transparent; border-left: 0;border-right:0; line-height: 0;} .globalSubBannerlink:hover,.globalSubBannerlink:focus{border-color: #89CFF0 ; text-decoration: none;} .globalSubBanner .gsb-message{color:#f6f3f3;font-family:Lato,serif;font-size:16px;font-weight:600;line-height:1.13;letter-spacing:.53px; padding:10px 6%; position:relative; } .globalSubBanner .gsb-cta{font-family:Lato;font-size:16px;font-weight:600; line-height:1.36;letter-spacing:0.53px;color:#f6f3f3;display:inline-block;width:fit-content;text-align:center;padding:0;border-bottom:1px #fff solid;position:absolute;right:22px;} .globalSubBanner .gsb-link {color:#f6f3f3; display: inline-block;text-decoration: underline;padding-left: 8px;} @media screen and (max-width:949px){ .globalSubBanner .gsb-message{font-size:14px;line-height:normal;letter-spacing:.47px} .globalSubBanner .gsb-cta{font-size:14px;width:fit-content}} @media screen and (max-width:600px){ .globalSubBanner .gsb-message{font-size:14px;} .globalSubBanner .gsb-cta{font-size:12px;letter-spacing: 0.09px;} } @media screen and (max-width:375px){ .globalSubBanner .gsb-message{font-size:13px;} .globalSubBanner .gsb-cta{font-size:12px} } </style><div class=" globalSubWrap"><a href="https://www.barnesandnoble.com/membership/" class="globalSubBannerlink" onclick="set_cookie('globalSubBanner_premium-members-get-10-off-and-earn-rewards_na_text');"> <div class=" gsb-table"><div class="gsb-row"> <div class="gsb-message gsb-td">Premium Members Get 10% Off and Earn Rewards <span class="gsb-link">Find Out More</span> </div> </div></div> </a> </div></div></div><script>
+if(typeof performance.mark !== 'undefined' && typeof performance.measure !== 'undefined')
+{
+performance.mark("Global_Header_loading_ends");
+performance.measure(
+"globalHeaderDur",
+"Global_Header_loading_starts",
+"Global_Header_loading_ends"
+);
+}
+</script>
+<div class="browser-notice ie-outdated hidden">
+<div>
+<span class="x">&#215;</span>
+<p>
+<strong>Uh-oh, it looks like your Internet Explorer is out of date.</strong>
+<br><br>
+For a better shopping experience, please <a target="_blank" href="http://windows.microsoft.com/en-us/internet-explorer/download-ie/">upgrade now.</a>
+</p>
+</div>
+</div>
+<script>
+// migration changes SRL-92
+/*  if($.browser.msie && parseInt($.browser.version, 10) <=10){
+if(!$('.ie-outdated').is('visible')){
+$('.ie-outdated').show();
+}
+}    */
+if (navigator.userAgent.indexOf('MSIE') != -1)
+var detectIEregexp = /MSIE (\d+\.\d+);/ //test for MSIE x.x
+else // if no "MSIE" string in userAgent
+var detectIEregexp = /Trident.*rv[ :]*(\d+\.\d+)/ //test for rv:x.x or rv x.x where Trident string exists
+if(detectIEregexp.test(navigator.userAgent)){ //if some form of IE
+var ieversion=new Number(RegExp.$1) // capture x.x portion and store as a number
+if (ieversion<=10){
+if(!$('.ie-outdated').is('visible')){
+$('.ie-outdated').show();
+}
+}
+}
+// migration changes end SRL-92
+</script>
+<noscript>
+<div class="browser-notice">
+<div>
+<p class="circle">&#33;</p>
+<p>&nbsp;&nbsp;Javascript is not enabled in your browser. Enabling JavaScript in your browser will allow you to experience all the features of our site.
+</br></br>
+&nbsp;&nbsp;<a href="https://help.barnesandnoble.com">Learn how to enable JavaScript on your browser</a>
+</p>
+</div>
+</div>
+</noscript>
+<input type="hidden" id="deferAdLoad" value="true" />
+<input name="imagePath" type="hidden" value="/static/redesign/srcs/images/"/>
+<input type="hidden" name="spinnerPath" value="//img.images-bn.com/static/redesign/srcs/images/spinner.svg"/>
+<input class="hiddenMembershipTermTypeForAnalytics" type="hidden" value="" />
+<div class="container membership-landing-container pt-s pt-sm-0 pb-s pl-md-5 pl-sm-4 pr-sm-4">
+<div class="pt-0 pb-ss text--left nav-section">
+<nav role="navigation" data-nav="mainNav" class="breadCrumbNav">
+<ol class="lists lists--unstyled lists--bread-crumbs">
+<li><a href="/" class="bread-crumbs__item"> <span
+itemprop="name">Home</span>
+</a></li>
+<li><a href="/account/" class="bread-crumbs__item nav-membership">
+<span itemprop="name">My Account</span>
+</a></li>
+<li><a class="bread-crumbs__item nav-membership">
+<span itemprop="name">Memberships & Rewards</span>
+</a></li>
+</ol>
+</nav>
+</div>
+<div class="container membership-container membership-landing-container pt-s pt-sm-0 pb-s pl-md-5 pl-sm-4 pr-sm-4 pr-lg-5">
+<header class="col-sm-12 pb-sm-4 pb-md-4 pl-0 pr-0 text--center">
+<h1 class="membership-heading">Membership &amp; Rewards</h1>
+</header>
+<div class="row">
+<div class="col-lg-2 account-settings-sidebar bd-right-disabled-gray left-panel d-sm-none d-lg-block">
+<!-- SRL-3258 defect start -->
+<!-- SRL-3258 defect end -->
+<div class="account-menu">
+<ul class="menu-list mt-0 mb-0">
+<li class="account-menu-item ">
+<a href="/account/index.jsp" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-my-account mr-2"></span><span>My Account</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a href="/account/includes/view-orders.jsp" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-order-history mr-2"></span><span>Order
+History</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="/account/manage/settings/" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-account-settings mr-2"></span><span>Account
+Settings</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="/account/manage/payment/" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-payments mr-2"></span><span>Payment
+Methods</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="/account/manage/addresses/" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-address-book mr-2"></span><span>Address
+Book</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="/account/giftcard/manage/" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-gift-cards mr-2"></span><span>Gift Cards</span>
+</a>
+</li>
+<li class="account-menu-item active">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="/account/manage/memberships/associate-membership.jsp" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-memberships mr-2" style="background-color: rgb(219, 116, 97);"></span><span>Memberships</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="/account/wishlist/" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-wishlists mr-2"></span><span>Wishlists</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="https://nook.barnesandnoble.com/my_library" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-my-nook mr-2"></span><span>My Nook</span>
+</a>
+</li>
+<li class="account-menu-item ">
+<a data-modal-class="BN.Modal.Account.LoginNew" href="/account/manage/communications/" class="d-flex justify-content-start align-items-center">
+<span class="icon-circle icon-circle-color-email-preferences mr-2"></span><span>Email
+Preferences</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-10 col-md-12 col-sm-12 pl-lg-m">
+<section id="manageMembership" class="primary-content-b" aria-labelledby="manageMembershipForm">
+<hr>
+<form id="manageMembershipForm" name="manageMembershipForm" action="/xhr/handler.jsp?_DARGS=/account/manage/memberships/non-member-without-rewards.jsp.manageMembershipForm" data-messaging=".error-msg" class="add-membership" method="post"><input name="_dyncharset" value="UTF-8" type="hidden"></input><input name="_dynSessConf" value="4069203420791483657" type="hidden"></input><header><h2 class="link_membership_heading pt-m pb-xxs">Link an Existing Membership</h2></header>
+<aside  class="alert alert--error error-msg mb-s" role="alert" style="display: none"></aside>
+<p class="link_membership_text">Add a Member number to your account to receive your online benefits and to manage your Member profile.</p>
+<div class="selectMembershipDropdown w-100">
+<div class="col-sm-12 col-md-12 col-lg-4 pl-0 pr-0">
+<input name="_D:/atg/userprofiling/ProfileFormHandler.memberDetails.membershipType" value=" " type="hidden"></input><select id="selectMembership" title="Program Type" data-selectbox="" name="/atg/userprofiling/ProfileFormHandler.memberDetails.membershipType" role="listbox" custValidationMessage="Program Type field cannot be left blank" required="required"><option value="" role="option"></option>
+<option role="option" value="BNMembership">B&N Premium / B&N Rewards</option>
+<option role="option" value="Employee">Other</option>
+</select></div>
+</div>
+<div class="row mt-xs ml-0 mr-0">
+<div class="col-lg-4 col-md-7 col-sm-7 text-input" id="addMembershipId">
+<label data-target="text-input-label" for="membershipCard">Card Number (Member ID)</label>
+<input id="membershipCard" name="memberIdToAssociate" value="" required="required" type="text"><input name="_D:memberIdToAssociate" value=" " type="hidden"></div>
+<div class="col-lg-4 col-sm-12 col-md-12 link_membership_info">
+<p class="mb-0 link_membership_text 1">Don't know your Member Number?&nbsp;<a href="https://help.barnesandnoble.com/hc/en-us/articles/5202053403675-Contact-Us" target="_blank">Contact Us</a></p>
+</div>
+</div>
+<p id="membershipTerms" class="mt-ss link_membership_text mb-ss">
+I acknowledge that the card number entered above is mine and that I am the owner of this account. Additionally, by clicking below, I expressly consent to Barnes &amp; Noble adding personal data from my existing Barnes &amp; Noble Membership profile to my bn.com account.</p>
+<div class="submit-cancel">
+<input id="addAddressSubmit" name="/atg/userprofiling/ProfileFormHandler.manageMembership" value="Add" class="btn btn--large btn-submit mt-0" type="submit"><input name="_D:/atg/userprofiling/ProfileFormHandler.manageMembership" value=" " type="hidden"><a href="javascript:void(0)" id="addAddressCancel" class="btn-cancel-new" role="link" title="Cancel">Cancel</a>
+</div>
+<input name="/atg/userprofiling/ProfileFormHandler.memberDetails.profileID" value="66110323546" type="hidden"><input name="_D:/atg/userprofiling/ProfileFormHandler.memberDetails.profileID" value=" " type="hidden"><input name="/atg/userprofiling/ProfileFormHandler.memberDetails.firstName" value="" type="hidden"><input name="_D:/atg/userprofiling/ProfileFormHandler.memberDetails.firstName" value=" " type="hidden"><input name="/atg/userprofiling/ProfileFormHandler.memberDetails.lastName" value="" type="hidden"><input name="_D:/atg/userprofiling/ProfileFormHandler.memberDetails.lastName" value=" " type="hidden"><input name="/atg/userprofiling/ProfileFormHandler.memberDetails.newEmail" value="" type="hidden"><input name="_D:/atg/userprofiling/ProfileFormHandler.memberDetails.newEmail" value=" " type="hidden"><input name="/atg/userprofiling/ProfileFormHandler.memberDetails.bnmbrId" value="" type="hidden"><input name="_D:/atg/userprofiling/ProfileFormHandler.memberDetails.bnmbrId" value=" " type="hidden"><input name="/atg/userprofiling/ProfileFormHandler.requestFrom" value="associateMembership" type="hidden"><input name="_D:/atg/userprofiling/ProfileFormHandler.requestFrom" value=" " type="hidden"><input type="hidden" name="amplifiHandler"	value="/atg/userprofiling/ProfileFormHandler.manageMembership">
+<input name="_DARGS" value="/account/manage/memberships/non-member-without-rewards.jsp.manageMembershipForm" type="hidden"></input></form></section>
+<br>
+<section id="BNPremiumMembershipTile">
+<div class="membership-premium-banner no-banner p-sm-2 p-md-4 mb-4">
+<header>
+<h2 class="pt-m pb-xs"><i>Join B&N Premium Membership</i></h2>
+</header>
+<aside class="alert alert--error error-msg mb-s" role="alert" style="display: none"></aside>
+<p class="text--small discount-text mb-xs">B&N Premium Membership is your ticket to offers, perks and exclusives. Enjoy everyday discounts and many more benefits, including <b>B&N&nbsp;Rewards</b>.</p>
+<!--<div class="image-container pr-xs">
+<img src="../../../static/redesign/srcs/images/fpo/membership.png" alt="Membership Tile"> -->
+<!--<div class="bn-membership-account"></div>
+<img src="//img.images-bn.com/static/img/membership/myaccount_membership.jpg"
+class="image-resize" alt="Member Barnes and Noble BN.COM">
+</div>-->
+<div class="d-lg-block">
+<div class="center-content">
+<img
+src="//img.images-bn.com/static/redesign/srcs/images/membership/member-cards-new.jpg" alt="img" class="mb-s new-premium-image">
+<h3 class="premium-benefits-title pb-sm-2">THE BOOK LOVER'S MEMBERSHIP</h3>
+<div class="d-block mmp-text-cont mb-2">
+<p class="mmp-text">Become a Premium Member and receive 10% off almost everything in store and online, free online shipping, free Cafe drink upgrades, a premium tote every year, exclusive offers and&nbsp;more!</p>
+</div>
+<div><a class="btn upgrade-member-btn mb-2" role="button" href="/membership">Learn More</a></div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<div>
+<header>
+<h2 class="pt-m pb-xs"><i>Join B&amp;N Rewards</i></h2>
+</header>
+<aside class="alert alert--error error-msg mb-s" role="alert" style="display: none"></aside>
+<p class="text--small pb-4 mb-xs txt-membership-links">As part of our free B&N Rewards program, you'll collect one stamp for every $10 spent in a purchase when you shop with us in store or online. <b>10&nbsp;stamps&nbsp;=&nbsp;$5&nbsp;reward.</b><div class="mt-xs text--center">
+<a  class="btn learn-more" role="button" href="/membership">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+new BN.Modal.Account.LoginNew(null, {target: this, onclose: function() { window.location.href = '/account'; }}, {useCache: false, tplParams:{membershipIDLink: false}});
+});
+</script>
+<input type="hidden" id="formattedExpireDate" value="" />
+<script type="text/javascript">
+$(document).ready(function() {
+new BN.Modal.Account.LoginNew(null, {target: this, onclose: function() { window.location.href = '/account'; }}, {useCache: false, tplParams:{membershipIDLink: false}});
+});
+</script>
+<script>
+if(typeof performance.mark !== 'undefined')
+{
+performance.mark("Global_Footer_loading_starts");
+}
+</script>
+<div id="footer" class=""></div>
+<!-- ATG-26331 remove google analytics-->
+<script>
+if(typeof performance.mark !== 'undefined' && typeof performance.measure !== 'undefined')
+{
+performance.mark("Global_Footer_loading_ends");
+performance.measure(
+"globalFooterDur",
+"Global_Footer_loading_starts",
+"Global_Footer_loading_ends"
+);
+}
+</script>
+<!-- ATG-26338 : Add modal for PDP, PLP -->
+<!-- ATG-26338 : Ends -->
+<!-- ATG-28414: Add modal for ROPIS -->
+<!-- ATG-28414: Ends -->
+<!-- All Javascripts in js-scripts-ra.jsp has to be minified. ALl JS has to be moved to release dir as per grunt minification -->
+<script src="//js.js-bn.com/static/redesign/release/js/bn.js?v10.10.6"></script><script src="//js.js-bn.com/static/redesign/release/js/modal.modals-membership.js?v10.10.6"></script><script src="//js.js-bn.com/static/redesign/release/js/modal.modals-account.js?v10.10.6"></script><script src="//js.js-bn.com/static/redesign/release/js/modal.modals-qas.js?v10.10.6"></script><script>
+$.webshims.setOptions('basePath','//js.js-bn.com/static/redesign/srcs/js/vendor/js-webshim-1.15/minified/shims/');
+$.webshims.polyfill('es5 forms forms-ext');
+</script>
+<script type="text/javascript"
+src="//js.js-bn.com/static/redesign/srcs/js/sections/account/membership.js?v10.10.6"></script>
+<script type="text/javascript"
+src="//js.js-bn.com/static/release/js/toolkit.js?v10.10.6"></script>
+<script src="//js.js-bn.com/static/redesign/release/js/membership-ra.js?v10.10.6"></script><script type="text/javascript"
+src="//js.js-bn.com/static/release/js/toolkit-responsive.js?v10.10.6"></script>
+<script defer="true" async="true" src="//js.js-bn.com/static/redesign/release/js/audiobook.main.js?v10.10.6"></script><script defer async type="text/javascript" src="https://request.eprotect.vantivcnp.com/eProtect/eProtect-api3.js"></script>
+<script defer="true" async="true" src="//js.js-bn.com/static/redesign/release/js/worldpay.js?v10.10.6"></script><input type="hidden" id="analyticsEnabledFlag" value="true">
+<script>
+if(!$.isEmptyObject(digitalData)){
+var digitalData1 = {"session":{"sessionID":"4208A575A330A3258305D1A627F082A4","serverName":"prodny_store02"},"page":{"timestamp":"Mon Aug 28 00:03:01 EDT 2023","category":{"primaryCategory":"manage","subCategory":["memberships"],"hierarchy":"/account/manage"},"pageInfo":{"pageType":"account","pageName":"account:manage","language":"en","geoRegion":"US","breadCrumbs":["home","account","manage"],"ipAddress":"54.204.36.66"},"attributes":{"internalCampaignCTA":"","internalCampaignElement":"","pickupInStoreFilterIsVisible":false,"internalCampaignAdFormat":"","internalCampaignPageType":"","internalCampaignDescription":""}},"cart":{"price":{"shipping":0,"priceWithTax":0,"transationalTotal":0,"basePrice":0,"currency":"USD"}},"user":[{"profile":[{"profileInfo":{"profileID":"66110323546"}}]}]};
+$.extend(digitalData,digitalData1);
+}else{
+
+var digitalData = {"session":{"sessionID":"4208A575A330A3258305D1A627F082A4","serverName":"prodny_store02"},"page":{"timestamp":"Mon Aug 28 00:03:01 EDT 2023","category":{"primaryCategory":"manage","subCategory":["memberships"],"hierarchy":"/account/manage"},"pageInfo":{"pageType":"account","pageName":"account:manage","language":"en","geoRegion":"US","breadCrumbs":["home","account","manage"],"ipAddress":"54.204.36.66"},"attributes":{"internalCampaignCTA":"","internalCampaignElement":"","pickupInStoreFilterIsVisible":false,"internalCampaignAdFormat":"","internalCampaignPageType":"","internalCampaignDescription":""}},"cart":{"price":{"shipping":0,"priceWithTax":0,"transationalTotal":0,"basePrice":0,"currency":"USD"}},"user":[{"profile":[{"profileInfo":{"profileID":"66110323546"}}]}]};
+
+}
+if (typeof s_setP !== 'undefined') {
+
+}
+$(document).ready(function(){
+if (typeof s_setP !== 'undefined') {
+
+BN.Analytics.Account.init();
+
+}
+});
+</script>
+<script type="text/javascript">
+</script>
+<input name="bopisEnabled" type="hidden" value="true"/>
+<script type="text/javascript">
+var cname = "internalCampaign",
+cvalue = null;
+var curCookie = cname + "=" + cvalue +
+"; expires= Thu, 01 Jan 1970 00:00:01 GMT;" +
+"; path=" + "/"  +
+"; domain=" + SITE_DOMAIN;
+document.cookie = curCookie;
+</script>
+<input type="hidden" id="gptAdsVal" name="gptAdsVal" value="" />
+<input type="hidden" id="hiddenCardNumber" />
+<input type="hidden" id="hiddenSecurityCode" />
+<input type="hidden" id="isWPApiAlreadyCalled" value="false">
+<input type="hidden" id="paymentFormContainerId" value="" />
+<input type="hidden" id="isWorldPayEnabled" value="true" />
+<script type="text/javascript">
+_satellite.pageBottom();
+</script>
+<script type="text/javascript">
+/*CommerceHeaderFooter is the name of the library that we defined in webpack.config.js */
+CommerceHeaderFooter.showFooter('footer', {env:'prod', consumer_host:'https://www.barnesandnoble.com', styling:'responsive'});
+</script>
+<script type="text/javascript"  src="/BTRqFkVC/Esi5Khv/yHAs_4W/u1/NuL72NLQcmOu/KyMEeFx7bw/OHI-dj/8BaxQ"></script></body>
+</html>

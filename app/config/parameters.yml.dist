@@ -1,0 +1,63 @@
+parameters:
+  google_api_key: 'xxx'
+  positionstack_api_key: 'xxx'
+  timezonedb_endpoint: 'http://api.timezonedb.com'
+  timezonedb_apikey: ''
+  flight_info.app_id: xxx
+  flight_info.app_key: xxx
+  flight_stats_restricted_partners: []
+  disable_flight_stats: true
+  # ------------ parsing related ---------------
+  parsing_constants:
+    # luminati
+    illuminati_customer: ~
+    illuminati_zone: ~
+    illuminati_pass: ~
+    # captcha
+    antigate_key:  ~
+    rucaptcha_key: ~
+    antigate_proxy_password: ~
+    aa_proxy: host.docker.internal
+    # netnut
+    netnut_username: ~
+    netnut_password: ~
+    # oxylabs
+    oxylabs_username: ~
+    oxylabs_password: ~
+    # goproxies
+    goproxies_username: ~
+    goproxies_password: ~
+    # mount
+    mount_apikey: ~
+    mount_username: ~
+    mount_password: ~
+    # geosurf
+    geosurf_id: 633314
+    geosurf_password: ~
+    # aa
+    aa_wsdl_login: 'xxx'
+    aa_wsdl_password: 'xxx'
+    aa_wsdl_authorization_password: 'xxx'
+    # capital one
+    capitalcards_client_id: ~
+    capitalcards_sandbox_client_id: ~
+    capitalcards_client_secret: ~
+    capitalcards_sandbox_client_secret: ~
+    # bank of america
+    bankofamerica_client_id: 'xxx'
+    bankofamerica_client_secret: 'xxx'
+    bankofamerica_ssl_cert_file: '/www/awardwallet/app/config/awardwalletPremiumSslEv.pem'
+    mailslurp_api_key: xxxx
+  bing_maps_api_key: 'xxx'
+  selenium_memcached_host: 'memcached'
+  shared_memcached_host: 'memcached'
+  memcached_host: 'memcached'
+  #AirLabs
+  airlabs_api_key: xxx
+  webdriver_cluster_endpoint: 'http://webdriver.infra.awardwallet.com'
+  selenium_share: /tmp
+  selenium_consul_address: null
+  geoapify_api_key: xxxx
+  lpm_host: lpm
+
+

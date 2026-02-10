@@ -1,0 +1,12 @@
+services:
+
+  aw.s3client:
+    class: AwardWallet\Common\AWS\TestS3Client
+    arguments: ['%aws_test_s3_bucket_dir%']
+
+  AwardWallet\Common\Selenium\HotSession\KeepHotConfigFactory:
+    class: AwardWallet\Common\Selenium\HotSession\TestKeepHotConfigFactory
+    arguments: ["@=container.hasParameter('ra_parse_mode') ? parameter('ra_parse_mode') : null"]
+
+  aw.selenium_node_finder: '@aw.selenium_single_node_finder'
+  aw.selenium_mac_node_finder: '@aw.selenium_single_node_finder'

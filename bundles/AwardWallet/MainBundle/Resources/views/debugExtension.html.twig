@@ -1,0 +1,42 @@
+{% extends '@AwardWalletMain/layout.html.twig' %}
+{% form_theme form with ['form_table_layout.html.twig'] %}
+
+{% block content %}
+    <div style="width: 300px; float: left;">
+        {{ form(form) }}
+        <div>
+            <a href="https://github.com/AwardWallet/parserbox-web/blob/master/doc/extension-v3.md" target="_blank">Смотри инструкцию в doc/extension-v3.md</a>
+        </div>
+    </div>
+    <div id="log">
+
+    </div>
+
+    <div id="extension-install" style="display: none">
+        <h2>Установите browser extension</h2>
+        <ul>
+            <li>Откройте в chrome страницу chrome://extensions/</li>
+            <li>Включите режим разработчки (Developer mode) в правом верхнем углу</li>
+            <li>Нажмите "Load unpacked"</li>
+            <li>Выберите папку node_modules/@awardwallet/extension-v3/dist</li>
+        </ul>
+    </div>
+
+    <script type="module">
+        import {checkExtensionInstalled} from "/js/compiled/debug-extension.js"
+        checkExtensionInstalled()
+    </script>
+    {% if session is not empty %}
+        <script type="module">
+            import {connectExtensionChannel} from "/js/compiled/debug-extension.js"
+            import {connectLog} from "/js/compiled/debug-extension.js"
+            connectExtensionChannel(
+                    {{ session.centrifugoJwtToken | json_encode | raw }},
+                    {{ session.sessionId | json_encode | raw }}
+            )
+            connectLog({{ debugConnectionToken | json_encode | raw }})
+        </script>
+
+        <iframe src="{{ path("run_extension", {"sessionId" : session.sessionId}) }}" width="90%" height="600" style="border: none;"></iframe>
+    {% endif %}
+{% endblock %}

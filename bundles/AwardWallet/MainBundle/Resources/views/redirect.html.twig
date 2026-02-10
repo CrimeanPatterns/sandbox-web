@@ -1,0 +1,103 @@
+{% import "@AwardWalletMain/TwigMacros/extension.html.twig" as extension %}
+
+{% block javascripts %}
+    <script src="/assets/common/vendors/requirejs/require.js"></script>
+    <script src="/assets/requireConfig.js"></script>
+    <script type="text/javascript">
+        var debugMode = true;
+        define('translator-boot', ['translations/en']);
+        define('intl', []);
+    </script>
+    {% if loginWithExtension %}
+    <script type="text/javascript">
+
+        function initExtension(){
+            if(browserExt.supportedBrowser()){
+                if(browserExt.showInfoBrowser()){
+                    startRedirecting();
+                }else{
+                    browserExt.requireValidExtension();
+                    browserExt.pushOnReady(startRedirecting);
+                }
+            }
+            else{
+                startRedirecting();
+            }
+        }
+
+        function loginWithExtension(){
+            $('#status').text("logging in with extension, please wait..");
+            var params = {{ params | json_encode(constant('JSON_PRETTY_PRINT')) | raw }};
+            if(lastAskedPassword)
+                params.password = lastAskedPassword;
+
+            browserExt.saveLog = function(data) {
+                // todo: record to receive-browser-log and give link
+                $.each(data.log, function(index, record){
+                    if (record.type === "message") {
+                        var div = document.createElement('div');
+                        div.innerText = record.content;
+                        $('#log').append(div);
+                    }
+                });
+            };
+
+            browserExt.updateExtension(function(){
+                browserExt.setAccountInfo(params);
+                browserExt.autologin(
+                    {{ params['accountId'] }},
+                    function(){
+                        $('#status').text("Autologin successful");
+                    },
+                    function(error){
+                        $('#status').text("Autologin failed: " + error);
+                    }
+                );
+            });
+        }
+
+    </script>
+	{% endif %}
+
+	<script type="text/javascript">
+		var mode = {{ mode | json_encode | raw }};
+
+		function canLoginWithExtension(){
+			return {{ loginWithExtension|json_encode | raw  }} && browserExt.supportedBrowser() && !browserExt.showInfoBrowser();
+		}
+
+		function startRedirecting(){
+			redirectAccount({{ params['accountId'] }}, {{ displayName | json_encode | raw }}, {{ providerName | json_encode | raw }}, {{ autologin | json_encode | raw }}, {{ askLocalPassword | json_encode | raw }}, {{ login | json_encode | raw }}, {{ userName | json_encode | raw }});
+		}
+
+		function processRedirect(){
+            $('#status').text("starting autologin, please wait..");
+            if (mode == 'download')
+                document.location.href = {{ frameURL | json_encode | raw }};
+            else if (canLoginWithExtension())
+                loginWithExtension();
+            else
+                document.getElementById('redirectFrame').src = {{ frameURL | json_encode | raw }};
+		}
+
+		require(['browserext', 'routing'], function(){
+            {% if error is empty %}
+                startAccountOperations(); {# not needed ? #}
+                {{ onLoad | raw }};
+            {% endif %}
+        })
+
+	</script>
+{% endblock %}
+
+{% block body %}
+<div id="fader" style="display: none;">
+</div>
+{% include "@AwardWalletMain/_autologinPopup.html.twig" %}
+{{ extension.load() }}
+{% if error is not empty %}
+    <b>{{ error }}</b>
+{% else %}
+    <iframe id="redirectFrame" width="400" height="400" style="display: none;" frameborder="0" src="about:blank"></iframe>
+{% endif %}
+{% endblock %}

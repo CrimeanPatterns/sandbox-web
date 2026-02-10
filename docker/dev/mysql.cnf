@@ -1,0 +1,13 @@
+[mysqld]
+character-set-server = utf8
+skip-character-set-client-handshake = 1
+sql_mode = "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION"
+wait_timeout = 600
+connect_timeout = 60
+interactive_timeout = 600
+innodb_flush_log_at_trx_commit = 0
+innodb_log_buffer_size = 256M
+max_allowed_packet = 64M
+
+# general_log = on
+# general_log_file = /tmp/sql.log

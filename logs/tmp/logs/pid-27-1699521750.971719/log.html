@@ -1,0 +1,769 @@
+<span class='time'>09:22:30 </span><span style='color: #686868;'><span class="awlog-debug">attempt: 0</span></span><br><span class='time'>09:22:30 </span><span style='color: #686868;'><span class="awlog-debug">state size: 0</span></span><br><span class='time'>09:22:30 </span><span style='color: green;'>set http2: true</span><br><span class='time'>09:22:30 </span><span style='color: green;'>set Header: 'User-Agent' =&gt; 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'</span><br><span class='time'>09:22:30 </span><span style='color: red;'><span class="awlog-error">failed to load state</span></span><br><span class='time'>09:22:30 </span><h2 class="awlog-info">Account Check Parameters</h2><br><span class='time'>09:22:30 </span><span class="awlog-info">Provider engine: HttpBrowser</span><br><span class='time'>09:22:30 </span><span class="awlog-info">Provider code: handm</span><br><span class='time'>09:22:30 </span><span class="awlog-info">Account ID: 0</span><br><span class='time'>09:22:30 </span><span class="awlog-info">Class name: TAccountCheckerHandm</span><br><span class='time'>09:22:30 </span><span class="awlog-info">Server: parserbox-web, Thu, 09 Nov 2023 09:22:30 +0000<style>.time { display: none; }</style> <a href='#' onclick="$('span.time').show(); return false;">show timings</a></span><br><span class='time'>09:22:30 </span>Credentials: Array<br />
+(<br />
+    [Login] =&gt; veresch80@yahoo.com<br />
+    [Login2] =&gt; <br />
+    [Login3] =&gt; <br />
+    [Pass] =&gt; Banana1234!<br />
+    [AccountID] =&gt; 0<br />
+)<br />
+<br><span class='time'>09:22:30 </span>Answers on enter: Array<br />
+(<br />
+)<br />
+<br><span class='time'>09:22:30 </span><span class="awlog-info">Question on enter: </span><br><span class='time'>09:22:30 </span><span class="awlog-info">Step: </span><br><span class='time'>09:22:31 </span><span class="awlog-info">Last request time: none</span><br><span class='time'>09:22:31 </span><hr><br><span class='time'>09:22:31 </span><span style='color: #686868;'><span class="awlog-debug">checking, if already logged in</span></span><br><span class='time'>09:22:31 </span><span style='color: #8A2BE2;'><span class="awlog-notice">TAccountCheckerHandm::loginSuccessful</span></span><br><span class='time'>09:22:33 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/v2/user" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/v2/user</a></b></span><br><span class='time'>09:22:33 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:33 </span><span style='color: #696969;'><pre>GET /en_us/v2/user HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+accept: application/json
+content-type: application/json
+origin: https://www2.hm.com</span><br><span class='time'>09:22:33 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:33 </span><span style='color: #696969;'><b>HTTP/2 401 </b> 2412 msec</span><br><span class='time'>09:22:33 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:33 </span><span style='color: #696969;'><pre>content-type: text/html;charset=utf-8
+x-frame-options: SAMEORIGIN
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+expires: 0
+x-content-type-options: nosniff
+content-language: en
+content-length: 437
+date: Thu, 09 Nov 2023 09:22:33 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=207
+server-timing: origin; dur=84
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521752964_400219923_274482875_29140_14156_273_265_15&quot;;dur=1</span><br><span class='time'>09:22:33 </span><b>Set-Cookies:</b><br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521754.395.83.312326|ce11af63eaca573be5110d180bb330ca; Path=/; HttpOnly; SameSite=None; Secure
+<b>JSESSIONID</b>&nbsp;=&nbsp;4BCEB93E73DB9A26AD2C27C1308253C8AF7E75FC66EA3DE359843D6069D46C56E138A269069AD1D547E3DB3E6BDBA4F3FB8DCBF1DFD395013FC00C7EF911BF4C.hybris-ecm-web-796c98648f-qp972; Path=/; HttpOnly; SameSite=None; Secure
+<b>userCookie</b>&nbsp;=&nbsp;; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; SameSite=None; Secure
+<b>userCookie</b>&nbsp;=&nbsp;##eyJjYXJ0Q291bnQiOjB9##; Path=/; SameSite=None; Secure
+<b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com; SameSite=None; Secure
+<b>akamref</b>&nbsp;=&nbsp;en_us; path=/; domain=www2.hm.com; SameSite=None; Secure
+<b>AKA_A2</b>&nbsp;=&nbsp;A; expires=Thu, 09-Nov-2023 10:22:33 GMT; path=/; domain=hm.com; HttpOnly; SameSite=None; Secure
+<b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522053~id=96c6c9b810914621ba6175de844b3ade; Path=/; HttpOnly; SameSite=None; Secure
+<b>_abck</b>&nbsp;=&nbsp;A73623EA6930A212603F696867EDB728~-1~YAAQE9/aFwycwq6LAQAAv/Fjswq9cWd5dtnvE5IElsD3cB83HABtHFmOgwE6Rlx2I7+HEDhdE5WBT44NJuZGhkJm3mAhSGNKYFlwtKjrstdXlW/EGmTxK0Gg4uQtyLyOXsfSMI+nTTsj6bVtehoB2OaZEgcLkAdc8+ulYdKQ0YXODqqrHPzWtHHuZkUPOGDbkrh5PAnw4BGZMcGYc+AaJm/R0WlcpN3gn3+CQoF5veO6gzBL+Wg4a5vMiru8pjowt3+6P8QLevEXdUnmXlRhbB0AtA0NOm5rY8YDN7/ehsHop7vgl/nFLZDDUiVfar3T4kEMI/k6E1k4qr2tPquQKQxqtjhEB1WhhFK6CfkNNlE8j63134YYgQ==~-1~-1~1699525323; Domain=.hm.com; Path=/; Expires=Fri, 08 Nov 2024 09:22:33 GMT; Max-Age=31536000; Secure
+<b>bm_sz</b>&nbsp;=&nbsp;306F7C6162FB75CFC31DC258A1067D56~YAAQE9/aFw2cwq6LAQAAv/FjsxUGClE9SqU6Dd7VT2hKAd7sR0KPuDgnhq+4q+lYu1VS+hkdldM6mZPfxb/IHB5uw9DvywmDvpG/+HYdNoeMu9gGmyxTaRDTe8Bc1HhG3XiFy6B7KTS3loWsJ4e4adc8Oezb0ZvsYPVwF0WyCEZX2hXFGiU9HMOqGXG9oXx5ueiAQOKyzlTR/FF8eeMuRqB/kYVWsINmciBuAU29kcyuoSTpvSgluTrdPvnSC0tuxImCWOlQma3rBOywid9olR6pLBd1JizRiL97+h+TKGunu5y/8K0VLhcRPYJR66/RlN0AwQIu3hI=~3747910~3748674; Domain=.hm.com; Path=/; Expires=Thu, 09 Nov 2023 13:22:33 GMT; Max-Age=14400<br><span class='time'>09:22:33 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:33 </span>saved step00.html<!-- url:https://www2.hm.com/en_us/v2/user --><br><span class='time'>09:22:33 </span><span style='color: red;'>error: HTTP Code 401</span><br><span class='time'>09:22:33 </span><hr><br><span class='time'>09:22:33 </span><span style='color: #686868;'><span class="awlog-debug">not logged in, loading login form</span></span><br><span class='time'>09:22:33 </span><h2 class="awlog-info">Load Login Form</h2><br><span class='time'>09:22:34 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/index.html" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/index.html</a></b></span><br><span class='time'>09:22:34 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:34 </span><span style='color: #696969;'><pre>GET /en_us/index.html HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/v2/user</span><br><span class='time'>09:22:34 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:34 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 959 msec</span><br><span class='time'>09:22:34 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:34 </span><span style='color: #696969;'><pre>content-type: text/html; charset=utf-8
+access-control-expose-headers: Server-Timing
+x-frame-options: SAMEORIGIN
+x-nextjs-cache: HIT
+x-powered-by: Next.js
+etag: &quot;zcgrpteykdezol&quot;
+cache-control: s-maxage=300, stale-while-revalidate
+strict-transport-security: max-age=15724800; includeSubDomains
+x-akamai-transformed: 9 - 0 pmb=mTOE,1mRUM,2
+content-encoding: gzip
+date: Thu, 09 Nov 2023 09:22:33 GMT
+vary: Accept-Encoding
+server-timing: cdn-cache; desc=HIT
+server-timing: edge; dur=1
+server-timing: origin; dur=0
+server-timing: traceparent;desc=&quot;00-9619c006729cb7b5190dd1fb5418427f-ab3f90b43e6d3c70-01&quot;
+link: &lt;https://s1-cdn.hm.com&gt;;rel=&quot;preconnect&quot;,&lt;https://cdn.cookielaw.org&gt;;rel=&quot;preconnect&quot;,&lt;https://gs.nmgassets.com&gt;;rel=&quot;preconnect&quot;,&lt;https://cdn.optimizely.com&gt;;rel=&quot;preconnect&quot;,&lt;https://tags.tiqcdn.com&gt;;rel=&quot;preconnect&quot;,&lt;https://cdn-pci.optimizely.com&gt;;rel=&quot;preconnect&quot;,&lt;https://bat.bing.com&gt;;rel=&quot;preconnect&quot;,&lt;https://www.google-analytics.com&gt;;rel=&quot;preconnect&quot;,&lt;https://s.pinimg.com&gt;;rel=&quot;preconnect&quot;
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521753809_400219923_274483759_43_14125_270_0_15&quot;;dur=1</span><br><span class='time'>09:22:34 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com
+<b>akamref</b>&nbsp;=&nbsp;en_us; path=/; domain=www2.hm.com
+<b>AKA_A2</b>&nbsp;=&nbsp;A; expires=Thu, 09-Nov-2023 10:22:33 GMT; path=/; domain=hm.com; secure; HttpOnly
+<b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522053~id=96c6c9b810914621ba6175de844b3ade; Path=/; HttpOnly; Secure; SameSite=None
+<b>_abck</b>&nbsp;=&nbsp;EC499BDAAF05B236006A4273D0137870~-1~YAAQE9/aFw6cwq6LAQAAC/NjswrMvoWSsXaokcXQQR6ThK2B2Vb8KV3S3U5DxcNWn4Q8Z271f8/4yqViTOy9J29+BYgXnmFNLdiHVLP+qOf0HW3PtjMWM+o8KU0ye/t6YhAgeJ+g7RRyCSr0SqjXckr05sOMQf1ylGIx8/O1W5lvicRNfsChn5WBuF7vhmug93llw4TjOkkEG0Ox7MQ81fZVcyg8AhXShT2AaJhZTufQClmSRsm5u7vhUkWDSNJfp6v12kdL7gzKAEiDwcjfzJU7UsN7mmF1BQu1HAcgphEBmu8Q6FVRecpS7f7gakXX/2kN5/Fqn+kbDth3A/7D5MSJbd2E+iIU4XGUu1eDqzu5+sp1813fQg==~-1~-1~1699525313; Domain=.hm.com; Path=/; Expires=Fri, 08 Nov 2024 09:22:33 GMT; Max-Age=31536000; Secure
+<b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674; Domain=.hm.com; Path=/; Expires=Thu, 09 Nov 2023 13:22:33 GMT; Max-Age=14400<br><span class='time'>09:22:34 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:34 </span>saved step01.html<!-- url:https://www2.hm.com/en_us/index.html --><br><span class='time'>09:22:34 </span><hr><br><span class='time'>09:22:34 </span><span style='color: green;'>Set-Cookie: _abck =&gt; 8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQEGncFzTXhKiLAQAAHrZjswruLiCAyjtLroZB7IvYnof2j4LJ7BOdp6LdCH7Nm8vJRs/Y3Wloh1R2/1k1OWra4j84G1fb8x0/WXNpAU5tXweT+7PVSP6GwvjClhPQ7VWvi0GDDiF/kmMSG9wQiIh5ISbwUQvGrBz3PIlBIluxQ4Dte14cvecA2Kvyhr3a1EHtJKVNgctETnSX4h6ubI70F0dO8rjGQtTUU1kK5kmMWlqERQhcT/bw5CBSQwJa3uf0e4M9qAoxs4qjvifREYq1Cqwck5IQ+6jangbfRY+TcGRai6Q9ctpipE9xvlijd09IpvFmCXJLG3BaynMIvR1/e+evDUOF/TnC5OFKZf3G2DRe4rTP6vGqTtHU7mIEVft48DTqrY9UdH6yha6TsbEdDM1Wx3G24DiZkIVWsLC45Q==~-1~-1~1699525223; domain=.hm.com; expires=Sat, 09 Nov 2024 09:22:34 GMT; path=/</span><br><span class='time'>09:22:35 </span><span style='color: #696969;'><b>POST <a target="_blank" href="https://www2.hm.com/en_us/j_spring_security_check" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/j_spring_security_check</a></b></span><br><span class='time'>09:22:35 </span><b>post fields:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:35 </span><span style='color: #696969;'>j_username: veresch80@yahoo.com</span><br><span class='time'>09:22:35 </span><span style='color: #696969;'>j_password: Banana1234!</span><br><span class='time'>09:22:35 </span><span style='color: #696969;'>asyncCall: true</span><br><span class='time'>09:22:35 </span><span style='color: #696969;'>_spring_security_remember_me: on</span><br></div>
+<span class='time'>09:22:35 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:35 </span><span style='color: #696969;'><pre>POST /en_us/j_spring_security_check HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/login
+accept: application/json
+content-type: application/x-www-form-urlencoded
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/index.html
+content-length: 104</span><br><span class='time'>09:22:35 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522053~id=96c6c9b810914621ba6175de844b3ade<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQEGncFzTXhKiLAQAAHrZjswruLiCAyjtLroZB7IvYnof2j4LJ7BOdp6LdCH7Nm8vJRs/Y3Wloh1R2/1k1OWra4j84G1fb8x0/WXNpAU5tXweT+7PVSP6GwvjClhPQ7VWvi0GDDiF/kmMSG9wQiIh5ISbwUQvGrBz3PIlBIluxQ4Dte14cvecA2Kvyhr3a1EHtJKVNgctETnSX4h6ubI70F0dO8rjGQtTUU1kK5kmMWlqERQhcT/bw5CBSQwJa3uf0e4M9qAoxs4qjvifREYq1Cqwck5IQ+6jangbfRY+TcGRai6Q9ctpipE9xvlijd09IpvFmCXJLG3BaynMIvR1/e+evDUOF/TnC5OFKZf3G2DRe4rTP6vGqTtHU7mIEVft48DTqrY9UdH6yha6TsbEdDM1Wx3G24DiZkIVWsLC45Q==~-1~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><span class='time'>09:22:35 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:35 </span><span style='color: #696969;'><b>HTTP/2 302 </b> 770 msec</span><br><span class='time'>09:22:35 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:35 </span><span style='color: #696969;'><pre>content-length: 0
+x-frame-options: SAMEORIGIN
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+expires: 0
+x-content-type-options: nosniff
+location: https://www2.hm.com/en_us/login
+date: Thu, 09 Nov 2023 09:22:35 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=270
+server-timing: origin; dur=283
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521755013_400219923_274485539_55339_12181_225_0_15&quot;;dur=1</span><br><span class='time'>09:22:35 </span><b>Set-Cookies:</b><br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca; Path=/; HttpOnly; SameSite=None; Secure
+<b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb; Path=/; HttpOnly; SameSite=None; Secure
+<b>userCookie</b>&nbsp;=&nbsp;; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; SameSite=None; Secure
+<b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx; Max-Age=7776000; Expires=Wed, 07-Feb-2024 09:22:35 GMT; Path=/; HttpOnly; SameSite=None; Secure
+<b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2; Path=/; HttpOnly; SameSite=None; Secure
+<b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..uJBCjRPHoTiVh8ZcL-fteg.iRyo0YRsUfgzJTIu6Mr1N0xj-yr0IGRmQt9i-UjnqM1PQK8PjYiW_cTHZV9WeToV5a6lh5r9vxAUCokQEtfbNsjUN7DMuftx3s_hXE1AIIPlcgIZyTJP2OWlquH8ASeqnyVJ-jCnBx5b5omIRDwX6S1MMmCHjBflDyhdOL0LlMcmyW-ZBBt6g08pobEYyVXkBR6gDxUx7p1xty_NHlCyXav6gPqj6x5VZIOW9GULXFvIg-IkZYqdWMKFOSf0AZWKQmhB02OHMVJFRgDVQeh9JnwQM2nPHfakPINUJ7LWc2k.W1MWPXdvlfsIWz-8F2ROLA; Expires=Fri, 08-Nov-2024 09:22:35 GMT; Path=/; SameSite=None; Secure
+<b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##; Path=/; SameSite=None; Secure
+<b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##; Path=/; SameSite=None; Secure
+<b>hm-us-favourites</b>&nbsp;=&nbsp;&quot;&quot;; Expires=Thu, 16-Nov-2023 09:22:35 GMT; Path=/; SameSite=None; Secure
+<b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ; Expires=Fri, 08-Nov-2024 09:22:35 GMT; Path=/; SameSite=None; Secure
+<b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com; SameSite=None; Secure
+<b>akamref</b>&nbsp;=&nbsp;en_us; path=/; domain=www2.hm.com; SameSite=None; Secure
+<b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522055~id=eb61513f9e45f7d4491a0d23c95a1710; Path=/; HttpOnly; SameSite=None; Secure
+<b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223; Domain=.hm.com; Path=/; Expires=Fri, 08 Nov 2024 09:22:35 GMT; Max-Age=31536000; Secure<br><span class='time'>09:22:35 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:35 </span>saved step02.html<!-- url:https://www2.hm.com/en_us/j_spring_security_check --><br><span class='time'>09:22:36 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/login" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/login</a></b></span><br><span class='time'>09:22:36 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:36 </span><span style='color: #696969;'><pre>GET /en_us/login HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/login
+accept: application/json
+content-type: application/x-www-form-urlencoded
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/index.html</span><br><span class='time'>09:22:36 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522055~id=eb61513f9e45f7d4491a0d23c95a1710<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:36 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:36 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 653 msec</span><br><span class='time'>09:22:36 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:36 </span><span style='color: #696969;'><pre>content-type: text/html; charset=UTF-8
+x-frame-options: SAMEORIGIN
+accept-ranges: bytes
+vary: Accept-Encoding
+cache-control: max-age=0, no-cache, no-store
+x-akamai-transformed: 9 32197 0 pmb=mTOE,1mRUM,2
+content-encoding: gzip
+date: Thu, 09 Nov 2023 09:22:36 GMT
+content-length: 34469
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=196
+server-timing: origin; dur=89
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521755785_400219923_274486763_28556_18619_213_0_15&quot;;dur=1</span><br><span class='time'>09:22:36 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com
+<b>akamref</b>&nbsp;=&nbsp;en_us; path=/; domain=www2.hm.com
+<b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522056~id=f79b9e08bc21813175a3b10f152904c9; Path=/; HttpOnly; Secure; SameSite=None<br><span class='time'>09:22:36 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:36 </span>saved step03.html<!-- url:https://www2.hm.com/en_us/login --><br><span class='time'>09:22:36 </span><hr><br><span class='time'>09:22:36 </span><span style='color: #686868;'><span class="awlog-debug">form loaded, logging in</span></span><br><span class='time'>09:22:36 </span><h2 class="awlog-info">Login</h2><br><span class='time'>09:22:36 </span><span style='color: #8A2BE2;'><span class="awlog-notice">TAccountCheckerHandm::loginSuccessful</span></span><br><span class='time'>09:22:36 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/v2/user" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/v2/user</a></b></span><br><span class='time'>09:22:36 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:36 </span><span style='color: #696969;'><pre>GET /en_us/v2/user HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+accept: application/json
+content-type: application/json
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/login</span><br><span class='time'>09:22:36 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522056~id=f79b9e08bc21813175a3b10f152904c9<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:36 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:36 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 722 msec</span><br><span class='time'>09:22:36 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:36 </span><span style='color: #696969;'><pre>content-type: application/json;charset=UTF-8
+vary: Accept-Encoding
+x-frame-options: SAMEORIGIN
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+expires: 0
+x-content-type-options: nosniff
+content-encoding: gzip
+content-length: 1469
+date: Thu, 09 Nov 2023 09:22:36 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=114
+server-timing: origin; dur=242
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521756529_400219923_274487945_35579_18092_213_0_15&quot;;dur=1</span><br><span class='time'>09:22:36 </span><b>Set-Cookies:</b><br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##; Path=/; SameSite=None; Secure
+<b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com; SameSite=None; Secure
+<b>akamref</b>&nbsp;=&nbsp;en_us; path=/; domain=www2.hm.com; SameSite=None; Secure
+<b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522056~id=f79b9e08bc21813175a3b10f152904c9; Path=/; HttpOnly; SameSite=None; Secure<br><span class='time'>09:22:36 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:36 </span>saved step04.html<!-- url:https://www2.hm.com/en_us/v2/user --><br><span class='time'>09:22:36 </span><hr><br><span class='time'>09:22:36 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>{"email":"veresch80@yahoo.com","contactEmail":"veresch80@yahoo.com","categoryId":"CLUB","customerId":"100108754650","customerEmail":"veresch80@yahoo.com","customerFashionNews":"N","customerHasChildren":"N","customerLoyaltyLevel":"1","customerBpid":"3181923997","customerCountry":"USA","selectedMarket":"US","displayLanguage":"en_US","businessPartnerId":"3181923997","clubRole":"Z002","status":"FULL_MEMBER","originalUpdateTimestamp":"2023-01-17T07:29:53.000+01:00","customerLoyaltyId":"100912812208172","loyaltyProgramId":"1009","frequencyTextFashionNews":"None","frequencyTextClubNews":"none","gender":"MALE","bounceIndicator":false,"fullClubMemberStartDateAndTime":"2023-01-17T07:29:53.000+01:00","formattedFullClubMemberStartDateAndTime":"01/17/2023","emailConfirmationState":"null","fashionNewsSignupState":"null","fullClubSignupState":"null","pointsBalance":0,"corporateBrandId":"0","countryCode":"US","timestamp":"Tue Jan 17 07:29:53 CET 2023","upToDate":true,"firstName":"Alexi","lastName":"Vereschaga","prefix":"+1","country":"USA","day":"01","month":"04","year":"1980","hmCatalogueSubscription":true,"emailChanged":false,"doiMarket":false,"customerCodeURL":"/medias/100912812208172?context=bWFzdGVyfGludGVybGVhdmVkYmFyY29kZXN8NjcxM3xpbWFnZS9wbmd8aW50ZXJsZWF2ZWRiYXJjb2Rlcy9oYWUvaGI0LzMzMTMwNzAwNTM3ODg2LnBuZ3xlZGNhYTllMjFiMjg0MjUyYzgwYjA4MGUyZDU0YjMyZGY1MTk5OTJmYWYzZDg0MzdlZGVlNWQyN2QxNzUwNjIy&amp;storeId=hm-us&amp;instanceType=ECM","customerCodeType":"ITF2OF5","currentTier":0,"nextTierBalance":"500","currentTierLabel":"hub.membership.level","currentBalanceLabel":"","currentTierCopy":"Member","nextTierCopyClubProfile":"Unlock Plus Level at 500 pts","nextTierCopyProfileOverlay":"Get to 500 pts before 01/17/2024 to unlock Plus level.","omniCreditCustomer":false,"payLaterWhitelisted":false,"postPurchaseAuthenticated":false,"displayName":"Alexi Vereschaga","applicationTimestamp":1699521756664,"showClub2TermsAndConditionModal":false,"hmFashionNewsSubscription":false,"customerType":"REGISTERED","printReceipt":true,"mainMembershipCardCopy":"You&rsquo;re 200 points away from your next reward and 500 points are needed to become a Plus member. Vouchers are issued 30 days after they are earned.","linkedSMProfile":"","socialProfileId":"","validatedUser":false,"customerCorePortalData":"data=ag%2FHmHuhsSzRU%2B%2FLgfVXS6nwNBlyW0tgEnqZPP81OgD5HH%2Fy2gbL8XJ3G55w8C1e%2FzSu1Q%2Bvf4vmfMM2sINqgYqSPJmPtuJfb9vUgpwZOV%2FLUnt6DAjBCmfeRtEfzqIs","omnicreditStatus":"NOT_AUTHENTICATED","altIdSaved":false,"clubMemberCreationDateAndTime":"2023-01-17T06:30:17.000Z","pointsExpirationDate":"2024-01-16T00:00:00Z","cbpcustomer":false,"apcustomerRequested":false,"cleansingRequested":false}</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:36 </span><span style='color: #686868;'><span class="awlog-debug">[Email]: veresch80@yahoo.com</span></span><br><span class='time'>09:22:36 </span><span style='color: red;'><span class="awlog-error">logged in, parsing</span></span><br><span class='time'>09:22:36 </span><h2 class="awlog-info">Parse</h2><br><span class='time'>09:22:37 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/v2/user" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/v2/user</a></b></span><br><span class='time'>09:22:37 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:37 </span><span style='color: #696969;'><pre>GET /en_us/v2/user HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+accept: application/json
+content-type: application/json
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/v2/user</span><br><span class='time'>09:22:37 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522056~id=f79b9e08bc21813175a3b10f152904c9<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:37 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:37 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 513 msec</span><br><span class='time'>09:22:37 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:37 </span><span style='color: #696969;'><pre>content-type: application/json;charset=UTF-8
+vary: Accept-Encoding
+x-frame-options: SAMEORIGIN
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+expires: 0
+x-content-type-options: nosniff
+content-encoding: gzip
+content-length: 1465
+date: Thu, 09 Nov 2023 09:22:37 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=83
+server-timing: origin; dur=79
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521757270_400219923_274489040_16225_18515_242_0_15&quot;;dur=1</span><br><span class='time'>09:22:37 </span><b>Set-Cookies:</b><br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##; Path=/; SameSite=None; Secure
+<b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com; SameSite=None; Secure
+<b>akamref</b>&nbsp;=&nbsp;en_us; path=/; domain=www2.hm.com; SameSite=None; Secure
+<b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a; Path=/; HttpOnly; SameSite=None; Secure<br><span class='time'>09:22:37 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:37 </span>saved step05.html<!-- url:https://www2.hm.com/en_us/v2/user --><br><span class='time'>09:22:37 </span><hr><br><span class='time'>09:22:37 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>{"email":"veresch80@yahoo.com","contactEmail":"veresch80@yahoo.com","categoryId":"CLUB","customerId":"100108754650","customerEmail":"veresch80@yahoo.com","customerFashionNews":"N","customerHasChildren":"N","customerLoyaltyLevel":"1","customerBpid":"3181923997","customerCountry":"USA","selectedMarket":"US","displayLanguage":"en_US","businessPartnerId":"3181923997","clubRole":"Z002","status":"FULL_MEMBER","originalUpdateTimestamp":"2023-01-17T07:29:53.000+01:00","customerLoyaltyId":"100912812208172","loyaltyProgramId":"1009","frequencyTextFashionNews":"None","frequencyTextClubNews":"none","gender":"MALE","bounceIndicator":false,"fullClubMemberStartDateAndTime":"2023-01-17T07:29:53.000+01:00","formattedFullClubMemberStartDateAndTime":"01/17/2023","emailConfirmationState":"null","fashionNewsSignupState":"null","fullClubSignupState":"null","pointsBalance":0,"corporateBrandId":"0","countryCode":"US","timestamp":"Tue Jan 17 07:29:53 CET 2023","upToDate":true,"firstName":"Alexi","lastName":"Vereschaga","prefix":"+1","country":"USA","day":"01","month":"04","year":"1980","hmCatalogueSubscription":true,"emailChanged":false,"doiMarket":false,"customerCodeURL":"/medias/100912812208172?context=bWFzdGVyfGludGVybGVhdmVkYmFyY29kZXN8NjcxM3xpbWFnZS9wbmd8aW50ZXJsZWF2ZWRiYXJjb2Rlcy9oYWUvaGI0LzMzMTMwNzAwNTM3ODg2LnBuZ3xlZGNhYTllMjFiMjg0MjUyYzgwYjA4MGUyZDU0YjMyZGY1MTk5OTJmYWYzZDg0MzdlZGVlNWQyN2QxNzUwNjIy&amp;storeId=hm-us&amp;instanceType=ECM","customerCodeType":"ITF2OF5","currentTier":0,"nextTierBalance":"500","currentTierLabel":"hub.membership.level","currentBalanceLabel":"","currentTierCopy":"Member","nextTierCopyClubProfile":"Unlock Plus Level at 500 pts","nextTierCopyProfileOverlay":"Get to 500 pts before 01/17/2024 to unlock Plus level.","omniCreditCustomer":false,"payLaterWhitelisted":false,"postPurchaseAuthenticated":false,"displayName":"Alexi Vereschaga","applicationTimestamp":1699521757391,"showClub2TermsAndConditionModal":false,"hmFashionNewsSubscription":false,"customerType":"REGISTERED","printReceipt":true,"mainMembershipCardCopy":"You&rsquo;re 200 points away from your next reward and 500 points are needed to become a Plus member. Vouchers are issued 30 days after they are earned.","linkedSMProfile":"","socialProfileId":"","validatedUser":false,"customerCorePortalData":"data=ag%2FHmHuhsSzRU%2B%2FLgfVXS6nwNBlyW0tgEnqZPP81OgD5HH%2Fy2gbL8XJ3G55w8C1eGo0pLHaG9pxi4U41bkdCWsMarQlJnRF8uj%2BmTAnDmmSyP9srlLcgFEVpUaQb1Tb0","omnicreditStatus":"NOT_AUTHENTICATED","altIdSaved":false,"clubMemberCreationDateAndTime":"2023-01-17T06:30:17.000Z","pointsExpirationDate":"2024-01-16T00:00:00Z","cbpcustomer":false,"apcustomerRequested":false,"cleansingRequested":false}</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:37 </span><span class="awlog-info">property set - Name: Alexi Vereschaga</span><br><span class='time'>09:22:37 </span><span class="awlog-info">property set - EliteLevel: Member</span><br><span class='time'>09:22:37 </span><span class="awlog-info">balance set: 0</span><br><span class='time'>09:22:37 </span><span class="awlog-info">property set - RenewalDate: 1705363200</span><br><span class='time'>09:22:37 </span><span class="awlog-info">property set - NextReward: 200</span><br><span class='time'>09:22:37 </span><span class="awlog-info">property set - NextLevel: 500</span><br><span class='time'>09:22:37 </span><span class="awlog-info">property set - Number: 100912812208172</span><br><span class='time'>09:22:37 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/v1/offersProposition" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/v1/offersProposition</a></b></span><br><span class='time'>09:22:37 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:37 </span><span style='color: #696969;'><pre>GET /en_us/v1/offersProposition HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/v2/user</span><br><span class='time'>09:22:37 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:37 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:37 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 478 msec</span><br><span class='time'>09:22:37 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:37 </span><span style='color: #696969;'><pre>content-type: application/json;charset=UTF-8
+vary: Accept-Encoding
+x-frame-options: SAMEORIGIN
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+expires: 0
+x-content-type-options: nosniff
+content-encoding: gzip
+content-length: 929
+date: Thu, 09 Nov 2023 09:22:37 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=89
+server-timing: origin; dur=70
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521757803_400219923_274489832_16024_17221_266_0_15&quot;;dur=1</span><br><span class='time'>09:22:37 </span><b>Set-Cookies:</b><br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##; Path=/; SameSite=None; Secure
+<b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com; SameSite=None; Secure
+<b>akamref</b>&nbsp;=&nbsp;en_us; path=/; domain=www2.hm.com; SameSite=None; Secure
+<b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a; Path=/; HttpOnly; SameSite=None; Secure<br><span class='time'>09:22:37 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:37 </span>saved step06.html<!-- url:https://www2.hm.com/en_us/v1/offersProposition --><br><span class='time'>09:22:37 </span><hr><br><span class='time'>09:22:37 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[{"offerKey":"OFR79637","offerPropositionId":123400493,"amount":0.0,"offerSpaceID":0,"weight":0,"rank":1,"pointsImpactValue":0,"pointsImpactFlag":0,"offerType":"CL01","startDateTime":"2023-10-26T12:00:00.000Z","startDateTimeFormatted":"10/26/2023 8:00 AM ET","startDateTimeMs":1698321600000,"endDateTime":"2023-11-09T11:00:00.000Z","endDateTimeFormatted":"11/09/2023 6:00 AM ET","endDateTimeMs":1699527600000,"personalizedExpireDate":"2023-11-09T11:00:00.000Z","personalizedExpireDateFormatted":"11/09/2023 6:00 AM ET","personalizedExpireDateMs":1699527600000,"timestamp":"2023-11-09T10:22:37.921+01:00","timestampMs":1699521757921,"offerDiscountCode":"","offerDiscountCodeStore":"","amountFormatted":"$ 0.00"},{"offerKey":"OFR73096","offerPropositionId":123400494,"amount":0.0,"offerSpaceID":0,"weight":0,"rank":2,"pointsImpactValue":0,"pointsImpactFlag":0,"offerType":"ZR08","startDateTime":"2022-10-23T12:00:00.000Z","startDateTimeFormatted":"10/23/2022 8:00 AM ET","startDateTimeMs":1666526400000,"endDateTime":"2025-10-23T12:00:00.000Z","endDateTimeFormatted":"10/23/2025 8:00 AM ET","endDateTimeMs":1761220800000,"personalizedExpireDate":"2025-10-23T12:00:00.000Z","personalizedExpireDateFormatted":"10/23/2025 8:00 AM ET","personalizedExpireDateMs":1761220800000,"timestamp":"2023-11-09T10:22:37.921+01:00","timestampMs":1699521757921,"offerDiscountCode":"NAL212_s6","offerDiscountCodeStore":"","amountFormatted":"$ 0.00"},{"offerKey":"OFR74194","offerPropositionId":123400495,"amount":0.0,"offerSpaceID":0,"weight":0,"rank":3,"pointsImpactValue":0,"pointsImpactFlag":0,"offerType":"ZR08","startDateTime":"2022-12-03T08:00:00.000Z","startDateTimeFormatted":"12/03/2022 3:00 AM ET","startDateTimeMs":1670054400000,"endDateTime":"2025-11-23T13:00:00.000Z","endDateTimeFormatted":"11/23/2025 8:00 AM ET","endDateTimeMs":1763902800000,"personalizedExpireDate":"2025-11-23T13:00:00.000Z","personalizedExpireDateFormatted":"11/23/2025 8:00 AM ET","personalizedExpireDateMs":1763902800000,"timestamp":"2023-11-09T10:22:37.921+01:00","timestampMs":1699521757921,"offerDiscountCode":"NAL231_s6","offerDiscountCodeStore":"","amountFormatted":"$ 0.00"},{"offerKey":"OFR40908","offerPropositionId":123400496,"amount":0.0,"offerSpaceID":0,"weight":0,"rank":4,"pointsImpactValue":0,"pointsImpactFlag":0,"offerType":"CL01","startDateTime":"2020-09-20T04:00:00.000Z","startDateTimeFormatted":"09/20/2020 12:00 AM ET","startDateTimeMs":1600574400000,"endDateTime":"2025-12-27T04:59:00.000Z","endDateTimeFormatted":"12/26/2025 11:59 PM ET","endDateTimeMs":1766811540000,"personalizedExpireDate":"2025-12-27T04:59:00.000Z","personalizedExpireDateFormatted":"12/26/2025 11:59 PM ET","personalizedExpireDateMs":1766811540000,"timestamp":"2023-11-09T10:22:37.921+01:00","timestampMs":1699521757921,"offerDiscountCode":"","offerDiscountCodeStore":"","amountFormatted":"$ 0.00"},{"offerKey":"OFR81151","offerPropositionId":123400497,"amount":0.0,"offerSpaceID":0,"weight":0,"rank":5,"pointsImpactValue":0,"pointsImpactFlag":0,"offerType":"ZR12","startDateTime":"2023-10-05T04:00:00.000Z","startDateTimeFormatted":"10/05/2023 12:00 AM ET","startDateTimeMs":1696478400000,"endDateTime":"2024-10-05T03:59:00.000Z","endDateTimeFormatted":"10/04/2024 11:59 PM ET","endDateTimeMs":1728100740000,"personalizedExpireDate":"2024-10-05T03:59:00.000Z","personalizedExpireDateFormatted":"10/04/2024 11:59 PM ET","personalizedExpireDateMs":1728100740000,"timestamp":"2023-11-09T10:22:37.921+01:00","timestampMs":1699521757921,"offerDiscountCode":"","offerDiscountCodeStore":"","amountFormatted":"$ 0.00"},{"offerKey":"OFR69221","offerPropositionId":123400498,"amount":0.0,"offerSpaceID":0,"weight":0,"rank":6,"pointsImpactValue":0,"pointsImpactFlag":0,"offerType":"CL01","startDateTime":"2022-04-17T22:00:00.000Z","startDateTimeFormatted":"04/17/2022 6:00 PM ET","startDateTimeMs":1650232800000,"endDateTime":"2025-12-30T23:00:00.000Z","endDateTimeFormatted":"12/30/2025 6:00 PM ET","endDateTimeMs":1767135600000,"personalizedExpireDate":"2025-12-30T23:00:00.000Z","personalizedExpireDateFormatted":"12/30/2025 6:00 PM ET","personalizedExpireDateMs":1767135600000,"timestamp":"2023-11-09T10:22:37.921+01:00","timestampMs":1699521757921,"offerDiscountCode":"","offerDiscountCodeStore":"","amountFormatted":"$ 0.00"},{"offerKey":"OFR40245","offerPropositionId":123400499,"amount":0.0,"offerSpaceID":0,"weight":0,"rank":7,"pointsImpactValue":0,"pointsImpactFlag":0,"offerType":"CL01","startDateTime":"2019-07-17T04:00:00.000Z","startDateTimeFormatted":"07/17/2019 12:00 AM ET","startDateTimeMs":1563336000000,"endDateTime":"2025-07-17T04:00:00.000Z","endDateTimeFormatted":"07/17/2025 12:00 AM ET","endDateTimeMs":1752724800000,"personalizedExpireDate":"2025-07-17T04:00:00.000Z","personalizedExpireDateFormatted":"07/17/2025 12:00 AM ET","personalizedExpireDateMs":1752724800000,"timestamp":"2023-11-09T10:22:37.922+01:00","timestampMs":1699521757922,"offerDiscountCode":"","offerDiscountCodeStore":"","amountFormatted":"$ 0.00"}]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:39 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR79637" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR79637</a></b></span><br><span class='time'>09:22:39 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:39 </span><span style='color: #696969;'><pre>GET /en_us/member/memberOffers.v1.json?offerKeys=OFR79637 HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/v1/offersProposition</span><br><span class='time'>09:22:39 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:39 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:39 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1324 msec</span><br><span class='time'>09:22:39 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:39 </span><span style='color: #696969;'><pre>content-type: application/json;charset=utf-8
+content-length: 624
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+vary: Accept-Encoding
+content-encoding: gzip
+cache-control: public, max-age=10800, post-check=900, must-revalidate
+date: Thu, 09 Nov 2023 09:22:39 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=87
+server-timing: origin; dur=1026
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521758287_400219923_274490527_111236_16674_270_0_15&quot;;dur=1</span><br><span class='time'>09:22:39 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com<br><span class='time'>09:22:39 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:39 </span>saved step07.html<!-- url:https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR79637 --><br><span class='time'>09:22:39 </span><hr><br><span class='time'>09:22:39 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[{"key":"OFR79637","headline":"Up to 30% off select outerwear styles","type":"CL01","benefitNearingExpiryThresholdDays":"3","isOfferOrVoucher":"offer","typeCat":"MEMBER PRICES","logo":{"name":"","position":"center","color":"black","logoType":"helloMemberEnLogo"},"srcImage":"https://www2.hm.com/content/dam/global_campaigns/season_07/ladies/1067e/1067e-3x2.jpg","relativeScrImage":"/content/dam/global_campaigns/season_07/ladies/1067e/1067e-3x2.jpg","srcImageThumbnail":null,"relativeScrImageThumbnail":null,"path":"/en_us/member/offers/vm-vouchers/ofr79643","tcLink":"/en_us/member/offers/vm-vouchers/ofr79643.tc.html","targetTemplate":"/apps/hm/templates/content/loyalty/offer","isBookingBug":false,"bonus":false,"garmentCollection":false,"isValidUntilEnable":true,"isValidFromEnable":false,"activeForLabel":"[activeForText]","validUntilLabel":"Expires on","validFromLabel":null,"rectangleText":null,"clubEventChainId":"","clubServiceId":"","isPreshopping":false,"fullyBookedMessage":"Fully booked","registrationClosedMessage":"REGISTRATION CLOSED","fewSeatsLeftMessage":"ONLY A FEW SEATS LEFT!","notPossibleToBookMessage":"REGISTRATION CLOSED"}]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:39 </span><span style='color: #686868;'><span class="awlog-debug">Adding subAccount...</span></span><br><span class='time'>09:22:39 </span><span style='color: #686868;'><span class="awlog-debug"><pre>array (
+  'Code' => 'handm123400493',
+  'DisplayName' => 'Up to 30% off select outerwear styles',
+  'Balance' => 0.0,
+  'ExpirationDate' => 1699527600,
+)</pre></span></span><br><span class='time'>09:22:39 </span><span style='color: #686868;'><span class="awlog-debug">subAccount was added successfully</span></span><br><span class='time'>09:22:40 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR73096" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR73096</a></b></span><br><span class='time'>09:22:40 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:40 </span><span style='color: #696969;'><pre>GET /en_us/member/memberOffers.v1.json?offerKeys=OFR73096 HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR79637</span><br><span class='time'>09:22:40 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:40 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:40 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1282 msec</span><br><span class='time'>09:22:40 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:40 </span><span style='color: #696969;'><pre>content-type: application/json;charset=utf-8
+content-length: 645
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+vary: Accept-Encoding
+content-encoding: gzip
+cache-control: public, max-age=10800, post-check=900, must-revalidate
+date: Thu, 09 Nov 2023 09:22:40 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=97
+server-timing: origin; dur=927
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521759655_400219923_274492466_102410_16363_259_0_15&quot;;dur=1</span><br><span class='time'>09:22:40 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com<br><span class='time'>09:22:40 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:40 </span>saved step08.html<!-- url:https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR73096 --><br><span class='time'>09:22:40 </span><hr><br><span class='time'>09:22:40 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[{"key":"OFR73096","headline":"20% off H&amp;M HOME","type":"ZR08","benefitNearingExpiryThresholdDays":"3","isOfferOrVoucher":"offer","typeCat":"REFRESH YOUR SPACE","logo":{"name":"","position":"center","color":"black","logoType":"helloMemberEnLogo"},"srcImage":"https://www2.hm.com/content/dam/global_campaigns/season_08/home/7078-holiday/7078a/department-teasers/7078A-holiday-destination-3x2-1.jpg","relativeScrImage":"/content/dam/global_campaigns/season_08/home/7078-holiday/7078a/department-teasers/7078A-holiday-destination-3x2-1.jpg","srcImageThumbnail":null,"relativeScrImageThumbnail":null,"path":"/en_us/member/offers/vm-vouchers/ofr73098","tcLink":"/en_us/member/offers/vm-vouchers/ofr73098.tc.html","targetTemplate":"/apps/hm/templates/content/loyalty/offer","isBookingBug":false,"bonus":false,"garmentCollection":false,"isValidUntilEnable":true,"isValidFromEnable":false,"activeForLabel":"[activeForText]","validUntilLabel":"Expires on","validFromLabel":null,"rectangleText":null,"clubEventChainId":"","clubServiceId":"","isPreshopping":false,"fullyBookedMessage":"Fully booked","registrationClosedMessage":"REGISTRATION CLOSED","fewSeatsLeftMessage":"ONLY A FEW SEATS LEFT!","notPossibleToBookMessage":"REGISTRATION CLOSED"}]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:40 </span><span style='color: #686868;'><span class="awlog-debug">Adding subAccount...</span></span><br><span class='time'>09:22:40 </span><span style='color: #686868;'><span class="awlog-debug"><pre>array (
+  'Code' => 'handm123400494',
+  'DisplayName' => '20% off H&M HOME',
+  'Balance' => 0.0,
+  'ExpirationDate' => 1761220800,
+)</pre></span></span><br><span class='time'>09:22:40 </span><span style='color: #686868;'><span class="awlog-debug">subAccount was added successfully</span></span><br><span class='time'>09:22:41 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR74194" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR74194</a></b></span><br><span class='time'>09:22:41 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:41 </span><span style='color: #696969;'><pre>GET /en_us/member/memberOffers.v1.json?offerKeys=OFR74194 HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR73096</span><br><span class='time'>09:22:41 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:41 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:41 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1369 msec</span><br><span class='time'>09:22:41 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:41 </span><span style='color: #696969;'><pre>content-type: application/json;charset=utf-8
+content-length: 645
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+vary: Accept-Encoding
+content-encoding: gzip
+cache-control: public, max-age=10800, post-check=900, must-revalidate
+date: Thu, 09 Nov 2023 09:22:42 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=116
+server-timing: origin; dur=931
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521760964_400219923_274494430_104762_16822_252_0_15&quot;;dur=1</span><br><span class='time'>09:22:41 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com<br><span class='time'>09:22:41 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:41 </span>saved step09.html<!-- url:https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR74194 --><br><span class='time'>09:22:41 </span><hr><br><span class='time'>09:22:41 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[{"key":"OFR74194","headline":"20% off H&amp;M Sport","type":"ZR08","benefitNearingExpiryThresholdDays":"3","isOfferOrVoucher":"offer","typeCat":"READY TO MOVE? LET'S GO!","logo":{"name":"","position":"center","color":"black","logoType":"helloMemberEnLogo"},"srcImage":"https://www2.hm.com/content/dam/global_campaigns/season_08/sport/7438a/7438A-3x2-3-womens-indoor-training.jpg","relativeScrImage":"/content/dam/global_campaigns/season_08/sport/7438a/7438A-3x2-3-womens-indoor-training.jpg","srcImageThumbnail":null,"relativeScrImageThumbnail":null,"path":"/en_us/member/offers/vm-vouchers/ofr74087","tcLink":"/en_us/member/offers/vm-vouchers/ofr74087.tc.html","targetTemplate":"/apps/hm/templates/content/loyalty/offer","isBookingBug":false,"bonus":false,"garmentCollection":false,"isValidUntilEnable":true,"isValidFromEnable":false,"activeForLabel":"[activeForText]","validUntilLabel":"Expires on","validFromLabel":null,"rectangleText":null,"clubEventChainId":"","clubServiceId":"","isPreshopping":false,"fullyBookedMessage":"Fully booked","registrationClosedMessage":"REGISTRATION CLOSED","fewSeatsLeftMessage":"ONLY A FEW SEATS LEFT!","notPossibleToBookMessage":"REGISTRATION CLOSED"}]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:41 </span><span style='color: #686868;'><span class="awlog-debug">Adding subAccount...</span></span><br><span class='time'>09:22:41 </span><span style='color: #686868;'><span class="awlog-debug"><pre>array (
+  'Code' => 'handm123400495',
+  'DisplayName' => '20% off H&M Sport',
+  'Balance' => 0.0,
+  'ExpirationDate' => 1763902800,
+)</pre></span></span><br><span class='time'>09:22:41 </span><span style='color: #686868;'><span class="awlog-debug">subAccount was added successfully</span></span><br><span class='time'>09:22:43 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR40908" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR40908</a></b></span><br><span class='time'>09:22:43 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:43 </span><span style='color: #696969;'><pre>GET /en_us/member/memberOffers.v1.json?offerKeys=OFR40908 HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR74194</span><br><span class='time'>09:22:43 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:43 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:43 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1672 msec</span><br><span class='time'>09:22:43 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:43 </span><span style='color: #696969;'><pre>content-type: application/json;charset=utf-8
+content-length: 620
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+vary: Accept-Encoding
+content-encoding: gzip
+cache-control: public, max-age=10800, post-check=900, must-revalidate
+date: Thu, 09 Nov 2023 09:22:43 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=91
+server-timing: origin; dur=1080
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521762352_400219923_274496691_117156_21152_258_0_15&quot;;dur=1</span><br><span class='time'>09:22:43 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com<br><span class='time'>09:22:43 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:43 </span>saved step10.html<!-- url:https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR40908 --><br><span class='time'>09:22:43 </span><hr><br><span class='time'>09:22:43 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[{"key":"OFR40908","headline":"Get deals &amp; invites tailored to you","type":"CL01","benefitNearingExpiryThresholdDays":"3","isOfferOrVoucher":"offer","typeCat":"PROFILE STATUS: ALMOST COMPLETE","logo":{"name":"","position":"northwest","color":"black","logoType":""},"srcImage":"https://www2.hm.com/content/dam/Hm_Member_and_Loyalty/campaigns/8016/3x2/8016-3x2-13.jpg","relativeScrImage":"/content/dam/Hm_Member_and_Loyalty/campaigns/8016/3x2/8016-3x2-13.jpg","srcImageThumbnail":null,"relativeScrImageThumbnail":null,"path":"/en_us/member/offers/vm-vouchers/ofr40908","tcLink":"/en_us/member/offers/vm-vouchers/ofr40908.tc.html","targetTemplate":"/apps/hm/templates/content/loyalty/offer","isBookingBug":false,"bonus":false,"garmentCollection":false,"isValidUntilEnable":false,"isValidFromEnable":false,"activeForLabel":"[activeForText]","validUntilLabel":null,"validFromLabel":null,"rectangleText":null,"clubEventChainId":"","clubServiceId":"","isPreshopping":false,"fullyBookedMessage":"Fully booked","registrationClosedMessage":"REGISTRATION CLOSED","fewSeatsLeftMessage":"ONLY A FEW SEATS LEFT!","notPossibleToBookMessage":"REGISTRATION CLOSED"}]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:43 </span><span style='color: #686868;'><span class="awlog-debug">Adding subAccount...</span></span><br><span class='time'>09:22:43 </span><span style='color: #686868;'><span class="awlog-debug"><pre>array (
+  'Code' => 'handm123400496',
+  'DisplayName' => 'Get deals & invites tailored to you',
+  'Balance' => 0.0,
+  'ExpirationDate' => 1766811540,
+)</pre></span></span><br><span class='time'>09:22:43 </span><span style='color: #686868;'><span class="awlog-debug">subAccount was added successfully</span></span><br><span class='time'>09:22:45 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR81151" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR81151</a></b></span><br><span class='time'>09:22:45 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:45 </span><span style='color: #696969;'><pre>GET /en_us/member/memberOffers.v1.json?offerKeys=OFR81151 HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR40908</span><br><span class='time'>09:22:45 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:45 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:45 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1578 msec</span><br><span class='time'>09:22:45 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:45 </span><span style='color: #696969;'><pre>content-type: application/json;charset=utf-8
+content-length: 633
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+vary: Accept-Encoding
+content-encoding: gzip
+cache-control: public, max-age=10800, post-check=900, must-revalidate
+date: Thu, 09 Nov 2023 09:22:45 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=94
+server-timing: origin; dur=957
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521764057_400219923_274499533_105188_16977_283_0_15&quot;;dur=1</span><br><span class='time'>09:22:45 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com<br><span class='time'>09:22:45 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:45 </span>saved step11.html<!-- url:https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR81151 --><br><span class='time'>09:22:45 </span><hr><br><span class='time'>09:22:45 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[{"key":"OFR81151","headline":"Get a free 3-month trial","type":"ZR12","benefitNearingExpiryThresholdDays":"3","isOfferOrVoucher":"offer","typeCat":"HELLO H&amp;M MEMBER","logo":{"name":"","position":"center","color":"black","logoType":"helloMemberEnLogo"},"srcImage":"https://www2.hm.com/content/dam/Hm_Member_and_Loyalty/rewards/GLOBAL/8038-spotify/8038_Spotify_Premium_Reward_3x2.jpg","relativeScrImage":"/content/dam/Hm_Member_and_Loyalty/rewards/GLOBAL/8038-spotify/8038_Spotify_Premium_Reward_3x2.jpg","srcImageThumbnail":null,"relativeScrImageThumbnail":null,"path":"/en_us/member/offers/collab-codes/ofr81151","tcLink":"/en_us/member/offers/collab-codes/ofr81151.tc.html","targetTemplate":"/apps/hm/templates/content/loyalty/offer","isBookingBug":false,"bonus":false,"garmentCollection":false,"isValidUntilEnable":true,"isValidFromEnable":false,"activeForLabel":"[activeForText]","validUntilLabel":"Expires on","validFromLabel":null,"rectangleText":null,"clubEventChainId":"","clubServiceId":"","isPreshopping":false,"fullyBookedMessage":"Fully booked","registrationClosedMessage":"REGISTRATION CLOSED","fewSeatsLeftMessage":"ONLY A FEW SEATS LEFT!","notPossibleToBookMessage":"REGISTRATION CLOSED"}]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:45 </span><span style='color: #686868;'><span class="awlog-debug">Adding subAccount...</span></span><br><span class='time'>09:22:45 </span><span style='color: #686868;'><span class="awlog-debug"><pre>array (
+  'Code' => 'handm123400497',
+  'DisplayName' => 'Get a free 3-month trial',
+  'Balance' => 0.0,
+  'ExpirationDate' => 1728100740,
+)</pre></span></span><br><span class='time'>09:22:45 </span><span style='color: #686868;'><span class="awlog-debug">subAccount was added successfully</span></span><br><span class='time'>09:22:46 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR69221" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR69221</a></b></span><br><span class='time'>09:22:46 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:46 </span><span style='color: #696969;'><pre>GET /en_us/member/memberOffers.v1.json?offerKeys=OFR69221 HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR81151</span><br><span class='time'>09:22:46 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:46 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:46 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1476 msec</span><br><span class='time'>09:22:46 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:46 </span><span style='color: #696969;'><pre>content-type: application/json;charset=utf-8
+content-length: 2
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+cache-control: public, max-age=10800, post-check=900, must-revalidate
+date: Thu, 09 Nov 2023 09:22:46 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=86
+server-timing: origin; dur=1028
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521765617_400219923_274502134_111387_17369_305_0_15&quot;;dur=1</span><br><span class='time'>09:22:46 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com<br><span class='time'>09:22:46 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:46 </span>saved step12.html<!-- url:https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR69221 --><br><span class='time'>09:22:46 </span><hr><br><span class='time'>09:22:46 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:46 </span><span style='color: #686868;'><span class="awlog-debug">Adding subAccount...</span></span><br><span class='time'>09:22:46 </span><span style='color: #686868;'><span class="awlog-debug"><pre>array (
+  'Code' => 'handm123400498',
+  'DisplayName' => NULL,
+  'Balance' => 0.0,
+  'ExpirationDate' => 1767135600,
+)</pre></span></span><br><span class='time'>09:22:46 </span><span style='color: red;'><span class="awlog-error">wrong subAccount, skip it</span></span><br><span class='time'>09:22:48 </span><span style='color: #696969;'><b>GET <a target="_blank" href="https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR40245" style="color:black; text-decoration:none;">https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR40245</a></b></span><br><span class='time'>09:22:48 </span><b>request headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:48 </span><span style='color: #696969;'><pre>GET /en_us/member/memberOffers.v1.json?offerKeys=OFR40245 HTTP/2
+Host: www2.hm.com
+accept-encoding: deflate, gzip, br
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+accept-language: en-us,en;q=0.5
+connection: Keep-Alive
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+origin: https://www2.hm.com
+referer: https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR69221</span><br><span class='time'>09:22:48 </span><b>Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM<br><b>akamref</b>&nbsp;=&nbsp;en_us<br><b>AKA_A2</b>&nbsp;=&nbsp;A<br><b>akavpau_www2_en_us</b>&nbsp;=&nbsp;1699522057~id=fbd4c246c8a272bf575d476b4ea24c3a<br><b>_abck</b>&nbsp;=&nbsp;8AB0D2D40548BDD077D15ED0E4731898~-1~YAAQE9/aFyacwq6LAQAAvPljswqcl7Iklq+K4FMkLKGa+7LI7VEL7M9iGWSV75VD/29pgm9wyvTJ+ZAD4Tq/ip7/6bdC4WTUbIzhNEItLDIV2hMqXALgExNLjntsK5lgFiLJkzoHPYbUCkAooXeUa/okM3vboqqRIECHoBQnzrx3/gqmnNz8XEn58Hzylfdd45MfM58JAg1x8oSFMVWG5fU7Un75j34bbFrhMbUOmcKY2YhF+SqaceKd0dcWG/0zf4JXHRKBarWkcFUWWvrmKYWsfpTLiqBAnfm1In7MrgZUb/fAFprATqPjOGIdaFN+wZ/HBnyinFCUejm86TYc/V7Oil1a9N/k2CIogHOOZjXykoujYFwvtDRh4KMx6rN2ZgujSJBncs9Y8FeTaFODfXxvwFyIApXId1aRm1P43fxfxA==~0~-1~1699525223<br><b>bm_sz</b>&nbsp;=&nbsp;B63DFFA108B7030D45754F9387045F5B~YAAQE9/aFw+cwq6LAQAAC/NjsxUIEpU12mtlsbvE/Dk2nosWG1e8U+fh/sLhVv1LEYskR+JNaPhIhq4ciP1cYK4ejj88x7fLgeNdjAEtFSXpYdcZMoA0UDBUCvdqe1maOfcSEG4xd2aR0HpdO3kXloYjjXvXll220wCG2Woe4brUy2UB+VPM7TDVa9KCnnykS4Q7ka1GGQg5lc6g4gdeiafV6VvA04TZFLWh3xXJkfGNZNWc3VKCntRwQySwVIRXoRTrGM4bHAixZxSsZ4r1j0NTf6/NQ982nKcyjxDthR7miwYUsgRVUfhwGFzQuhvAcF7ctfbO8t0=~3747910~3748674<br><b>INGRESSCOOKIE</b>&nbsp;=&nbsp;1699521756.24.131.514661|ce11af63eaca573be5110d180bb330ca<br><b>JSESSIONID</b>&nbsp;=&nbsp;A0E576544CC3EA2C66938BC602CAD4ECF3E2A4E8CF2C6E0B64D9C253F9685EE520036CAB63D67AD74BD2EEBF4C7142A2FA9CF0D437041CB89F6D430E993470C9.hybris-ecm-web-796c98648f-4xrqb<br><b>rememberMe</b>&nbsp;=&nbsp;vhXUAIrfAEspWbCnxcUEvkY4FujC%2FqKrjVct%2FmViwa97ETNI719INmN9vCnWJJkKrNTUoxPygUiq8MMnZZlFtrl%2FJk3rjCty2WhOdRr3Pz5YOtHlhhjFvL7L0C3HxHKx<br><b>acceleratorSecureGUID</b>&nbsp;=&nbsp;bc0771782ec3f839704d5672cd80299b4e129ea2<br><b>uuidCookie</b>&nbsp;=&nbsp;eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Y6IIbRFotj3i2fpod7vDsQ.aGNd0GvqsYLx3_4tarPIk3gsFHWApT-7rL56NsdFiYDNX8es4Y42AG7-2rdGJBV6Q-zmc3k9CZTiZW6RIuaSFzegUxEAykMyA-_IXUnc2-ixpkveYVZbWVIsgztCtSXZSCmpdrW44u7X8LjxNFYHAzt1KuQAe3MIdpUtAsZj30KpQwu37Yvy2Np-2fpj8Z06Ag1zr4rw2AGnw-umg_FY8rQtOUW02mobK_bqxKU30az0cgw8iEQCdt9ipJdRFAElPoUedMrfOYFCdr8l7HoKDRoDyBHrpoRePAYgxyh1itw.Lp1DnGyTKFFYOQDaetArhQ<br><b>userCookie</b>&nbsp;=&nbsp;##eyJsYXN0TmFtZSI6IlZlcmVzY2hhZ2EiLCJzdCI6IiIsImN1c3RvbWVyR3JvdXAiOlsibG95YWx0eU1lbWJlckdyb3VwIiwiY3VzdG9tZXJncm91cCJdLCJicGlkIjoiMzE4MTkyMzk5NyIsInNob3dDbHViMlRlcm1zQW5kQ29uZGl0aW9uTW9kYWwiOmZhbHNlLCJmdWxsSm9pbiI6MCwiemMiOiIiLCJjYXJ0Q291bnQiOjAsInR5cGUiOiJSIiwic3RyIjoiIiwiZmlyc3ROYW1lIjoiQWxleGkiLCJjdXN0b21lcl9rZXkiOiI0NzYzODYzZTIyY2EwNjdmNzRiYmQ4Mzg4NDVmOTU2ZiIsImN1c3RvbWVyX2NsdWJfbGV2ZWwiOjAsImhpZGVHcmVldGluZyI6ZmFsc2UsInRuIjoiIiwiaHlicmlzX2ZpcnN0TmFtZSI6IkFsZXhpIiwiaHlicmlzX3V1aWQiOiJ2ZXJlc2NoODBAeWFob28uY29tIiwiY3VzdG9tZXJfaWQiOiIxMDAxMDg3NTQ2NTAifQ##<br><b>clubFullJoinCookie</b>&nbsp;=&nbsp;##eyJkZWxheSI6NywiZGF0ZSI6MTcwMDEyNjU1NTUwMSwidXNlciI6InZlcmVzY2g4MEB5YWhvby5jb20iLCJzdGF0dXMiOiIwIiwiY291bnRlciI6MCwibWF4Q291bnRlciI6Mn0##<br><span class='time'>09:22:48 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:48 </span><span style='color: #696969;'><b>HTTP/2 200 </b> 1394 msec</span><br><span class='time'>09:22:48 </span><b>response headers:</b><br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+<span class='time'>09:22:48 </span><span style='color: #696969;'><pre>content-type: application/json;charset=utf-8
+content-length: 616
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+vary: Accept-Encoding
+content-encoding: gzip
+cache-control: public, max-age=10800, post-check=900, must-revalidate
+date: Thu, 09 Nov 2023 09:22:48 GMT
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=87
+server-timing: origin; dur=985
+strict-transport-security: max-age=31536000; includeSubDomains
+server-timing: ak_p; desc=&quot;1699521767115_400219923_274504423_107152_16737_308_0_15&quot;;dur=1</span><br><span class='time'>09:22:48 </span><b>Set-Cookies:</b><br><b>akainst</b>&nbsp;=&nbsp;AM; path=/; domain=.www2.hm.com<br><span class='time'>09:22:48 </span><span style='color: #696969;'></pre></span><br></div>
+<span class='time'>09:22:48 </span>saved step13.html<!-- url:https://www2.hm.com/en_us/member/memberOffers.v1.json?offerKeys=OFR40245 --><br><span class='time'>09:22:48 </span><hr><br><span class='time'>09:22:48 </span><span style='color: #686868;'>
+    <p class="options">
+      Options:
+      <label title="Generate node as collapsed">
+        <input type="checkbox" data-type="collapsed">Collapse nodes
+      </label>
+      <label title="Generate node as collapsed with set depth">
+        <input type="checkbox" data-type="collapsed-depth" checked="">
+        Collapse nodes with set depth (3)
+      </label>
+      <label title="Surround keys with quotes">
+        <input type="checkbox" data-type="with-quotes">Keys with quotes
+      </label>
+      <label title="Generate anchor tags for URL values">
+        <input type="checkbox" data-type="with-links" checked="">
+        With Links
+      </label>
+      <label title="Collapse all except">
+        <input type="checkbox" data-type="except" >
+        Except: 
+        <input type="text" data-type="except-value" >
+      </label>
+    <button style="cursor:pointer;padding:0;background:none;border:none;color:gray;margin-right: 20px;" title="Copy json to buffer" onclick="textToBuffer($(this).parent().next()); return false;">&nbsp;❒ Copy</button>
+    </p>
+    <pre style='display: none;' class='json-data'>[{"key":"OFR40245","headline":"Earn points every time you shop!","type":"CL01","benefitNearingExpiryThresholdDays":"3","isOfferOrVoucher":"offer","typeCat":"$1 = 1 POINT","logo":{"name":"","position":"northwest","color":"black","logoType":""},"srcImage":"https://www2.hm.com/content/dam/Hm_Member_and_Loyalty/campaigns/8077-member-recruitment/8077-Member_Recruitment_Home_3x2.jpg","relativeScrImage":"/content/dam/Hm_Member_and_Loyalty/campaigns/8077-member-recruitment/8077-Member_Recruitment_Home_3x2.jpg","srcImageThumbnail":null,"relativeScrImageThumbnail":null,"path":"/en_us/member/offers/vm-vouchers/ofr40245","tcLink":"/en_us/member/offers/vm-vouchers/ofr40245.tc.html","targetTemplate":"/apps/hm/templates/content/loyalty/offer","isBookingBug":false,"bonus":false,"garmentCollection":false,"isValidUntilEnable":false,"isValidFromEnable":false,"activeForLabel":"[activeForText]","validUntilLabel":null,"validFromLabel":null,"rectangleText":null,"clubEventChainId":"","clubServiceId":"","isPreshopping":false,"fullyBookedMessage":"Fully booked","registrationClosedMessage":"REGISTRATION CLOSED","fewSeatsLeftMessage":"ONLY A FEW SEATS LEFT!","notPossibleToBookMessage":"REGISTRATION CLOSED"}]</pre>
+    <pre class='json-renderer' data-depth='3'></pre>
+            </span><br><span class='time'>09:22:48 </span><span style='color: #686868;'><span class="awlog-debug">Adding subAccount...</span></span><br><span class='time'>09:22:48 </span><span style='color: #686868;'><span class="awlog-debug"><pre>array (
+  'Code' => 'handm123400499',
+  'DisplayName' => 'Earn points every time you shop!',
+  'Balance' => 0.0,
+  'ExpirationDate' => 1752724800,
+)</pre></span></span><br><span class='time'>09:22:48 </span><span style='color: #686868;'><span class="awlog-debug">subAccount was added successfully</span></span><br><span class='time'>09:22:48 </span><h2 class="awlog-info">Parse Itineraries</h2><br><span class='time'>09:22:48 </span><h2 class="awlog-info">Account Check Result</h2><br><span class='time'>09:22:48 </span><span style='color: red;'><span class="awlog-error">error: No errors [Checked]</span></span><br><span class='time'>09:22:48 </span><span style='color: #686868;'><span class="awlog-debug">debug info: </span></span><br><span class='time'>09:22:48 </span><span class="awlog-info">balance: 0</span><br><span class='time'>09:22:48 </span><span class="awlog-info">properties:</span><br><span class='time'>09:22:48 </span><span class="awlog-info"><pre>array (
+  'Name' =&gt; 'Alexi Vereschaga',
+  'EliteLevel' =&gt; 'Member',
+  'RenewalDate' =&gt; 1705363200,
+  'NextReward' =&gt; '200',
+  'NextLevel' =&gt; '500',
+  'Number' =&gt; '100912812208172',
+  'SubAccounts' =&gt; 
+  array (
+    0 =&gt; 
+    array (
+      'Code' =&gt; 'handm123400493',
+      'DisplayName' =&gt; 'Up to 30% off select outerwear styles',
+      'Balance' =&gt; 0.0,
+      'ExpirationDate' =&gt; 1699527600,
+    ),
+    1 =&gt; 
+    array (
+      'Code' =&gt; 'handm123400494',
+      'DisplayName' =&gt; '20% off H&amp;M HOME',
+      'Balance' =&gt; 0.0,
+      'ExpirationDate' =&gt; 1761220800,
+    ),
+    2 =&gt; 
+    array (
+      'Code' =&gt; 'handm123400495',
+      'DisplayName' =&gt; '20% off H&amp;M Sport',
+      'Balance' =&gt; 0.0,
+      'ExpirationDate' =&gt; 1763902800,
+    ),
+    3 =&gt; 
+    array (
+      'Code' =&gt; 'handm123400496',
+      'DisplayName' =&gt; 'Get deals &amp; invites tailored to you',
+      'Balance' =&gt; 0.0,
+      'ExpirationDate' =&gt; 1766811540,
+    ),
+    4 =&gt; 
+    array (
+      'Code' =&gt; 'handm123400497',
+      'DisplayName' =&gt; 'Get a free 3-month trial',
+      'Balance' =&gt; 0.0,
+      'ExpirationDate' =&gt; 1728100740,
+    ),
+    5 =&gt; 
+    array (
+      'Code' =&gt; 'handm123400499',
+      'DisplayName' =&gt; 'Earn points every time you shop!',
+      'Balance' =&gt; 0.0,
+      'ExpirationDate' =&gt; 1752724800,
+    ),
+  ),
+)</pre></span><br><span class='time'>09:22:48 </span><span class="awlog-info">files:</span><br><span class='time'>09:22:48 </span><span class="awlog-info"><pre>array (
+)</pre></span><br><span class='time'>09:22:48 </span><span class="awlog-info">step: </span><br><span class='time'>09:22:48 </span><span class="awlog-info">question: </span><br><span class='time'>09:22:48 </span><span class="awlog-info">invalid answers:</span><br><span class='time'>09:22:48 </span><span class="awlog-info"><pre>Array
+(
+)
+</pre></span><br><span class='time'>09:22:48 </span><span class="awlog-info">itineraries:</span><br><span class='time'>09:22:48 </span><span class="awlog-info"><pre>array (
+)</pre></span><br><span class='time'>09:22:48 </span>Check itineraries required fields:<br><div style='border: 1px solid #d3d3d3; overflow: auto; padding: 2px;' class='scroll'>
+</div>
+<span class='time'>09:22:48 </span><span>show tables like "FlightStatsCache"</span><br><span class='time'>09:22:48 </span><span>select ProviderID, Code, IATACode, Kind, ShortName from Provider where Code = ? ["handm"] []
+</span><br>

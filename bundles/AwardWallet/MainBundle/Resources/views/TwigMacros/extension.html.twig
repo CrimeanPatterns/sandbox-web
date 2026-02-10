@@ -1,0 +1,9 @@
+{% macro load() %}
+<!-- browser ext params -->
+<input type="hidden" id="extCommand" value="init"/>
+<input type="hidden" id="extParams" value=""/>
+<input type="button" id="extButton" style="display: none;"/>
+<input type="button" id="extListenButton" style="display: none;" onclick="if(typeof(browserExt) == 'undefined') setTimeout(document.getElementById('extListenButton').onclick, 100); else browserExt.receiveCommand()"/>
+<input type="hidden" id="extBrowserKey" value="deprecated"/> {# not used, we do not store account data in browser anymore, can't set to empty string, because extension will not start #}
+<input type="hidden" id="extUserId" value="1"/>
+{% endmacro %}

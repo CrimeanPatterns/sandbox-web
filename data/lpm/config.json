@@ -1,0 +1,13 @@
+{
+  "_defaults": {
+    "debug": "none",
+    "lpm_auth": "none",
+    "version": "1.407.3",
+    "www_whitelist_ips": [
+      "0.0.0.0/0"
+    ]
+  },
+  "proxies": [
+  ],
+  "ts": "2023-09-19T09:54:46.968Z"
+}

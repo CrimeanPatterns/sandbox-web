@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+<title>Airblue  - BlueMiles Rewards Program</title>
+
+<style>
+    /*
+    body { visibility: hidden !important } 
+    body.loaded  { visibility: visible !important }
+    */
+
+/*	@media screen { html { text-align: center; } }*/
+	/*body {
+	    width: auto;
+	    display: inline-block;
+	    margin: 0 auto;
+	    text-align: center;
+	}*/
+</style>
+<link rel="stylesheet" type="text/css" href="/scripts/airline.css">
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="/custom/?/=/scripts/public.css" /><script>var node=document.firstChild,html=document.firstElementChild;while(!html&&node)if(node.nodeType===1)html=node;else node=node.nextSibling; html.className += " ASP";</script>
+
+
+<script src="/scripts/preload.js"></script>
+<script src="/scripts/airline.js"></script>
+<script type="text/javascript" src="/scripts/js/jquery-1.3.2.min.js"></script>
+<link rel="stylesheet" href="/scripts/js/jquery.alerts/css/jquery.alerts.css" type="text/css" />
+<script type="text/javascript" src="/scripts/js/jquery.alerts/js/jquery.alerts.js"></script>
+<script type="text/javascript" src="/custom/?/=/scripts/rewards.js"></script>
+<script type="text/javascript" src="/custom/?/=/scripts/bookings.js"></script>
+<link rel="stylesheet" type="text/css" href="/custom/?/=/scripts/login.less">
+<script language=javascript type="text/javascript">
+function do_login()
+{
+	if (validation())
+	{
+		var $loginButton = $('input[name="cmdLogin"]').attr('disabled', 'disabled')
+		var $message = $('#message').text('')
+
+		$.get("/api/members/DoLogin?id=" + document.frm_Login.login.value + "&pwd=" + document.frm_Login.password.value,
+			function (result) {
+				try {
+					var json = JSON.parse(result)
+					if (json && json.result == "OK") {
+						document.frm_Login.login_action.value = "dologin";
+						document.frm_Login.submit();
+					}
+					else {
+						json = json || {}
+
+						var error = json.error
+						if (error) {
+							if (!error.title)
+								error = (error.conflicts || [])[0]
+						}
+						else {
+							error = json.exception
+							if (!error.title)
+								error = (exception.conflicts || [])[0]
+						}
+
+						if (error)
+							$message.html(`<b>${error.title}</b><p>${error.text}</p>`)
+
+                        $loginButton.removeAttr('disabled')
+                    }
+				}
+				catch { }
+			},
+			function (error) {
+                $loginButton.removeAttr('disabled')
+            }
+		);
+	}
+}
+function forgot_password()
+{
+	jPrompt('Enter the <b>e-mail address</b> associated with your Frequent Flyer account and your password will be emailed to you.', '', 'Forgot Password', function(email) {
+	    if(email && emailCheck(email))
+		{
+			document.frm_Login.email_password.value = email;
+			document.frm_Login.login_action.value = "forgotpassword";
+			document.frm_Login.submit();
+		}
+		else
+			return;
+	});
+
+}
+function validation()
+{
+	var errorcount = 0;
+	var msg = "___________________________________\n\n";
+	msg += "You must enter correct information into the following fields for this form to be submitted:\n\n";	
+	var err_login;
+	var err_password;
+	
+	document.frm_Login.login.value = trim_id(document.frm_Login.login.value);
+	
+	if (!isNumeric(document.frm_Login.login.value) || document.frm_Login.login.value == "")
+	{
+ 		msg += "Frequent Flyer Member ID\n\n";
+		err_login = true;
+		errorcount++;
+	}
+	if (document.frm_Login.password.value == "")
+	{
+ 		msg += "Password\n\n";
+		err_password = true;
+		errorcount++;
+	}
+		
+	msg += "___________________________________";
+	
+	if (errorcount > 0)
+		alert(msg);
+
+	if (err_login){document.frm_Login.login.focus();}
+	else if (err_password){document.frm_Login.password.focus();}
+
+	return (errorcount == 0);
+}
+//will strip out all non-numeric characters from a string
+function trim_id(word)
+{
+	var newvalue = "";
+	for (i=0; i<word.length; i++ )
+	{
+		if (isNumeric(word.charAt(i)))
+			newvalue = newvalue + word.charAt(i);
+	}
+	return newvalue
+}
+function setfocus()
+{
+    if ( document.frm_Login.login.value == '' )
+		document.frm_Login.login.focus();
+}
+//-->
+</script>
+<script language=javascript type="text/javascript">
+<!--
+var isNetscape = false;
+var isIE = false;
+var isWhoKnows = false;
+
+//This determines which browser the user is using
+if (parseInt(navigator.appVersion) >= 4)
+{
+	if(navigator.appName == "Netscape" || navigator.appName == "Opera")
+	{
+		isNetscape = true;
+	}
+	else if (navigator.appName == "Microsoft Internet Explorer")
+	{
+		isIE = true;
+	}
+	else
+	{
+		isWhoKnows = true;
+	}
+}
+	
+// this captures the events of the user for NetScape 4
+if(document.captureEvents && Event.KEYUP)
+{
+	document.captureEvents(Event.KEYUP);
+}
+// this is for all other browsers
+document.onkeyup = handleEnterKey
+
+function handleEnterKey(evt)
+{
+	var keyCode;
+	keyCode = getEventKey(evt);
+	if (keyCode == 13) 
+	{
+		do_login();
+	}
+}
+function benefits_popup()
+{
+	var strFeatures;
+	var nWinTop;
+	var nWinLeft;
+	// first calculate a central position for the window
+	nWinTop = (screen.availHeight - 238) / 2;
+	if (nWinTop < 0) {
+	  nWinTop = 0;
+	}
+	nWinLeft = (screen.availWidth - 515) / 2;
+	if (nWinLeft < 0) {
+	  nWinLeft = 0;
+	}
+	// set the width and height and any other features required or not required
+	strFeatures = "width=515,height=238,top=" + nWinTop + ",left=" + nWinLeft + ",location=0,menubar=0,toolbar=0,resizable=0";
+	// popup window
+	popupWindow = window.open("benefits_popup.asp", "popupFS", strFeatures); 
+	// focus to make sure it is at the front
+	popupWindow.focus();
+} 
+//-->
+</script>
+<div id="wrapper">
+<script>
+        if (window !== window.top && window.top.location.protocol != "https:")
+            window.top.location = window.top.location.href.replace("http://", "https://");
+    </script>
+<div class="container">
+<div class="pageContent">
+<h1 id="memLoginLabel">BlueMiles login</h1>
+<form name="frm_Login" action="https://www.airblue.com/rewards/login.asp" method="post">
+<input type="hidden" name="login_action" value="">
+<input type="hidden" name="email_password" value="">
+<input type="hidden" name="redir" value="">
+<div class="loginForm">
+<input type="text" onFocus="this.select()" name="login" value="" maxlength="8" placeholder="Member ID#">
+<input type="password" onFocus="this.select()" name="password" maxlength="20" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+<div class="loginButton">
+<input type="button" name="cmdLogin" value="Login" onclick="javascript:do_login();return false;">
+<div id="message"></div>
+</div>
+</div>
+</form>
+</div>
+<div class="pageLinks">
+<ul>
+<li class="desktopOnly"><a href="/bluemiles" target="_top">BlueMiles</a></li>
+<li><a href="#" onclick="javascript:forgot_password();">Recover Password</a></li>
+<li>
+<a href="/bluemiles/join" target="_top">Enroll Now</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footer" class="noprint">
+<style type='text/css' data-src='/scripts/airline-footer.css'>#footer
+{
+    background-color: #FFFFCC;
+    color: #fe0003;
+    text-align: center;
+ 	font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    padding: 1em;
+    width: 927px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-top: 5px solid #fe0003;
+    clear: both;
+}
+div#sitemap
+{
+	position: relative;
+    display: block;
+    background-color: #7498C3;
+    color: #fad709;
+    width: 927px;
+    font-size: 0.7em;
+    padding: 1em;
+    height: 6em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#sitemap ul
+{
+	position: relative;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+#sitemap>ul>li
+{
+    width: 10em;
+ 	font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+	list-style-type: none;
+	position: relative;
+    left: -2em;
+	text-align: left;
+	cursor: pointer;
+	float: left;
+    color: fad709;
+}
+#sitemap>ul>li>ul>li
+{
+	position: relative;
+    left: -2em;
+    display: block;
+    width: 20em;
+ 	font-family: Arial, Helvetica, sans-serif;
+	list-style-type: none;
+	text-align: left;
+	float: left;
+    color: fad709;
+}
+#sitemap a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+#sitemap a:hover
+{
+    color: #fad709;
+}
+</style>
+</div>
+</body>
+</html>

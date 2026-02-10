@@ -1,0 +1,17 @@
+{
+  "token_hmac_secret_key": "my_secret",
+  "allow_user_limited_channels": true,
+  "allow_history_for_subscriber": true,
+  "history_size": 10,
+  "history_ttl": "300s",
+  "force_recovery": true,
+  "api_key": "my_api_key",
+  "admin_password": "password",
+  "admin_secret": "secret",
+  "admin": true,
+  "user_subscribe_to_personal": true,
+  "http_stream": true,
+  "emulation_handler_prefix": "/connection/emulation",
+  "sse": true,
+  "allowed_origins": ["http://parserbox-web.awardwallet.docker", "http://parserbox-web.awardwallet.docker:38401"]
+}

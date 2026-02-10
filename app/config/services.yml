@@ -1,0 +1,70 @@
+services:
+    controllers:
+        namespace: AwardWallet\MainBundle\Controller\
+        resource: '../../bundles/AwardWallet/MainBundle/Controller/**/*Controller.php'
+        autowire: true
+        autoconfigure: true
+        tags: ['controller.service_arguments']
+
+    doctrine.dbal.shared_connection:
+        alias: "doctrine.dbal.default_connection"
+
+    aw.stat_logger: '@logger'
+    Monolog\Logger: '@logger'
+
+    aw.curl_driver:
+        class: CurlDriver
+        arguments: ['@aw.shared_memcached']
+    HttpDriverInterface: "@aw.curl_driver"
+
+    aw.shared_memcached:
+        public: true
+        class: AwardWallet\MainBundle\Service\Memcached
+        arguments:
+            - "memcached"
+            - "none"
+
+    event_dispatcher:
+        class: Symfony\Component\EventDispatcher\EventDispatcher
+
+    serializer_builder:
+        class: JMS\Serializer\SerializerBuilder
+        factory: 'JMS\Serializer\SerializerBuilder::create'
+
+    jms_serializer:
+        class: JMS\Serializer\Serializer
+        factory: ['@serializer_builder', 'build']
+
+    AwardWallet\MainBundle\Service\ParsingConstants:
+        arguments:
+            - "%parsing_constants%"
+
+    AwardWallet\MainBundle\Service\CheckerFactory:
+        autowire: true
+        public: true
+
+    AwardWallet\Common\Memcached\Factory:
+
+    Memcached:
+        public: true
+        class: Memcached
+        factory: ['@AwardWallet\Common\Memcached\Factory', 'create']
+        arguments:
+            - "%memcached_host%"
+
+    aw.memcached: '@Memcached'
+    # ------------- selenium ---------------
+    aw.selenium_memcached:
+        public: true
+        class: AwardWallet\MainBundle\Service\Memcached
+        arguments:
+            - 'memcached'
+            - ""
+
+    # --------------- repositories -------------------
+    aw.repository.provider:
+        public: true
+        class: Doctrine\ORM\EntityRepository
+        factory: 'doctrine.orm.default_entity_manager:getRepository'
+        arguments:
+            - AwardWalletMainBundle:Provider

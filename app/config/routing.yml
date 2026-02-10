@@ -1,0 +1,5 @@
+AwardWalletMainBundle:
+    resource: "@AwardWalletMainBundle/Controller"
+    type:     annotation
+    prefix:   /
+

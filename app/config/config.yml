@@ -1,0 +1,94 @@
+parameters:
+    aws_test_s3_bucket_dir: '/www/awardwallet/logs/s3'
+    env(EXTENSION_WORKER_CENTRIFUGE_SERVER_API_URL): 'http://centrifugo:8000/api'
+    env(EXTENSION_WORKER_CENTRIFUGE_API_KEY): 'my_api_key'
+    env(EXTENSION_WORKER_CENTRIFUGE_SECRET): 'my_secret'
+    selenium_host: host.docker.internal
+
+framework:
+    secret: nosecret
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: "%kernel.debug%"
+
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   "pdo_mysql"
+                host:     "mysql"
+                port:     "3306"
+                dbname:   "awardwallet"
+                user:     "awardwallet"
+                password: "awardwallet"
+                charset:  UTF8
+    orm:
+        default_entity_manager: default
+        entity_managers:
+            default:
+                connection: default
+                mappings:
+                    AwardWalletMainBundle: ~
+                    ServiceBundle:
+                      type: annotation
+                      dir: "%kernel.root_dir%/../vendor/awardwallet/service/Common/Entity"
+                      prefix: AwardWallet\Common\Entity
+                      is_bundle: false
+
+doctrine_mongodb:
+    default_commit_options: ~
+    connections:
+        default:
+            server: 'mongodb://mongo:27017'
+            options:
+                username: null
+                password: null
+                db: "loyalty"
+                socketTimeoutMS: 10000
+                w: 1
+
+    default_connection: default
+    default_database: 'loyalty'
+    document_managers:
+        default:
+            connection: default
+            mappings:
+                service_mapping:
+                    type: annotation
+                    dir: "%kernel.project_dir%/vendor/awardwallet/service/Common/Document"
+                    prefix: AwardWallet\Common\Document
+                    is_bundle: false
+            retry_connect: 2
+
+twig:
+    debug: true
+    strict_variables: true
+
+old_sound_rabbit_mq:
+    connections:
+        default:
+            host:     'rabbitmq'
+            port:     5672
+            user:     'guest'
+            password: 'guest'
+            vhost:    '/'
+            lazy:     false
+            connection_timeout: 3
+            read_write_timeout: 3
+            # requires php-amqplib v2.4.1+ and PHP5.4+
+            keepalive: false
+            # requires php-amqplib v2.4.1+
+            heartbeat: 0
+            #requires php_sockets.dll
+            use_socket: true # default false
+
+monolog:
+    handlers:
+        # this "file_log" key could be anything
+        file_log:
+            type: stream
+            # log to var/logs/(environment).log
+            path: "php://stderr"
+            # log *all* messages (debug is lowest level)
+            level: info
