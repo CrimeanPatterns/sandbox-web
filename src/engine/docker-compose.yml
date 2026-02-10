@@ -1,0 +1,7 @@
+version: '3.5'
+
+services:
+  cs-fixer:
+    image: docker.awardwallet.com/service/php-cs-fixer-multiarch:3.0.0-php7.2.34-aw6
+    volumes:
+      - ./:/workdir
